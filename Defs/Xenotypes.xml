@@ -8,7 +8,7 @@
     <genes>
     <li MayRequire="oldmanwhistler.storagebornxenotype">OMW_Storageborn</li>
     <li MayRequire="oldmanwhistler.storagebornxenotype">OMW_StorageHead</li>
-    <li MayRequire="oldmanwhistler.storagebornxenotype">OMW_StorageBodyKallax</li>
+    <li MayRequire="oldmanwhistler.storagebornxenotype">OMW_StorageBodyMaid</li>
     <li>Neversleep</li>
     <li>Hair_BaldOnly</li>
     <li>Beard_NoBeardOnly</li>    
@@ -34,6 +34,7 @@
     <li MayRequire="redmattis.bigsmall.core">VU_NearSterile</li>
     <li MayRequire="redmattis.bigsmall.core">BS_SimpleMind</li>
     <li MayRequire="redmattis.bigsmall.core">BS_SnekEngulf</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_NoFamilyRelations</li>
     </genes>    
     <inheritable>true</inheritable>
     <canGenerateAsCombatant>false</canGenerateAsCombatant>

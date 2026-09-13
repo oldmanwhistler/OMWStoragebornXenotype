@@ -7,17 +7,23 @@
     <iconPath>GeneIcons/BS_DevourerHead</iconPath>
     <displayCategory>Storageborn</displayCategory>    
     <displayOrderInCategory>98</displayOrderInCategory>
-    <graphicData>
-      <graphicPaths>
-        <li>Storageborn/Heads/StoragebornHead</li>
-      </graphicPaths>
-      <layer>PostSkin</layer>
-      <colorType>Skin</colorType>				
-      <useSkinShader>false</useSkinShader>
-      <drawLoc>HeadTop</drawLoc>
-      <drawOffset>(0, -0.00288, 0)</drawOffset>
-      <drawIfFaceCovered>true</drawIfFaceCovered>						
-    </graphicData>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPaths>
+          <li>Head/StoragebornHead</li>
+        </texPaths>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Skin</colorType>
+        <drawData>
+          <defaultData>
+            <layer>52</layer>
+          </defaultData>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
     <selectionWeight>1</selectionWeight>
     <canGenerateInGeneSet>true</canGenerateInGeneSet>
     <hairTagFilter>
@@ -62,10 +68,11 @@
     <label>Storageborn Kallax Body</label>
     <labelShortAdj>Kallax Body</labelShortAdj>
     <description></description>
-    <iconPath>UI/Genes/OMW_StorageKallax</iconPath>
+    <iconPath>Storageborn/Bodies/Kallax/Storageborn_south</iconPath>
     <exclusionTags></exclusionTags>
     <modExtensions>
       <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>      
         <bodyPaths>
           <Body_Female>Storageborn/Bodies/Kallax/Storageborn</Body_Female>
           <Body_Male>Storageborn/Bodies/Kallax/Storageborn</Body_Male>
@@ -76,4 +83,131 @@
       </li>
     </modExtensions>
   </GeneDef> 
+
+    <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyLuggage</defName>
+    <label>Storageborn Luggage Body</label>
+    <labelShortAdj>Luggage Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Luggage/Storageborn_south</iconPath>
+    <exclusionTags></exclusionTags>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Luggage/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Luggage/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Luggage/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Luggage/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Luggage/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>   
+
+    <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyMimic</defName>
+    <label>Storageborn Mimic Body</label>
+    <labelShortAdj>Mimic Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Mimic/Storageborn_south</iconPath>
+    <exclusionTags></exclusionTags>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Mimic/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Mimic/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Mimic/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Mimic/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Mimic/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>    
+
+    <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyCardboard</defName>
+    <label>Storageborn Cardboard Body</label>
+    <labelShortAdj>Cardboard Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Cardboard/Storageborn_south</iconPath>
+    <exclusionTags></exclusionTags>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Cardboard/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Cardboard/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Cardboard/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Cardboard/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Cardboard/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>    
+
+    <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyMaid</defName>
+    <label>Storageborn Maid Body</label>
+    <labelShortAdj>Maid Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Maid/Storageborn_south</iconPath>
+    <exclusionTags></exclusionTags>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Maid/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Maid/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Maid/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Maid/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Maid/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>    
+    </modExtensions>
+  </GeneDef>     
+
+    <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyCube</defName>
+    <label>Storageborn Cube Body</label>
+    <labelShortAdj>Cube Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Cube/Storageborn_south</iconPath>
+    <exclusionTags></exclusionTags>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>        
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Cube/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Cube/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Cube/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Cube/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Cube/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>     
+
+
+    <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyTreant</defName>
+    <label>Storageborn Treant Body</label>
+    <labelShortAdj>Treant Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Treant/Storageborn_south</iconPath>
+    <exclusionTags></exclusionTags>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Treant/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Treant/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Treant/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Treant/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Treant/Storageborn</Body_Hulk>
+        </bodyPaths>        
+      </li>
+    </modExtensions>    
+  </GeneDef>     
 </Defs>

@@ -10,17 +10,27 @@ namespace StoragebornXenotype
         private const string StoragebornGeneDefName = "OMW_Storageborn";
         private const string ChildhoodBackstoryDefName = "OMW_StoragebornChildhood";
         private const string AdulthoodBackstoryDefName = "OMW_StoragebornWanderer";
-        private const int AgeGigantic = 50;
-        private const int AgeLarge = 35;
-
+        
         private static readonly string[] StageDefNames =
         {
+            "OMW_StorageStage_0",
             "OMW_StorageStage_0",
             "OMW_StorageStage_1",
             "OMW_StorageStage_2",
             "OMW_StorageStage_3",
             "OMW_StorageStage_4"
         };
+
+        private static readonly int[] StageAgeMin =
+        {
+            0,
+            8,
+            18,
+            30,
+            50,
+            70
+        };
+
 
         public static bool HasStoragebornGene(Pawn pawn)
         {
@@ -41,7 +51,16 @@ namespace StoragebornXenotype
                 if (adulthood != null) pawn.story.Adulthood = adulthood;
             }
 
+            RemoveBabyApparel(pawn);
             SetAgeStage(pawn);
+        }
+
+        private static void RemoveBabyApparel(Pawn pawn)
+        {
+            if (!pawn.DevelopmentalStage.Baby() || pawn.apparel == null) return;
+
+            foreach (Apparel apparel in pawn.apparel.WornApparel.ToList())
+                pawn.apparel.Remove(apparel);
         }
 
         public static void SetAgeStage(Pawn pawn)
@@ -68,13 +87,15 @@ namespace StoragebornXenotype
 
         private static int GetStageIndex(Pawn pawn)
         {
-            if (pawn.ageTracker != null && pawn.ageTracker.AgeBiologicalYears >= AgeGigantic)
-                return 4;
-            if (pawn.ageTracker != null && pawn.ageTracker.AgeBiologicalYears >= AgeLarge)
-                return 3;
             if (pawn.DevelopmentalStage.Baby()) return 0;
             if (pawn.DevelopmentalStage.Child()) return 1;
-            return 2;
+            int age = pawn.ageTracker?.AgeBiologicalYears ?? 18;
+            if (age >= StageAgeMin[5]) return 5;
+            if (age >= StageAgeMin[4]) return 4;
+            if (age >= StageAgeMin[3]) return 3;
+            if (age >= StageAgeMin[2]) return 2;
+            if (age >= StageAgeMin[1]) return 1;            
+            return 0;
         }
     }
 }

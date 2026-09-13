@@ -15,7 +15,7 @@
 
   <GeneDef ParentName="OMW_StorageStage">
     <defName>OMW_StorageStage_4</defName>
-    <label>Gigantism</label>
+    <label>Storageborn Gigantism</label>
     <description>Carriers of this gene have genetic gigantism</description>
     <iconPath>GeneIcons/BS_VeryScaleUp</iconPath>
     <displayOrderInCategory>1050</displayOrderInCategory>
@@ -24,11 +24,18 @@
         <def>Gigantism</def>
       </li>
     </forcedTraits>
+    <statFactors>
+      <CarryingCapacity>2.0</CarryingCapacity>
+      <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">2.0</VEF_MassCarryCapacity>
+    </statFactors>
+    <statOffsets>
+      <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">150</VEF_MassCarryCapacity>
+    </statOffsets>    
   </GeneDef>
 
  <GeneDef ParentName="OMW_StorageStage">
     <defName>OMW_StorageStage_3</defName>
-    <label>Large</label>
+    <label>Storageborn Large</label>
     <description>Carriers of this gene have been modified to be larger</description>
     <iconPath>GeneIcons/BS_ScaleUp</iconPath>
     <displayOrderInCategory>1050</displayOrderInCategory>
@@ -37,22 +44,36 @@
         <def>Large</def>
       </li>
     </forcedTraits>
+    <statFactors>
+      <CarryingCapacity>1.5</CarryingCapacity>
+      <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">1.5</VEF_MassCarryCapacity>
+    </statFactors>
+    <statOffsets>
+      <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">100</VEF_MassCarryCapacity>
+    </statOffsets>    
   </GeneDef>
 
  <GeneDef ParentName="OMW_StorageStage">
     <defName>OMW_StorageStage_2</defName>
-    <label>Medium</label>
+    <label>Storageborn Medium</label>
     <description>Carriers of this gene are normal sized</description>
-    <iconPath>GeneIcons/BS_ScaleUp</iconPath>
+    <iconPath>GeneIcons/BS_ScaleDown</iconPath>
     <displayOrderInCategory>1050</displayOrderInCategory>
+    <statFactors>
+      <CarryingCapacity>1.2</CarryingCapacity>
+      <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">1.2</VEF_MassCarryCapacity>
+    </statFactors>
+    <statOffsets>
+      <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">75</VEF_MassCarryCapacity>
+    </statOffsets>    
   </GeneDef>
  
 
 <GeneDef ParentName="OMW_StorageStage">
     <defName>OMW_StorageStage_1</defName>
-    <label>Small</label>
+    <label>Storageborn Small</label>
     <description>Carriers of this gene have been modified to be a bit smaller</description>
-    <iconPath>GeneIcons/BS_ScaleDown</iconPath>
+    <iconPath>GeneIcons/BS_VeryScaleDown</iconPath>
     <displayOrderInCategory>1050</displayOrderInCategory>
     <forcedTraits>
       <li>
@@ -63,12 +84,19 @@
       <li>Tiny</li>
     </exclusionTags>
     <marketValueFactor>0.8</marketValueFactor>
+    <statFactors>
+      <CarryingCapacity>1.0</CarryingCapacity>
+      <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">1.0</VEF_MassCarryCapacity>
+    </statFactors>
+    <statOffsets>
+      <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">50</VEF_MassCarryCapacity>
+    </statOffsets>    
   </GeneDef>
   
 <GeneDef ParentName="OMW_StorageStage">
     <defName>OMW_StorageStage_0</defName>
-    <label>Dwarfism</label>
-    <description>Carriers of this gene have genetic dwarfism</description>
+    <label>Storageborn Tiny</label>
+    <description>Carriers of this gene are very tiny.</description>
     <iconPath>GeneIcons/BS_VeryScaleDown</iconPath>
     <displayOrderInCategory>1050</displayOrderInCategory>
     <forcedTraits>
@@ -80,5 +108,12 @@
       <li>Tiny</li>
     </exclusionTags>
     <marketValueFactor>0.7</marketValueFactor>
+    <statFactors>
+      <CarryingCapacity>0.7</CarryingCapacity>
+      <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0.7</VEF_MassCarryCapacity>
+    </statFactors>
+    <statOffsets>
+      <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">25</VEF_MassCarryCapacity>
+    </statOffsets>    
   </GeneDef>
 </Defs>
