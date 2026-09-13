@@ -14,6 +14,7 @@ namespace StoragebornXenotype
         {
             base.PostAdd();
             StoragebornController.ApplyTo(pawn);
+            StoragebornController.RandomizeBodyGene(pawn);
         }
     }
 

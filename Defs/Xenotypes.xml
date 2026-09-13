@@ -8,7 +8,6 @@
     <genes>
     <li MayRequire="oldmanwhistler.storagebornxenotype">OMW_Storageborn</li>
     <li MayRequire="oldmanwhistler.storagebornxenotype">OMW_StorageHead</li>
-    <li MayRequire="oldmanwhistler.storagebornxenotype">OMW_StorageBodyMaid</li>
     <li>Neversleep</li>
     <li>Hair_BaldOnly</li>
     <li>Beard_NoBeardOnly</li>    
