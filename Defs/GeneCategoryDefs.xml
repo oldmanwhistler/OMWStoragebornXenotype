@@ -1,0 +1,7 @@
+<Defs>
+  <GeneCategoryDef>
+    <defName>Storageborn</defName>
+    <label>Storageborn</label>
+    <displayPriorityInXenotype>810</displayPriorityInXenotype>
+  </GeneCategoryDef>
+</Defs>

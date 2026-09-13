@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build RimWorld Mod",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Source/StoragebornXenotype.csproj", // Removed ${workspaceFolder}/
+                "/property:Configuration=Release",
+                "/property:GenerateFullPaths=false", // Quote strings in paths
+                "/nologo"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}" // Ensures the terminal is "standing" in your root
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

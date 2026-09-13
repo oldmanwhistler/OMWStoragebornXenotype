@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <GeneDef>
+    <defName>OMW_Storageborn</defName>
+    <label>Storageborn</label>
+    <labelShortAdj>Storageborn</labelShortAdj>
+    <displayCategory>Storageborn</displayCategory>  
+    <description>The Storageborn genotype controls an age-progressive furniture-like body and carrying capacity.</description>
+    <iconPath>UI/Genes/OMW_Storageborn</iconPath>
+    <geneClass>StoragebornXenotype.StoragebornGene</geneClass>
+    <exclusionTags><li>OMW_StoragebornMembership</li></exclusionTags>
+    <biostatCpx>0</biostatCpx>
+    <biostatMet>0</biostatMet>
+    <passOnDirectly>true</passOnDirectly>
+  </GeneDef>
+</Defs>

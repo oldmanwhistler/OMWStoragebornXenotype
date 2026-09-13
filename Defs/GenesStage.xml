@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <GeneDef Name="OMW_StorageStage" Abstract="True">
+    <displayCategory>Storageborn</displayCategory>
+    <exclusionTags>
+      <li>OMW_StorageStage</li>
+      <li>Body_Size_Multiplier</li>
+    </exclusionTags>
+    <geneClass>StoragebornXenotype.StoragebornSizeGene</geneClass>
+    <biostatCpx>0</biostatCpx>
+    <biostatMet>0</biostatMet>
+    <selectionWeight>1</selectionWeight>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+  </GeneDef>
+
+  <GeneDef ParentName="OMW_StorageStage">
+    <defName>OMW_StorageStage_4</defName>
+    <label>Gigantism</label>
+    <description>Carriers of this gene have genetic gigantism</description>
+    <iconPath>GeneIcons/BS_VeryScaleUp</iconPath>
+    <displayOrderInCategory>1050</displayOrderInCategory>
+    <forcedTraits>
+      <li>
+        <def>Gigantism</def>
+      </li>
+    </forcedTraits>
+  </GeneDef>
+
+ <GeneDef ParentName="OMW_StorageStage">
+    <defName>OMW_StorageStage_3</defName>
+    <label>Large</label>
+    <description>Carriers of this gene have been modified to be larger</description>
+    <iconPath>GeneIcons/BS_ScaleUp</iconPath>
+    <displayOrderInCategory>1050</displayOrderInCategory>
+    <forcedTraits>
+      <li>
+        <def>Large</def>
+      </li>
+    </forcedTraits>
+  </GeneDef>
+
+ <GeneDef ParentName="OMW_StorageStage">
+    <defName>OMW_StorageStage_2</defName>
+    <label>Medium</label>
+    <description>Carriers of this gene are normal sized</description>
+    <iconPath>GeneIcons/BS_ScaleUp</iconPath>
+    <displayOrderInCategory>1050</displayOrderInCategory>
+  </GeneDef>
+ 
+
+<GeneDef ParentName="OMW_StorageStage">
+    <defName>OMW_StorageStage_1</defName>
+    <label>Small</label>
+    <description>Carriers of this gene have been modified to be a bit smaller</description>
+    <iconPath>GeneIcons/BS_ScaleDown</iconPath>
+    <displayOrderInCategory>1050</displayOrderInCategory>
+    <forcedTraits>
+      <li>
+        <def>Small</def>
+      </li>
+    </forcedTraits>
+    <exclusionTags>
+      <li>Tiny</li>
+    </exclusionTags>
+    <marketValueFactor>0.8</marketValueFactor>
+  </GeneDef>
+  
+<GeneDef ParentName="OMW_StorageStage">
+    <defName>OMW_StorageStage_0</defName>
+    <label>Dwarfism</label>
+    <description>Carriers of this gene have genetic dwarfism</description>
+    <iconPath>GeneIcons/BS_VeryScaleDown</iconPath>
+    <displayOrderInCategory>1050</displayOrderInCategory>
+    <forcedTraits>
+      <li>
+        <def>Dwarfism</def>
+      </li>
+    </forcedTraits>
+    <exclusionTags>
+      <li>Tiny</li>
+    </exclusionTags>
+    <marketValueFactor>0.7</marketValueFactor>
+  </GeneDef>
+</Defs>

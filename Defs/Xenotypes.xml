@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <XenotypeDef>
+    <defName>omw_storageborn</defName>
+    <label>Storageborn</label>
+    <descriptionShort>A nomadic lineage of sapient living furniture built to organize and carry goods.</descriptionShort>
+    <iconPath>UI/Icons/Xenotypes/OMW_Storageborn</iconPath>
+    <genes>
+    <li MayRequire="oldmanwhistler.storagebornxenotype">OMW_Storageborn</li>
+    <li MayRequire="oldmanwhistler.storagebornxenotype">OMW_StorageHead</li>
+    <li MayRequire="oldmanwhistler.storagebornxenotype">OMW_StorageBodyKallax</li>
+    <li>Neversleep</li>
+    <li>Hair_BaldOnly</li>
+    <li>Beard_NoBeardOnly</li>    
+    <li>DarkVision</li>
+    <li>PsychicAbility_Deaf</li>
+    <li>MaxTemp_LargeIncrease</li>
+    <li>ToxicEnvironmentResistance_Total</li>
+    <li>FireWeakness</li>
+    <li>Robust</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_CannotWearClothingOrArmor</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_VerySlowAging</li>
+    <li MayRequire="redmattis.bigsmall.core">VU_Unliving_Resilience</li>
+    <li MayRequire="redmattis.bigsmall.core">VU_Unliving</li>
+    <li MayRequire="redmattis.bigsmall.core">VU_NoBlood</li>
+    <li MayRequire="redmattis.bigsmall.core">VeryNakedSpeed</li>
+    <li MayRequire="redmattis.bigsmall.core">MinTemp_HugeDecrease</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_NoEquip</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_AnimalFriend</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_Pain_None</li>
+    <li MayRequire="redmattis.bigsmall.core">VU_Hermaphromorph</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_AutoPregnancy</li>
+    <li MayRequire="redmattis.bigsmall.core">VU_Libido_None</li>
+    <li MayRequire="redmattis.bigsmall.core">VU_NearSterile</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_SimpleMind</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_SnekEngulf</li>
+    </genes>    
+    <inheritable>true</inheritable>
+    <canGenerateAsCombatant>false</canGenerateAsCombatant>
+  </XenotypeDef>
+</Defs>
