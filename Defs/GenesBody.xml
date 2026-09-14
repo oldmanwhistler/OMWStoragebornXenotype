@@ -4,7 +4,7 @@
     <defName>OMW_StorageHead</defName>
     <label>storage head</label>
     <description>Carriers of this gene have heads that are part of their body</description>
-    <iconPath>GeneIcons/BS_DevourerHead</iconPath>
+    <iconPath>Head/StoragebornHead</iconPath>
     <displayCategory>Storageborn</displayCategory>    
     <displayOrderInCategory>98</displayOrderInCategory>
     <renderNodeProperties Inherit="False">
