@@ -62,7 +62,8 @@ namespace StoragebornXenotype
             });
             DrawBodyGroup(listing, "StoragebornSettingsFuturistic", new[]
             {
-                "OMW_StorageBodyMaid", "OMW_StorageBodyOrb", "OMW_StorageBodyMechLoader"
+                "OMW_StorageBodyMaid", "OMW_StorageBodyOrb", "OMW_StorageBodyMechLoader",
+                "OMW_StorageBodyCube2", "OMW_StorageBodyRobot", "OMW_StorageBodyRobot2"
             });
 
             listing.GapLine();

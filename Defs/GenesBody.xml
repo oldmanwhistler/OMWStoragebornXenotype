@@ -310,4 +310,64 @@
       </li>
     </modExtensions>
   </GeneDef>
+
+  <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyCube2</defName>
+    <label>Storageborn Cube 2 Body</label>
+    <labelShortAdj>Cube 2 Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Cube2/Storageborn_south</iconPath>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+        <disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Cube2/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Cube2/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Cube2/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Cube2/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Cube2/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyRobot</defName>
+    <label>Storageborn Robot Body</label>
+    <labelShortAdj>Robot Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Robot/Storageborn_south</iconPath>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+        <disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Robot/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Robot/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Robot/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Robot/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Robot/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyRobot2</defName>
+    <label>Storageborn Robot 2 Body</label>
+    <labelShortAdj>Robot 2 Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Robot2/Storageborn_south</iconPath>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+        <disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Robot2/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Robot2/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Robot2/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Robot2/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Robot2/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>
 </Defs>
