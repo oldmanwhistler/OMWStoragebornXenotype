@@ -26,7 +26,7 @@ namespace StoragebornXenotype
 
         public void DoWindowContents(UnityEngine.Rect inRect)
         {
-            Rect viewRect = new Rect(0f, 0f, inRect.width - 16f, 900f);
+            Rect viewRect = new Rect(0f, 0f, inRect.width - 16f, 1400f);
             Widgets.BeginScrollView(inRect, ref scrollPosition, viewRect);
 
             Listing_Standard listing = new Listing_Standard();
@@ -37,16 +37,21 @@ namespace StoragebornXenotype
                 "OMW_StorageBodyMimic",
                 "OMW_StorageBodyLuggage",
                 "OMW_StorageBodyCube",
-                "OMW_StorageBodyTreant"
+                "OMW_StorageBodyTreant",
+                "OMW_StorageBodyGolem"
             });
             DrawBodyGroup(listing, "StoragebornSettingsModern", new[]
             {
                 "OMW_StorageBodyKallax",
-                "OMW_StorageBodyCardboard"
+                "OMW_StorageBodyCardboard",
+                "OMW_StorageBodySuitcase",
+                "OMW_StorageBodyWardrobe"
             });
             DrawBodyGroup(listing, "StoragebornSettingsFuturistic", new[]
             {
-                "OMW_StorageBodyMaid"
+                "OMW_StorageBodyMaid",
+                "OMW_StorageBodyOrb",
+                "OMW_StorageBodyMechLoader"
             });
 
             listing.GapLine();

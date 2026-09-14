@@ -41,7 +41,12 @@ namespace StoragebornXenotype
             "OMW_StorageBodyCardboard",
             "OMW_StorageBodyMaid",
             "OMW_StorageBodyCube",
-            "OMW_StorageBodyTreant"
+            "OMW_StorageBodyTreant",
+            "OMW_StorageBodyGolem",
+            "OMW_StorageBodySuitcase",
+            "OMW_StorageBodyWardrobe",
+            "OMW_StorageBodyOrb",
+            "OMW_StorageBodyMechLoader"
         };
 
         public static IEnumerable<GeneDef> BodyGeneDefs()
@@ -72,6 +77,16 @@ namespace StoragebornXenotype
                     return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Cube/Storageborn_south", false);
                 case "OMW_StorageBodyTreant":
                     return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Treant/Storageborn_south", false);
+                case "OMW_StorageBodyGolem":
+                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Golem/Storageborn_south", false);
+                case "OMW_StorageBodySuitcase":
+                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Suitcase/Storageborn_south", false);
+                case "OMW_StorageBodyWardrobe":
+                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Wardrobe/Storageborn_south", false);
+                case "OMW_StorageBodyOrb":
+                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Orb/Storageborn_south", false);
+                case "OMW_StorageBodyMechLoader":
+                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/MechLoader/Storageborn_south", false);
                 default:
                     return null!;
             }
