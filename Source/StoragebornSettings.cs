@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace StoragebornXenotype
@@ -8,6 +9,7 @@ namespace StoragebornXenotype
     public class StoragebornSettings : ModSettings
     {
         private List<string> disabledBodyGenes = new List<string>();
+        private Vector2 scrollPosition;
 
         public bool IsBodyEnabled(string defName)
         {
@@ -24,24 +26,57 @@ namespace StoragebornXenotype
 
         public void DoWindowContents(UnityEngine.Rect inRect)
         {
-            Listing_Standard listing = new Listing_Standard();
-            listing.Begin(inRect);
-            listing.Label("StoragebornSettingsBodyGenes".Translate());
+            Rect viewRect = new Rect(0f, 0f, inRect.width - 16f, 900f);
+            Widgets.BeginScrollView(inRect, ref scrollPosition, viewRect);
 
-            foreach (GeneDef bodyGene in StoragebornController.BodyGeneDefs())
+            Listing_Standard listing = new Listing_Standard();
+            listing.Begin(viewRect);
+            listing.Label("StoragebornSettingsBodyGenes".Translate());
+            DrawBodyGroup(listing, "StoragebornSettingsFantasy", new[]
             {
-                bool enabled = IsBodyEnabled(bodyGene.defName);
-                bool updated = enabled;
-                listing.CheckboxLabeled(bodyGene.LabelCap, ref updated);
-                if (updated != enabled)
-                    SetBodyEnabled(bodyGene.defName, updated);
-            }
+                "OMW_StorageBodyMimic",
+                "OMW_StorageBodyLuggage",
+                "OMW_StorageBodyCube",
+                "OMW_StorageBodyTreant"
+            });
+            DrawBodyGroup(listing, "StoragebornSettingsModern", new[]
+            {
+                "OMW_StorageBodyKallax",
+                "OMW_StorageBodyCardboard"
+            });
+            DrawBodyGroup(listing, "StoragebornSettingsFuturistic", new[]
+            {
+                "OMW_StorageBodyMaid"
+            });
 
             listing.GapLine();
             if (listing.ButtonText("StoragebornSettingsRerandomize".Translate()))
                 StoragebornController.RerandomizeAllStorageborn();
 
             listing.End();
+            Widgets.EndScrollView();
+        }
+
+        private void DrawBodyGroup(Listing_Standard listing, string labelKey, IEnumerable<string> defNames)
+        {
+            listing.Gap();
+            listing.Label(labelKey.Translate());
+            foreach (string defName in defNames)
+            {
+                GeneDef bodyGene = DefDatabase<GeneDef>.GetNamedSilentFail(defName);
+                if (bodyGene == null) continue;
+
+                Rect row = listing.GetRect(68f);
+                Texture2D texture = StoragebornController.BodyPreviewTexture(bodyGene.defName);
+                if (texture != null)
+                    Widgets.DrawTextureFitted(new Rect(row.x, row.y, 64f, 64f), texture, 1f);
+
+                bool enabled = IsBodyEnabled(bodyGene.defName);
+                bool updated = enabled;
+                Widgets.CheckboxLabeled(new Rect(row.x + 72f, row.y, row.width - 72f, row.height), bodyGene.LabelCap, ref updated);
+                if (updated != enabled)
+                    SetBodyEnabled(bodyGene.defName, updated);
+            }
         }
 
         public override void ExposeData()

@@ -2,5 +2,8 @@
 <LanguageData>
   <StoragebornSettingsCategory>Storageborn Xenotype</StoragebornSettingsCategory>
   <StoragebornSettingsBodyGenes>Enabled body genes</StoragebornSettingsBodyGenes>
+  <StoragebornSettingsFantasy>Fantasy</StoragebornSettingsFantasy>
+  <StoragebornSettingsModern>Modern</StoragebornSettingsModern>
+  <StoragebornSettingsFuturistic>Futuristic</StoragebornSettingsFuturistic>
   <StoragebornSettingsRerandomize>Re-randomize all Storageborn bodies</StoragebornSettingsRerandomize>
 </LanguageData>

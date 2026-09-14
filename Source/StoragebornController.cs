@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using RimWorld.Planet;
+using UnityEngine;
 using Verse;
 
 namespace StoragebornXenotype
@@ -50,6 +51,29 @@ namespace StoragebornXenotype
                 GeneDef def = DefDatabase<GeneDef>.GetNamedSilentFail(defName);
                 if (def != null)
                     yield return def;
+            }
+        }
+
+        public static UnityEngine.Texture2D BodyPreviewTexture(string defName)
+        {
+            switch (defName)
+            {
+                case "OMW_StorageBodyKallax":
+                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Kallax/Storageborn_south", false);
+                case "OMW_StorageBodyLuggage":
+                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Luggage/Storageborn_south", false);
+                case "OMW_StorageBodyMimic":
+                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Mimic/Storageborn_south", false);
+                case "OMW_StorageBodyCardboard":
+                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Cardboard/Storageborn_south", false);
+                case "OMW_StorageBodyMaid":
+                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Maid/Storageborn_south", false);
+                case "OMW_StorageBodyCube":
+                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Cube/Storageborn_south", false);
+                case "OMW_StorageBodyTreant":
+                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Treant/Storageborn_south", false);
+                default:
+                    return null!;
             }
         }
 
