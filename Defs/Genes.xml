@@ -12,5 +12,6 @@
     <biostatCpx>0</biostatCpx>
     <biostatMet>0</biostatMet>
     <passOnDirectly>true</passOnDirectly>
+    <tattoosVisible>false</tattoosVisible>
   </GeneDef>
 </Defs>
