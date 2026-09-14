@@ -28,7 +28,6 @@
     <li MayRequire="redmattis.bigsmall.core">BS_AnimalFriend</li>
     <li MayRequire="redmattis.bigsmall.core">BS_Pain_None</li>
     <li MayRequire="redmattis.bigsmall.core">VU_Hermaphromorph</li>
-    <li MayRequire="redmattis.bigsmall.core">BS_AutoPregnancy</li>
     <li MayRequire="redmattis.bigsmall.core">VU_Libido_None</li>
     <li MayRequire="redmattis.bigsmall.core">VU_NearSterile</li>
     <li MayRequire="redmattis.bigsmall.core">BS_SimpleMind</li>
