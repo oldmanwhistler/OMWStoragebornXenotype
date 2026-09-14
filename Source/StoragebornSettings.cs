@@ -13,6 +13,11 @@ namespace StoragebornXenotype
         private int selectedTab;
         private float[] stageOffsets = { 25f, 50f, 75f, 100f, 150f };
         private float[] stageFactors = { 1.0f, 1.5f, 2.0f, 2.5f, 3.0f };
+        private bool storagebornRefugeeQuestEnabled = true;
+        private float storagebornRefugeeQuestDelayDays = 15f;
+
+        public bool StoragebornRefugeeQuestEnabled => storagebornRefugeeQuestEnabled;
+        public int StoragebornRefugeeQuestDelayTicks => Mathf.Max(0, Mathf.RoundToInt(storagebornRefugeeQuestDelayDays * GenDate.TicksPerDay));
 
         public bool IsBodyEnabled(string defName)
         {
@@ -32,19 +37,24 @@ namespace StoragebornXenotype
             float tabHeight = 35f;
             Rect bodyRect = new Rect(inRect.x, inRect.y + tabHeight, inRect.width, inRect.height - tabHeight);
             Rect bodyViewRect = new Rect(0f, 0f, bodyRect.width - 16f, selectedTab == 0 ? 1400f : 520f);
+            float tabWidth = (inRect.width - 4f) / 3f;
 
-            if (Widgets.ButtonText(new Rect(inRect.x, inRect.y, inRect.width / 2f - 2f, tabHeight), "StoragebornSettingsBodiesTab".Translate()))
+            if (Widgets.ButtonText(new Rect(inRect.x, inRect.y, tabWidth, tabHeight), "StoragebornSettingsBodiesTab".Translate()))
                 selectedTab = 0;
-            if (Widgets.ButtonText(new Rect(inRect.x + inRect.width / 2f + 2f, inRect.y, inRect.width / 2f - 2f, tabHeight), "StoragebornSettingsStagesTab".Translate()))
+            if (Widgets.ButtonText(new Rect(inRect.x + tabWidth + 2f, inRect.y, tabWidth, tabHeight), "StoragebornSettingsStagesTab".Translate()))
                 selectedTab = 1;
+            if (Widgets.ButtonText(new Rect(inRect.x + (tabWidth + 2f) * 2f, inRect.y, tabWidth, tabHeight), "StoragebornSettingsQuestTab".Translate()))
+                selectedTab = 2;
 
             Widgets.BeginScrollView(bodyRect, ref scrollPosition, bodyViewRect);
             Listing_Standard listing = new Listing_Standard();
             listing.Begin(bodyViewRect);
             if (selectedTab == 0)
                 DrawBodySettings(listing);
-            else
+            else if (selectedTab == 1)
                 DrawStageSettings(listing);
+            else
+                DrawQuestSettings(listing);
             listing.End();
             Widgets.EndScrollView();
         }
@@ -69,6 +79,17 @@ namespace StoragebornXenotype
             listing.GapLine();
             if (listing.ButtonText("StoragebornSettingsRerandomize".Translate()))
                 StoragebornController.RerandomizeAllStorageborn();
+        }
+
+        private void DrawQuestSettings(Listing_Standard listing)
+        {
+            listing.Label("StoragebornSettingsQuestTitle".Translate());
+            listing.CheckboxLabeled("StoragebornSettingsQuestEnabled".Translate(), ref storagebornRefugeeQuestEnabled);
+            listing.Label("StoragebornSettingsQuestDelay".Translate());
+            string delayText = listing.TextEntryLabeled("StoragebornSettingsQuestDelayDays".Translate(), storagebornRefugeeQuestDelayDays.ToString());
+            if (float.TryParse(delayText, out float delayDays))
+                storagebornRefugeeQuestDelayDays = Mathf.Max(0f, delayDays);
+            listing.Label("StoragebornSettingsQuestDescription".Translate());
         }
 
         private void DrawStageSettings(Listing_Standard listing)
@@ -119,6 +140,8 @@ namespace StoragebornXenotype
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look(ref storagebornRefugeeQuestEnabled, "storagebornRefugeeQuestEnabled", true);
+            Scribe_Values.Look(ref storagebornRefugeeQuestDelayDays, "storagebornRefugeeQuestDelayDays", 15f);
             Scribe_Collections.Look(ref disabledBodyGenes, "disabledBodyGenes", LookMode.Value);
             if (Scribe.mode == LoadSaveMode.PostLoadInit && disabledBodyGenes == null)
                 disabledBodyGenes = new List<string>();

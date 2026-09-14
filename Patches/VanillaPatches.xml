@@ -1,0 +1,34 @@
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <!-- <success>Always</success> -->
+    <xpath>Defs/ThoughtDef[defName="Slighted" or defName="Insulted" or defName="InsultedMood" or defName="FailedRomanceAttemptOnMe" or defName="FailedRomanceAttemptOnMeLowOpinionMood" or defName="RebuffedMyRomanceAttempt" or defName="RebuffedMyRomanceAttemptMood"]/nullifyingGenes</xpath>
+    <value>
+        <li>OMW_Storageborn</li>
+    </value>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/ThoughtDef[defName="AteCorpse"]/nullifyingGenes</xpath>
+    <value>
+        <li>OMW_Storageborn</li>
+    </value>
+  </Operation>
+
+	<Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/ThoughtDef[defName="AteNutrientPasteMeal" or defName="DeadMansApparel" or defName="Pretty" or defName="Ugly" or defName="Ascetic" or defName="CreepyBreathing" or defName="AnnoyingVoice" or defName="SleptOutside" or defName="SleptOnGround" or defName="SleptInCold" or defName="SleptInHeat" or defName="TitleBedroomRequirementsNotMet" or defName="TitleThroneroomRequirementsNotMet" or defName="TitleNoPersonalBedroom"  or defName="TitleApparelRequirementNotMet" or defName="TitleApparelMinQualityNotMet" or defName="TitleBedroomRequirementsNotMet" or defName="VFEE_TitleNoBallroom" or defName="VFEE_TitleNoGallery" or defName="VFEE_TitleGalleryRequirementsNotMet"]/nullifyingGenes</xpath>
+    <value>
+        <li>OMW_Storageborn</li>
+    </value>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/ThoughtDef[defName="LookChangeDesired"]/nullifyingGenes</xpath>
+    <value>
+        <li>OMW_Storageborn</li>
+    </value>
+  </Operation>
+	
+</Patch>

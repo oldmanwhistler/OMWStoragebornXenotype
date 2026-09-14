@@ -2,14 +2,20 @@
 <LanguageData>
   <StoragebornSettingsCategory>Storageborn Xenotype</StoragebornSettingsCategory>
   <StoragebornSettingsBodiesTab>Bodies</StoragebornSettingsBodiesTab>
-  <StoragebornSettingsStagesTab>Storage stages</StoragebornSettingsStagesTab>
-  <StoragebornSettingsBodyGenes>Enabled body genes</StoragebornSettingsBodyGenes>
+  <StoragebornSettingsStagesTab>Storage carrying capacity stages</StoragebornSettingsStagesTab>
+  <StoragebornSettingsBodyGenes>Enabled Storageborn genes</StoragebornSettingsBodyGenes>
   <StoragebornSettingsFantasy>Fantasy</StoragebornSettingsFantasy>
   <StoragebornSettingsModern>Modern</StoragebornSettingsModern>
   <StoragebornSettingsFuturistic>Futuristic</StoragebornSettingsFuturistic>
-  <StoragebornSettingsRerandomize>Re-randomize all Storageborn bodies</StoragebornSettingsRerandomize>
+  <StoragebornSettingsRerandomize>Re-randomize all Storageborn pawn bodies in the colony</StoragebornSettingsRerandomize>
   <StoragebornSettingsStageGenes>Storage stage genes</StoragebornSettingsStageGenes>
-  <StoragebornSettingsOffset>Offset</StoragebornSettingsOffset>
-  <StoragebornSettingsFactor>Multiplier</StoragebornSettingsFactor>
-  <StoragebornSettingsSaveStages>Save stage gene settings</StoragebornSettingsSaveStages>
+  <StoragebornSettingsOffset>Carry Capacity Offset</StoragebornSettingsOffset>
+  <StoragebornSettingsFactor>Carry Capacity Multiplier</StoragebornSettingsFactor>
+  <StoragebornSettingsSaveStages>Save carry capacity stage gene settings</StoragebornSettingsSaveStages>
+  <StoragebornSettingsQuestTab>Refuge quest</StoragebornSettingsQuestTab>
+  <StoragebornSettingsQuestTitle>Storageborn refuge quest</StoragebornSettingsQuestTitle>
+  <StoragebornSettingsQuestEnabled>Enable the Storageborn refuge quest</StoragebornSettingsQuestEnabled>
+  <StoragebornSettingsQuestDelay>Choose when the quest first becomes eligible</StoragebornSettingsQuestDelay>
+  <StoragebornSettingsQuestDelayDays>Days after game start</StoragebornSettingsQuestDelayDays>
+  <StoragebornSettingsQuestDescription>A Storageborn wanderer will seek refuge and offer to join the colony.</StoragebornSettingsQuestDescription>
 </LanguageData>

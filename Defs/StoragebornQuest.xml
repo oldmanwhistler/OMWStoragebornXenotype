@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>OMW_StoragebornWandererJoins</defName>
+    <autoAccept>true</autoAccept>
+    <defaultHidden>true</defaultHidden>
+    <isRootSpecial>true</isRootSpecial>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Storageborn seeks refuge</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription-></li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="StoragebornXenotype.StoragebornWandererQuestRoot" />
+  </QuestScriptDef>
+
+  <IncidentDef>
+    <defName>OMW_StoragebornWanderer</defName>
+    <label>Storageborn seeks refuge</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>StoragebornXenotype.IncidentWorker_StoragebornWanderer</workerClass>
+    <questScriptDef>OMW_StoragebornWandererJoins</questScriptDef>
+    <baseChance>0.4</baseChance>
+    <populationEffect>IncreaseEasy</populationEffect>
+  </IncidentDef>
+</Defs>
