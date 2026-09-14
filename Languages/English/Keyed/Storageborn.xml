@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <StoragebornSettingsCategory>Storageborn Xenotype</StoragebornSettingsCategory>
+  <StoragebornSettingsBodiesTab>Bodies</StoragebornSettingsBodiesTab>
+  <StoragebornSettingsStagesTab>Storage stages</StoragebornSettingsStagesTab>
   <StoragebornSettingsBodyGenes>Enabled body genes</StoragebornSettingsBodyGenes>
   <StoragebornSettingsFantasy>Fantasy</StoragebornSettingsFantasy>
   <StoragebornSettingsModern>Modern</StoragebornSettingsModern>
   <StoragebornSettingsFuturistic>Futuristic</StoragebornSettingsFuturistic>
   <StoragebornSettingsRerandomize>Re-randomize all Storageborn bodies</StoragebornSettingsRerandomize>
+  <StoragebornSettingsStageGenes>Storage stage genes</StoragebornSettingsStageGenes>
+  <StoragebornSettingsOffset>Offset</StoragebornSettingsOffset>
+  <StoragebornSettingsFactor>Multiplier</StoragebornSettingsFactor>
+  <StoragebornSettingsSaveStages>Save stage gene settings</StoragebornSettingsSaveStages>
 </LanguageData>

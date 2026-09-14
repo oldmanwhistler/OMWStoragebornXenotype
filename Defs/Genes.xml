@@ -6,7 +6,7 @@
     <labelShortAdj>Storageborn</labelShortAdj>
     <displayCategory>Storageborn</displayCategory>  
     <description>The Storageborn genotype controls an age-progressive furniture-like body and carrying capacity.</description>
-    <iconPath>UI/Genes/OMW_Storageborn</iconPath>
+    <iconPath>Storageborn/Bodies/Wardrobe/Storageborn_south</iconPath>
     <geneClass>StoragebornXenotype.StoragebornGene</geneClass>
     <exclusionTags><li>OMW_StoragebornMembership</li></exclusionTags>
     <biostatCpx>0</biostatCpx>

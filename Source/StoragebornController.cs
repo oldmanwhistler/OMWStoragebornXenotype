@@ -33,6 +33,15 @@ namespace StoragebornXenotype
             70
         };
 
+        private static readonly string[] StageSettingsGeneDefNames =
+        {
+            "OMW_StorageStage_0",
+            "OMW_StorageStage_1",
+            "OMW_StorageStage_2",
+            "OMW_StorageStage_3",
+            "OMW_StorageStage_4"
+        };
+
         private static readonly string[] BodyGeneDefNames =
         {
             "OMW_StorageBodyKallax",
@@ -90,6 +99,44 @@ namespace StoragebornXenotype
                 default:
                     return null!;
             }
+        }
+
+        public static IEnumerable<GeneDef> StageSettingsGeneDefs()
+        {
+            foreach (string defName in StageSettingsGeneDefNames)
+            {
+                GeneDef def = DefDatabase<GeneDef>.GetNamedSilentFail(defName);
+                if (def != null)
+                    yield return def;
+            }
+        }
+
+        public static void ApplyStageStatSettings(float[] offsets, float[] factors)
+        {
+            StatDef carryingCapacity = StatDefOf.CarryingCapacity;
+            StatDef vefMassCarryCapacity = DefDatabase<StatDef>.GetNamedSilentFail("VEF_MassCarryCapacity");
+
+            for (int i = 0; i < StageSettingsGeneDefNames.Length; i++)
+            {
+                GeneDef gene = DefDatabase<GeneDef>.GetNamedSilentFail(StageSettingsGeneDefNames[i]);
+                if (gene == null) continue;
+
+                gene.statOffsets = SetStatModifier(gene.statOffsets, carryingCapacity, offsets[i]);
+                gene.statFactors = SetStatModifier(gene.statFactors, carryingCapacity, factors[i]);
+                if (vefMassCarryCapacity != null)
+                {
+                    gene.statOffsets = SetStatModifier(gene.statOffsets, vefMassCarryCapacity, offsets[i]);
+                    gene.statFactors = SetStatModifier(gene.statFactors, vefMassCarryCapacity, factors[i]);
+                }
+            }
+        }
+
+        private static List<StatModifier> SetStatModifier(List<StatModifier> modifiers, StatDef stat, float value)
+        {
+            modifiers ??= new List<StatModifier>();
+            modifiers.RemoveAll(modifier => modifier.stat == stat);
+            modifiers.Add(new StatModifier { stat = stat, value = value });
+            return modifiers;
         }
 
         public static bool HasStoragebornGene(Pawn pawn)
