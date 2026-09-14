@@ -14,7 +14,7 @@ namespace StoragebornXenotype
         private float[] stageOffsets = { 25f, 50f, 75f, 100f, 150f };
         private float[] stageFactors = { 1.0f, 1.5f, 2.0f, 2.5f, 3.0f };
         private bool storagebornRefugeeQuestEnabled = true;
-        private float storagebornRefugeeQuestDelayDays = 15f;
+        private float storagebornRefugeeQuestDelayDays = 1f;
 
         public bool StoragebornRefugeeQuestEnabled => storagebornRefugeeQuestEnabled;
         public int StoragebornRefugeeQuestDelayTicks => Mathf.Max(0, Mathf.RoundToInt(storagebornRefugeeQuestDelayDays * GenDate.TicksPerDay));

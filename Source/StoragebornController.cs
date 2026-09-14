@@ -13,6 +13,16 @@ namespace StoragebornXenotype
         private const string ChildhoodBackstoryDefName = "OMW_StoragebornChildhood";
         private const string AdulthoodBackstoryDefName = "OMW_StoragebornWanderer";
         
+        private static readonly string[] ArmorDefNames =
+        {
+            "BS_ToughSkin",
+            "BS_ToughSkin",
+            "BS_NaturalArmor",
+            "BS_NaturalArmor",
+            "BS_NaturalArmor_Great",
+            "BS_NaturalArmor_Great"
+        };
+
         private static readonly string[] StageDefNames =
         {
             "OMW_StorageStage_0",
@@ -21,7 +31,7 @@ namespace StoragebornXenotype
             "OMW_StorageStage_2",
             "OMW_StorageStage_3",
             "OMW_StorageStage_4"
-        };
+        };    
 
         private static readonly int[] StageAgeMin =
         {
@@ -168,7 +178,7 @@ namespace StoragebornXenotype
             }
 
             RemoveBabyApparel(pawn);
-            SetAgeStage(pawn);
+            SetStage(pawn);
         }
 
         private static void RemoveBabyApparel(Pawn pawn)
@@ -221,11 +231,17 @@ namespace StoragebornXenotype
                     RandomizeBodyGene(pawn);
         }
 
-        public static void SetAgeStage(Pawn pawn)
+        public static void SetStage(Pawn pawn)
         {
             if (pawn?.genes == null || !HasStoragebornGene(pawn)) return;
-
             int targetIndex = GetStageIndex(pawn);
+            SetAgeStage(pawn, targetIndex);
+            SetArmorStage(pawn, targetIndex);
+        }
+
+        public static void SetAgeStage(Pawn pawn, int targetIndex)
+        {            
+            
             GeneDef targetDef = DefDatabase<GeneDef>.GetNamedSilentFail(StageDefNames[targetIndex]);
             if (targetDef == null) return;
 
@@ -233,15 +249,37 @@ namespace StoragebornXenotype
                 .Where(g => StageDefNames.Contains(g.def.defName))
                 .ToList();
 
+
             bool alreadyCorrect = existingStages.Count == 1 && existingStages[0].def == targetDef;
             if (!alreadyCorrect)
             {
                 foreach (Gene gene in existingStages)
                     pawn.genes.RemoveGene(gene);
 
-                pawn.genes.AddGene(targetDef, xenogene: true);
+                pawn.genes.AddGene(targetDef, xenogene: false);
             }
         }
+
+        public static void SetArmorStage(Pawn pawn, int targetIndex)
+        {
+            GeneDef targetDef = DefDatabase<GeneDef>.GetNamedSilentFail(ArmorDefNames[targetIndex]);
+            if (targetDef == null) return;
+
+            List<Gene> existingArmor = pawn.genes.GenesListForReading
+                .Where(g => ArmorDefNames.Contains(g.def.defName))
+                .ToList();
+
+
+            bool alreadyCorrect = existingArmor.Count == 1 && existingArmor[0].def == targetDef;
+            if (!alreadyCorrect)
+            {
+                foreach (Gene gene in existingArmor)
+                    pawn.genes.RemoveGene(gene);
+
+                pawn.genes.AddGene(targetDef, xenogene: false);
+            }
+        }
+
 
         private static int GetStageIndex(Pawn pawn)
         {

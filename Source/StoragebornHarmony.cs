@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using HarmonyLib;
-using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace StoragebornXenotype
@@ -24,7 +19,7 @@ namespace StoragebornXenotype
         {
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
             if (pawn != null && StoragebornController.HasStoragebornGene(pawn))
-                StoragebornController.SetAgeStage(pawn);
+                StoragebornController.SetStage(pawn);
         }
     }
 }

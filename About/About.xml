@@ -3,7 +3,7 @@
   <name>Storageborn Xenotype</name>
   <packageId>oldmanwhistler.StoragebornXenotype</packageId>
   <author>oldmanwhistler</author>
-  <description>Adds the Storageborn xenotype: a race of nomadic furniture pawns.</description>
+  <description>Adds the Storageborn xenotype: a race of nomadic furniture.</description>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
@@ -13,12 +13,21 @@
       <displayName>Biotech</displayName>
     </li>
     <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    </li>    
+    <li>
       <packageId>redmattis.bigsmall.core</packageId>
       <displayName>Big and Small - Genes and More</displayName>
       <steamWorkshopUrl>steam://url/CommunityFilePage/2920751126</steamWorkshopUrl>
     </li>
   </modDependencies>
   <loadAfter>
+    <li>brrainz.harmony</li>
     <li>redmattis.bigsmall.core</li>
   </loadAfter>
+  <loadBefore>
+    <li>mlie.10xcarryingcapacity</li>
+  </loadBefore>
 </ModMetaData>

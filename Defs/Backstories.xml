@@ -7,15 +7,15 @@
     <description>Created during the hyper-consumerist zenith of a mid-tier glitterworld, the Storageborn were meant to be the ultimate logistical luxury: living furniture that could grow, flex, adapt to cargo sizes, and self-repair without taking up mechanical power. Their skeletons consist of dense, chitinous, flat-surfaced bone plates capable of locking into horizontal platforms, while their musculature functions like high-tension biological hydraulic straps.
 
 When the corporation bankrupt, millions of these "living storage solutions" were abandoned. Left without overseers, they developed true sapience, unbolted themselves from warehouse walls, and formed nomadic tribes. They view the gathering, organizing, and holding of items not just as a job, but as an intimate, sacred act of bodily fulfillment.</description>
-    <workDisables>ManualSkilled, Shooting, Artistic, Caring, Social, Intellectual, Firefighting</workDisables>
+    <workDisables>ManualSkilled, Shooting, Intellectual, Firefighting</workDisables>
     <shuffleable>false</shuffleable>
   </BackstoryDef>
 
   <BackstoryDef>
     <defName>OMW_StoragebornWanderer</defName>
-    <title>Wanderer</title>
+    <title>Storageborn Wanderer</title>
     <titleShort>Wanderer</titleShort>
-    <description>A Storageborn wanderer, carrying the lessons of nomadic life from settlement to settlement.</description>
+    <description>A Storageborn wanderer, traveling the world searching for a new home.</description>
     <shuffleable>false</shuffleable>
   </BackstoryDef>
 </Defs>
