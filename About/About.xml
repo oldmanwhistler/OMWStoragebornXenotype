@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ModMetaData>
-  <name>Storageborn Xenotype</name>
-  <packageId>oldmanwhistler.StoragebornXenotype</packageId>
+  <name>[OMW] Storageborn Xenotype</name>
+  <packageId>oldmanwhistler.OMWStoragebornXenotype</packageId>
   <author>oldmanwhistler</author>
   <description>Adds the Storageborn xenotype: a race of nomadic furniture.</description>
   <supportedVersions>

@@ -11,7 +11,6 @@ namespace StoragebornXenotype
     {
         private const string StoragebornGeneDefName = "OMW_Storageborn";
         private const string ChildhoodBackstoryDefName = "OMW_StoragebornChildhood";
-        private const string AdulthoodBackstoryDefName = "OMW_StoragebornWanderer";
         
         private static readonly string[] ArmorDefNames =
         {
@@ -172,9 +171,7 @@ namespace StoragebornXenotype
             if (pawn.story != null)
             {
                 BackstoryDef childhood = DefDatabase<BackstoryDef>.GetNamedSilentFail(ChildhoodBackstoryDefName);
-                BackstoryDef adulthood = DefDatabase<BackstoryDef>.GetNamedSilentFail(AdulthoodBackstoryDefName);
                 if (childhood != null) pawn.story.Childhood = childhood;
-                if (adulthood != null) pawn.story.Adulthood = adulthood;
             }
 
             RemoveBabyApparel(pawn);
