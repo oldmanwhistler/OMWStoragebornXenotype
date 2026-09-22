@@ -36,7 +36,7 @@ With great carry capacity comes skill nerfs. By default they are bad at most thi
 
 ## Recommended
 
-[Pickup and Haul](https://steamcommunity.com/sharedfiles/filedetails/?id=1279012058) - to make use of the extra inventory
+[Pickup and Haul](https://steamcommunity.com/sharedfiles/filedetails/?id=1279012058) - to make use of the extra inventory space.
 
 ## Compatibility
 
