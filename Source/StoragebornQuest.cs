@@ -27,9 +27,6 @@ namespace StoragebornXenotype
             if (settings == null || !settings.StoragebornRefugeeQuestEnabled)
                 return false;
 
-            if (Find.TickManager.TicksGame < settings.StoragebornRefugeeQuestDelayTicks)
-                return false;
-
             return base.CanFireNowSub(parms);
         }
     }

@@ -14,10 +14,8 @@ namespace StoragebornXenotype
         private float[] stageOffsets = { 25f, 50f, 75f, 100f, 150f };
         private float[] stageFactors = { 1.0f, 1.5f, 2.0f, 2.5f, 3.0f };
         private bool storagebornRefugeeQuestEnabled = true;
-        private float storagebornRefugeeQuestDelayDays = 1f;
 
         public bool StoragebornRefugeeQuestEnabled => storagebornRefugeeQuestEnabled;
-        public int StoragebornRefugeeQuestDelayTicks => Mathf.Max(0, Mathf.RoundToInt(storagebornRefugeeQuestDelayDays * GenDate.TicksPerDay));
 
         public bool IsBodyEnabled(string defName)
         {
@@ -85,10 +83,6 @@ namespace StoragebornXenotype
         {
             listing.Label("StoragebornSettingsQuestTitle".Translate());
             listing.CheckboxLabeled("StoragebornSettingsQuestEnabled".Translate(), ref storagebornRefugeeQuestEnabled);
-            listing.Label("StoragebornSettingsQuestDelay".Translate());
-            string delayText = listing.TextEntryLabeled("StoragebornSettingsQuestDelayDays".Translate(), storagebornRefugeeQuestDelayDays.ToString());
-            if (float.TryParse(delayText, out float delayDays))
-                storagebornRefugeeQuestDelayDays = Mathf.Max(0f, delayDays);
             listing.Label("StoragebornSettingsQuestDescription".Translate());
         }
 
@@ -141,7 +135,6 @@ namespace StoragebornXenotype
         {
             base.ExposeData();
             Scribe_Values.Look(ref storagebornRefugeeQuestEnabled, "storagebornRefugeeQuestEnabled", true);
-            Scribe_Values.Look(ref storagebornRefugeeQuestDelayDays, "storagebornRefugeeQuestDelayDays", 15f);
             Scribe_Collections.Look(ref disabledBodyGenes, "disabledBodyGenes", LookMode.Value);
             if (Scribe.mode == LoadSaveMode.PostLoadInit && disabledBodyGenes == null)
                 disabledBodyGenes = new List<string>();
