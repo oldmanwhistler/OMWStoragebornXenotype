@@ -1,0 +1,19 @@
+{
+  "textures": [
+    "Storageborn/Bodies/Luggage/Storageborn_south",
+    "Storageborn/Bodies/Mimic/Storageborn_south",
+    "Storageborn/Bodies/Cardboard/Storageborn_south",
+    "Storageborn/Bodies/Maid/Storageborn_south",
+    "Storageborn/Bodies/Cube/Storageborn_south",
+    "Storageborn/Bodies/Treant/Storageborn_south",
+    "Storageborn/Bodies/Golem/Storageborn_south",
+    "Storageborn/Bodies/Suitcase/Storageborn_south",
+    "Storageborn/Bodies/Wardrobe/Storageborn_south",
+    "Storageborn/Bodies/Orb/Storageborn_south",
+    "Storageborn/Bodies/MechLoader/Storageborn_south",
+    "Storageborn/Bodies/Cube2/Storageborn_south",
+    "Storageborn/Bodies/Robot/Storageborn_south",
+    "Storageborn/Bodies/Robot2/Storageborn_south"
+  ],
+  "audio": []
+}
