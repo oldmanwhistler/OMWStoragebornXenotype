@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyWardrobe</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Medieval</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
+    <label>Storageborn Wardrobe Body</label>
+    <labelShortAdj>Wardrobe Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Wardrobe/Storageborn_south</iconPath>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+        <disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Wardrobe/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Wardrobe/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Wardrobe/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Wardrobe/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Wardrobe/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>
+</Defs>

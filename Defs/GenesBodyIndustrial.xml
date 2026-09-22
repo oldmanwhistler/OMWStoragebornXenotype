@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyCardboard</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Industrial</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
+    <label>Storageborn Cardboard Body</label>
+    <labelShortAdj>Cardboard Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Cardboard/Storageborn_south</iconPath>
+    <exclusionTags></exclusionTags>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Cardboard/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Cardboard/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Cardboard/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Cardboard/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Cardboard/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>    
+
+<GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodySuitcase</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Industrial</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
+    <label>Storageborn Suitcase Body</label>
+    <labelShortAdj>Suitcase Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Suitcase/Storageborn_south</iconPath>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+        <disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Suitcase/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Suitcase/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Suitcase/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Suitcase/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Suitcase/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+</Defs>

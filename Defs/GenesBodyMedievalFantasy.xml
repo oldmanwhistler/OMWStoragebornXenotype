@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyLuggage</defName>
+    <label>SB Luggage Mimic Body</label>
+    <labelShortAdj>Luggage Mimic</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Luggage/Storageborn_south</iconPath>
+    <exclusionTags></exclusionTags>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_MedievalFantasy</OMW_StoragebornCategory>
+      </li>
+      <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
+        <genes>
+        <li>BS_Diet_Carnivore</li>
+        <li>PsychicAbility_Deaf</li>
+        <li>BS_AlienApperanceStandards</li>   
+        <li>FireWeakness</li>
+        <li>FireTerror</li>
+        <li>Nearsighted</li>
+        <li>BS_FeedingFrenzy</li>
+        <li>BS_SnekEngulf</li>
+        <li>BS_NoEquip</li>
+        <li>KillThirst</li>
+        <li>AptitudePoor_Shooting</li>
+        <li>AptitudePoor_Melee</li>
+        <li>AptitudePoor_Construction</li>
+        <li>AptitudePoor_Mining</li>
+        <li>AptitudePoor_Cooking</li>
+        <li>AptitudePoor_Plants</li>
+        <li>AptitudePoor_Animals</li>
+        <li>AptitudePoor_Crafting</li>
+        <li>AptitudePoor_Artistic</li>
+        <li>AptitudePoor_Medicine</li>
+        <li>AptitudePoor_Social</li>
+        <li>AptitudePoor_Intellectual</li>
+        </genes>
+      </li>
+      <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Luggage/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Luggage/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Luggage/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Luggage/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Luggage/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>   
+
+    <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyMimic</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_MedievalFantasy</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
+    <label>Storageborn Mimic Body</label>
+    <labelShortAdj>Mimic Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Mimic/Storageborn_south</iconPath>
+    <exclusionTags></exclusionTags>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Mimic/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Mimic/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Mimic/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Mimic/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Mimic/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>        
+
+    <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyCube</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_MedievalFantasy</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
+    <label>Storageborn Cube Body</label>
+    <labelShortAdj>Cube Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Cube/Storageborn_south</iconPath>
+    <exclusionTags></exclusionTags>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>        
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Cube/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Cube/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Cube/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Cube/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Cube/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>     
+
+</Defs>

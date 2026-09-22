@@ -5,26 +5,44 @@
     <label>Neolithic</label>
     <worldTechLevel>Neolithic</worldTechLevel>
   </StoragebornXenotype.StoragebornCategoryDef>
+
+  <StoragebornXenotype.StoragebornCategoryDef>
+    <defName>OMW_StoragebornCategory_NeolithicFantasy</defName>
+    <label>Neolithic Fantasy</label>
+    <worldTechLevel>Neolithic</worldTechLevel>
+  </StoragebornXenotype.StoragebornCategoryDef>
+
   <StoragebornXenotype.StoragebornCategoryDef>
     <defName>OMW_StoragebornCategory_Medieval</defName>
     <label>Medieval</label>
     <worldTechLevel>Medieval</worldTechLevel>
   </StoragebornXenotype.StoragebornCategoryDef>
+
+
+  <StoragebornXenotype.StoragebornCategoryDef>
+    <defName>OMW_StoragebornCategory_MedievalFantasy</defName>
+    <label>Medieval Fantasy</label>
+    <worldTechLevel>Medieval</worldTechLevel>
+  </StoragebornXenotype.StoragebornCategoryDef>
+
   <StoragebornXenotype.StoragebornCategoryDef>
     <defName>OMW_StoragebornCategory_Industrial</defName>
     <label>Industrial</label>
     <worldTechLevel>Industrial</worldTechLevel>
   </StoragebornXenotype.StoragebornCategoryDef>
+
   <StoragebornXenotype.StoragebornCategoryDef>
     <defName>OMW_StoragebornCategory_Spacer</defName>
     <label>Spacer</label>
     <worldTechLevel>Spacer</worldTechLevel>
   </StoragebornXenotype.StoragebornCategoryDef>
+
   <StoragebornXenotype.StoragebornCategoryDef>
     <defName>OMW_StoragebornCategory_Ultra</defName>
     <label>Ultra</label>
     <worldTechLevel>Ultra</worldTechLevel>
   </StoragebornXenotype.StoragebornCategoryDef>
+
   <StoragebornXenotype.StoragebornCategoryDef>
     <defName>OMW_StoragebornCategory_Archotech</defName>
     <label>Archotech</label>

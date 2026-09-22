@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyMaid</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Ultra</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
+    <label>Storageborn Maid Body</label>
+    <labelShortAdj>Maid Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Maid/Storageborn_south</iconPath>
+    <exclusionTags></exclusionTags>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Maid/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Maid/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Maid/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Maid/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Maid/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>    
+    </modExtensions>
+  </GeneDef>
+  <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyOrb</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Ultra</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
+    <label>Storageborn Orb Body</label>
+    <labelShortAdj>Orb Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Orb/Storageborn_south</iconPath>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+        <disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Orb/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Orb/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Orb/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Orb/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Orb/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+ <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyCube2</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Ultra</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
+    <label>Storageborn Cube 2 Body</label>
+    <labelShortAdj>Cube 2 Body</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Cube2/Storageborn_south</iconPath>
+    <modExtensions>
+      <li Class="BigAndSmall.PawnExtension">
+        <disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Cube2/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Cube2/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Cube2/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Cube2/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Cube2/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+</Defs>
