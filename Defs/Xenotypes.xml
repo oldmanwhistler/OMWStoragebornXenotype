@@ -8,45 +8,40 @@
     <genes>
     <li MayRequire="oldmanwhistler.storagebornxenotype">OMW_Storageborn</li>
     <li MayRequire="oldmanwhistler.storagebornxenotype">OMW_StorageHead</li>
-    <li MayRequire="redmattis.bigsmall.core">BS_Diet_Universal</li>
     <li MayRequire="redmattis.bigsmall.core">BS_CannotWearClothingOrArmor</li>
-    <li MayRequire="redmattis.bigsmall.core">BS_FeedingFrenzy</li>
-    <li MayRequire="redmattis.bigsmall.core">BS_Talons</li>
     <li MayRequire="redmattis.bigsmall.core">BS_VerySlowAging</li>
     <li MayRequire="redmattis.bigsmall.core">VU_Unliving_Resilience</li>
-    <li MayRequire="redmattis.bigsmall.core">BS_SnekEngulf</li>
     <li MayRequire="redmattis.bigsmall.core">VU_Unliving</li>
     <li MayRequire="redmattis.bigsmall.core">VU_NoBlood</li>
     <li MayRequire="redmattis.bigsmall.core">VeryNakedSpeed</li>
     <li MayRequire="redmattis.bigsmall.core">MinTemp_HugeDecrease</li>
-    <li MayRequire="redmattis.bigsmall.core">BS_NoEquip</li>
-    <li MayRequire="redmattis.bigsmall.core">BS_Unarmed_VeryStrong</li>
     <li MayRequire="redmattis.bigsmall.core">BS_AnimalFriend</li>
     <li MayRequire="redmattis.bigsmall.core">BS_PainNumb</li>
     <li MayRequire="redmattis.bigsmall.core">VU_Hermaphromorph</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_VeryEarlyMaturity</li>    
     <li MayRequire="redmattis.bigsmall.core">BS_NoFamilyRelations</li>
     <li MayRequire="redmattis.bigsmall.core">VU_Libido_None</li>
     <li MayRequire="redmattis.bigsmall.core">VU_NearSterile</li>
-    <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
     <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
     <li>PsychicAbility_Deaf</li>
     <li>MaxTemp_LargeIncrease</li>
     <li>ToxicEnvironmentResistance_Total</li>
-    <li>FireWeakness</li>
-    <li>FireTerror</li>
     <li>Neversleep</li>
     <li>Robust</li>
     <li>Hair_BaldOnly</li>
     <li>Beard_NoBeardOnly</li>
-    <li>Nearsighted</li>
     <li>DarkVision</li>
-    <li>AptitudeTerrible_Shooting</li>
-    <li>AptitudeStrong_Plants</li>
-    <li>AptitudeStrong_Animals</li>
-    <li>AptitudeTerrible_Social</li>
-    <li>AptitudePoor_Intellectual</li>
+    <li>Skin_SheerWhite</li>
+    <li>Skin_LightGray</li>
+    <li>Skin_SlateGray</li>
+    <li>Skin_InkBlack</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_Skin_Marble_White</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_CreamSkin</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_BorealSkin</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_SkinFrostWhite</li>
+    <li MayRequire="redmattis.bigsmall.core">VU_LightPallorSkin</li>
     </genes>    
     <inheritable>true</inheritable>
-    <canGenerateAsCombatant>false</canGenerateAsCombatant>
+    <canGenerateAsCombatant>true</canGenerateAsCombatant>
   </XenotypeDef>
 </Defs>
