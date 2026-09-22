@@ -3,7 +3,7 @@
   <GeneDef ParentName="GeneJawBase">
     <defName>OMW_StorageHead</defName>
     <label>storage head</label>
-    <description>Carriers of this gene have heads that are part of their body</description>
+    <description>Carriers of this gene don't have individual heads. Their head is part of their body</description>
     <iconPath>Head/StoragebornHead</iconPath>
     <displayCategory>Storageborn</displayCategory>    
     <displayOrderInCategory>98</displayOrderInCategory>
@@ -65,6 +65,11 @@
 
     <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyKallax</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Industrial</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Kallax Body</label>
     <labelShortAdj>Kallax Body</labelShortAdj>
     <description></description>
@@ -86,6 +91,11 @@
 
     <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyLuggage</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Industrial</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Luggage Body</label>
     <labelShortAdj>Luggage Body</labelShortAdj>
     <description></description>
@@ -107,6 +117,11 @@
 
     <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyMimic</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Medieval</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Mimic Body</label>
     <labelShortAdj>Mimic Body</labelShortAdj>
     <description></description>
@@ -128,6 +143,11 @@
 
     <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyCardboard</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Industrial</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Cardboard Body</label>
     <labelShortAdj>Cardboard Body</labelShortAdj>
     <description></description>
@@ -149,6 +169,11 @@
 
     <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyMaid</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Ultra</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Maid Body</label>
     <labelShortAdj>Maid Body</labelShortAdj>
     <description></description>
@@ -170,6 +195,11 @@
 
     <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyCube</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Medieval</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Cube Body</label>
     <labelShortAdj>Cube Body</labelShortAdj>
     <description></description>
@@ -192,6 +222,11 @@
 
     <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyTreant</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Neolithic</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Treant Body</label>
     <labelShortAdj>Treant Body</labelShortAdj>
     <description></description>
@@ -213,6 +248,11 @@
 
   <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyGolem</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Neolithic</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Golem Body</label>
     <labelShortAdj>Golem Body</labelShortAdj>
     <description></description>
@@ -233,6 +273,11 @@
 
   <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodySuitcase</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Industrial</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Suitcase Body</label>
     <labelShortAdj>Suitcase Body</labelShortAdj>
     <description></description>
@@ -253,6 +298,11 @@
 
   <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyWardrobe</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Medieval</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Wardrobe Body</label>
     <labelShortAdj>Wardrobe Body</labelShortAdj>
     <description></description>
@@ -273,6 +323,11 @@
 
   <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyOrb</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Ultra</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Orb Body</label>
     <labelShortAdj>Orb Body</labelShortAdj>
     <description></description>
@@ -293,6 +348,11 @@
 
   <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyMechLoader</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Spacer</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Mech Loader Body</label>
     <labelShortAdj>Mech Loader Body</labelShortAdj>
     <description></description>
@@ -313,6 +373,11 @@
 
   <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyCube2</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Ultra</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Cube 2 Body</label>
     <labelShortAdj>Cube 2 Body</labelShortAdj>
     <description></description>
@@ -333,6 +398,11 @@
 
   <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyRobot</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Spacer</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Robot Body</label>
     <labelShortAdj>Robot Body</labelShortAdj>
     <description></description>
@@ -353,6 +423,11 @@
 
   <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyRobot2</defName>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Spacer</OMW_StoragebornCategory>
+      </li>
+    </modExtensions>
     <label>Storageborn Robot 2 Body</label>
     <labelShortAdj>Robot 2 Body</labelShortAdj>
     <description></description>

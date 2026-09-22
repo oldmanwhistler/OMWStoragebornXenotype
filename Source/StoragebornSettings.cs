@@ -14,8 +14,58 @@ namespace StoragebornXenotype
         private float[] stageOffsets = { 25f, 50f, 75f, 100f, 150f };
         private float[] stageFactors = { 1.0f, 1.5f, 2.0f, 2.5f, 3.0f };
         private bool storagebornRefugeeQuestEnabled = true;
+        private bool matchWorldTechLevel = true;
+        private bool enableByCategory = true;
+        private List<string> disabledCategories = new List<string>();
 
         public bool StoragebornRefugeeQuestEnabled => storagebornRefugeeQuestEnabled;
+        public bool MatchWorldTechLevel => matchWorldTechLevel && WorldTechLevelIntegration.IsAvailable;
+        public bool EnableByCategory => enableByCategory;
+        public bool IsCategoryEnabled(string defName) => !disabledCategories.Contains(defName);
+
+        public bool IsBodyEffectivelyEnabled(GeneDef gene)
+        {
+            StoragebornCategoryDef category = StoragebornController.BodyCategory(gene);
+            if (category == null) return false;
+            if (MatchWorldTechLevel && WorldTechLevelIntegration.TryGetWorldTechLevel(out TechLevel worldTechLevel))
+                return category.worldTechLevel <= worldTechLevel;
+            if (enableByCategory)
+                return IsCategoryEnabled(category.defName);
+            return IsBodyEnabled(gene.defName);
+        }
+
+        public string BodyStatusReasonKey(GeneDef gene)
+        {
+            StoragebornCategoryDef category = StoragebornController.BodyCategory(gene);
+            if (category == null) return "StoragebornSettingsReasonMissingCategory";
+            if (MatchWorldTechLevel && WorldTechLevelIntegration.TryGetWorldTechLevel(out TechLevel worldTechLevel))
+                return category.worldTechLevel <= worldTechLevel ? "StoragebornSettingsReasonWorldAllowed" : "StoragebornSettingsReasonWorldBlocked";
+            if (enableByCategory)
+                return IsCategoryEnabled(category.defName) ? "StoragebornSettingsReasonCategoryEnabled" : "StoragebornSettingsReasonCategoryDisabled";
+            return IsBodyEnabled(gene.defName) ? "StoragebornSettingsReasonIndividualEnabled" : "StoragebornSettingsReasonIndividualDisabled";
+        }
+
+        public void SetMatchWorldTechLevel(bool value)
+        {
+            matchWorldTechLevel = value && WorldTechLevelIntegration.IsAvailable;
+            if (!matchWorldTechLevel)
+            {
+                enableByCategory = true;
+                disabledCategories.Clear();
+                disabledBodyGenes.Clear();
+            }
+        }
+
+        public void SetEnableByCategory(bool value)
+        {
+            enableByCategory = value;
+        }
+
+        public void SetCategoryEnabled(string defName, bool enabled)
+        {
+            if (enabled) disabledCategories.Remove(defName);
+            else if (!disabledCategories.Contains(defName)) disabledCategories.Add(defName);
+        }
 
         public bool IsBodyEnabled(string defName)
         {
@@ -60,6 +110,35 @@ namespace StoragebornXenotype
         private void DrawBodySettings(Listing_Standard listing)
         {
             listing.Label("StoragebornSettingsBodyGenes".Translate());
+            bool worldTechLevelAvailable = WorldTechLevelIntegration.IsAvailable;
+            if (worldTechLevelAvailable)
+            {
+                bool match = MatchWorldTechLevel;
+                listing.CheckboxLabeled("StoragebornSettingsMatchWorldTechLevel".Translate(), ref match);
+                if (match != MatchWorldTechLevel)
+                    SetMatchWorldTechLevel(match);
+            }
+
+            bool oldGuiEnabled = GUI.enabled;
+            GUI.enabled = !MatchWorldTechLevel;
+            bool categoryMode = enableByCategory;
+            listing.CheckboxLabeled("StoragebornSettingsEnableByCategory".Translate(), ref categoryMode);
+            if (categoryMode != enableByCategory)
+                SetEnableByCategory(categoryMode);
+
+            listing.Label("StoragebornSettingsCategories".Translate());
+            bool categoriesEnabled = !MatchWorldTechLevel && enableByCategory;
+            GUI.enabled = categoriesEnabled;
+            foreach (StoragebornCategoryDef category in StoragebornController.BodyCategoryDefs())
+            {
+                bool enabled = IsCategoryEnabled(category.defName);
+                bool updated = enabled;
+                listing.CheckboxLabeled(category.LabelCap, ref updated);
+                if (updated != enabled)
+                    SetCategoryEnabled(category.defName, updated);
+            }
+
+            GUI.enabled = !MatchWorldTechLevel && !enableByCategory;
             DrawBodyGroup(listing, "StoragebornSettingsFantasy", new[]
             {
                 "OMW_StorageBodyMimic", "OMW_StorageBodyLuggage", "OMW_StorageBodyCube", "OMW_StorageBodyTreant", "OMW_StorageBodyGolem"
@@ -73,8 +152,11 @@ namespace StoragebornXenotype
                 "OMW_StorageBodyMaid", "OMW_StorageBodyOrb", "OMW_StorageBodyMechLoader",
                 "OMW_StorageBodyCube2", "OMW_StorageBodyRobot", "OMW_StorageBodyRobot2"
             });
+            GUI.enabled = oldGuiEnabled;
 
             listing.GapLine();
+            if (listing.ButtonText("StoragebornSettingsBodyStatus".Translate()))
+                Find.WindowStack.Add(new StoragebornBodyStatusWindow(this));
             if (listing.ButtonText("StoragebornSettingsRerandomize".Translate()))
                 StoragebornController.RerandomizeAllStorageborn();
         }
@@ -135,9 +217,14 @@ namespace StoragebornXenotype
         {
             base.ExposeData();
             Scribe_Values.Look(ref storagebornRefugeeQuestEnabled, "storagebornRefugeeQuestEnabled", true);
+            Scribe_Values.Look(ref matchWorldTechLevel, "matchWorldTechLevel", true);
+            Scribe_Values.Look(ref enableByCategory, "enableByCategory", true);
+            Scribe_Collections.Look(ref disabledCategories, "disabledCategories", LookMode.Value);
             Scribe_Collections.Look(ref disabledBodyGenes, "disabledBodyGenes", LookMode.Value);
             if (Scribe.mode == LoadSaveMode.PostLoadInit && disabledBodyGenes == null)
                 disabledBodyGenes = new List<string>();
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && disabledCategories == null)
+                disabledCategories = new List<string>();
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 if (stageOffsets == null || stageOffsets.Length != 5)

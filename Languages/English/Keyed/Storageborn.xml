@@ -16,4 +16,18 @@
   <StoragebornSettingsQuestTitle>Storageborn refuge quest</StoragebornSettingsQuestTitle>
   <StoragebornSettingsQuestEnabled>Enable the Storageborn refuge quest</StoragebornSettingsQuestEnabled>
   <StoragebornSettingsQuestDescription>A Storageborn wanderer will seek refuge and offer to join the colony.</StoragebornSettingsQuestDescription>
+  <StoragebornSettingsMatchWorldTechLevel>Match world tech level</StoragebornSettingsMatchWorldTechLevel>
+  <StoragebornSettingsEnableByCategory>Enable by category</StoragebornSettingsEnableByCategory>
+  <StoragebornSettingsCategories>Storageborn categories</StoragebornSettingsCategories>
+  <StoragebornSettingsBodyStatus>Display body enable status</StoragebornSettingsBodyStatus>
+  <StoragebornSettingsStatusEnabled>{0} — Enabled</StoragebornSettingsStatusEnabled>
+  <StoragebornSettingsStatusDisabled>{0} — Disabled</StoragebornSettingsStatusDisabled>
+  <StoragebornSettingsReasonWorldAllowed>Reason: world tech level allows category {0} (world level: {1})</StoragebornSettingsReasonWorldAllowed>
+  <StoragebornSettingsReasonWorldBlocked>Reason: category {0} exceeds the world tech level (world level: {1})</StoragebornSettingsReasonWorldBlocked>
+  <StoragebornSettingsReasonCategoryEnabled>Reason: category {0} is enabled</StoragebornSettingsReasonCategoryEnabled>
+  <StoragebornSettingsReasonCategoryDisabled>Reason: category {0} is disabled</StoragebornSettingsReasonCategoryDisabled>
+  <StoragebornSettingsReasonIndividualEnabled>Reason: individual body setting is enabled</StoragebornSettingsReasonIndividualEnabled>
+  <StoragebornSettingsReasonIndividualDisabled>Reason: individual body setting is disabled</StoragebornSettingsReasonIndividualDisabled>
+  <StoragebornSettingsReasonMissingCategory>Reason: body has no category</StoragebornSettingsReasonMissingCategory>
+  <StoragebornSettingsUnknownCategory>Unknown category</StoragebornSettingsUnknownCategory>
 </LanguageData>

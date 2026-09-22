@@ -51,6 +51,16 @@ namespace StoragebornXenotype
             "OMW_StorageStage_4"
         };
 
+        private static readonly string[] BodyCategoryDefNames =
+        {
+            "OMW_StoragebornCategory_Neolithic",
+            "OMW_StoragebornCategory_Medieval",
+            "OMW_StoragebornCategory_Industrial",
+            "OMW_StoragebornCategory_Spacer",
+            "OMW_StoragebornCategory_Ultra",
+            "OMW_StoragebornCategory_Archotech"
+        };
+
         private static readonly string[] BodyGeneDefNames =
         {
             "OMW_StorageBodyKallax",
@@ -69,6 +79,21 @@ namespace StoragebornXenotype
             "OMW_StorageBodyRobot",
             "OMW_StorageBodyRobot2"
         };
+
+        public static IEnumerable<StoragebornCategoryDef> BodyCategoryDefs()
+        {
+            foreach (string defName in BodyCategoryDefNames)
+            {
+                StoragebornCategoryDef def = DefDatabase<StoragebornCategoryDef>.GetNamedSilentFail(defName);
+                if (def != null)
+                    yield return def;
+            }
+        }
+
+        public static StoragebornCategoryDef BodyCategory(GeneDef gene)
+        {
+            return gene?.GetModExtension<StoragebornBodyCategoryExtension>()?.OMW_StoragebornCategory!;
+        }
 
         public static IEnumerable<GeneDef> BodyGeneDefs()
         {
@@ -191,7 +216,7 @@ namespace StoragebornXenotype
             if (pawn?.genes == null || !HasStoragebornGene(pawn)) return;
 
             List<GeneDef> enabled = BodyGeneDefs()
-                .Where(def => StoragebornXenotypeMod.Instance?.Settings?.IsBodyEnabled(def.defName) ?? true)
+                .Where(def => StoragebornXenotypeMod.Instance?.Settings?.IsBodyEffectivelyEnabled(def) ?? true)
                 .ToList();
             if (enabled.Count == 0) return;
 

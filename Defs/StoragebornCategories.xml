@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <StoragebornXenotype.StoragebornCategoryDef>
+    <defName>OMW_StoragebornCategory_Neolithic</defName>
+    <label>Neolithic</label>
+    <worldTechLevel>Neolithic</worldTechLevel>
+  </StoragebornXenotype.StoragebornCategoryDef>
+  <StoragebornXenotype.StoragebornCategoryDef>
+    <defName>OMW_StoragebornCategory_Medieval</defName>
+    <label>Medieval</label>
+    <worldTechLevel>Medieval</worldTechLevel>
+  </StoragebornXenotype.StoragebornCategoryDef>
+  <StoragebornXenotype.StoragebornCategoryDef>
+    <defName>OMW_StoragebornCategory_Industrial</defName>
+    <label>Industrial</label>
+    <worldTechLevel>Industrial</worldTechLevel>
+  </StoragebornXenotype.StoragebornCategoryDef>
+  <StoragebornXenotype.StoragebornCategoryDef>
+    <defName>OMW_StoragebornCategory_Spacer</defName>
+    <label>Spacer</label>
+    <worldTechLevel>Spacer</worldTechLevel>
+  </StoragebornXenotype.StoragebornCategoryDef>
+  <StoragebornXenotype.StoragebornCategoryDef>
+    <defName>OMW_StoragebornCategory_Ultra</defName>
+    <label>Ultra</label>
+    <worldTechLevel>Ultra</worldTechLevel>
+  </StoragebornXenotype.StoragebornCategoryDef>
+  <StoragebornXenotype.StoragebornCategoryDef>
+    <defName>OMW_StoragebornCategory_Archotech</defName>
+    <label>Archotech</label>
+    <worldTechLevel>Archotech</worldTechLevel>
+  </StoragebornXenotype.StoragebornCategoryDef>
+</Defs>
