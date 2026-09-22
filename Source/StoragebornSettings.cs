@@ -145,7 +145,7 @@ namespace StoragebornXenotype
             });
             DrawBodyGroup(listing, "StoragebornSettingsModern", new[]
             {
-                "OMW_StorageBodyKallax", "OMW_StorageBodyCardboard", "OMW_StorageBodySuitcase", "OMW_StorageBodyWardrobe"
+                "OMW_StorageBodyCardboard", "OMW_StorageBodySuitcase", "OMW_StorageBodyWardrobe"
             });
             DrawBodyGroup(listing, "StoragebornSettingsFuturistic", new[]
             {

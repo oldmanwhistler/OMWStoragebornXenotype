@@ -14,6 +14,8 @@ IMO, AI needs better legislation and regulation. Stop voting for idiots, crimina
 
 ## AI Usage
 
-"Storageborn Xenotype" uses a combination of [Modmixer](https://modmixer.com/) (with GPT-5.6 Luna) and VS Code for manual coding.
+"Storageborn Xenotype" uses a combination of [Modmixer](https://modmixer.com/) (with GPT-5.6 Luna) and VS Code for manual diffing/coding.
+
+Vibe coding without looking at the results still feels crazy to me.
 
 Visual assets generated using GPT-5.6 Luna.

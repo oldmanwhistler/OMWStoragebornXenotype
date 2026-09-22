@@ -36,7 +36,7 @@ namespace StoragebornXenotype
                 GenSpawn.Spawn(pawn, cell, map);
             }
 
-            Log.Message("[Storageborn Xenotype] Spawned Flatlet, Tall-boy, Kallax, and Greater Kallax test pawns.");
+            Log.Message("[Storageborn Xenotype] Spawned test pawns at different age ranges.");
         }
     }
 }

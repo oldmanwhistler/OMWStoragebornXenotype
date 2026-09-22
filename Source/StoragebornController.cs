@@ -63,7 +63,6 @@ namespace StoragebornXenotype
 
         private static readonly string[] BodyGeneDefNames =
         {
-            "OMW_StorageBodyKallax",
             "OMW_StorageBodyLuggage",
             "OMW_StorageBodyMimic",
             "OMW_StorageBodyCardboard",
@@ -109,8 +108,6 @@ namespace StoragebornXenotype
         {
             switch (defName)
             {
-                case "OMW_StorageBodyKallax":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Kallax/Storageborn_south", false);
                 case "OMW_StorageBodyLuggage":
                     return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Luggage/Storageborn_south", false);
                 case "OMW_StorageBodyMimic":
