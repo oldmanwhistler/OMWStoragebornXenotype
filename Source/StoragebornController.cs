@@ -7,6 +7,7 @@ using Verse;
 
 namespace StoragebornXenotype
 {
+    [StaticConstructorOnStartup]
     public static class StoragebornController
     {
         private const string StoragebornGeneDefName = "OMW_Storageborn";
@@ -51,33 +52,17 @@ namespace StoragebornXenotype
             "OMW_StorageStage_4"
         };
 
-        private static readonly string[] BodyCategoryDefNames =
-        {
-            "OMW_StoragebornCategory_Neolithic",
-            "OMW_StoragebornCategory_Medieval",
-            "OMW_StoragebornCategory_Industrial",
-            "OMW_StoragebornCategory_Spacer",
-            "OMW_StoragebornCategory_Ultra",
-            "OMW_StoragebornCategory_Archotech"
-        };
+        private static readonly List<string> BodyCategoryDefNames = new List<string>();
+        private static readonly List<string> BodyGeneDefNames = new List<string>();
 
-        private static readonly string[] BodyGeneDefNames =
+        static StoragebornController()
         {
-            "OMW_StorageBodyLuggage",
-            "OMW_StorageBodyMimic",
-            "OMW_StorageBodyCardboard",
-            "OMW_StorageBodyMaid",
-            "OMW_StorageBodyCube",
-            "OMW_StorageBodyTreant",
-            "OMW_StorageBodyGolem",
-            "OMW_StorageBodySuitcase",
-            "OMW_StorageBodyWardrobe",
-            "OMW_StorageBodyOrb",
-            "OMW_StorageBodyMechLoader",
-            "OMW_StorageBodyCube2",
-            "OMW_StorageBodyRobot",
-            "OMW_StorageBodyRobot2"
-        };
+            BodyCategoryDefNames.AddRange(DefDatabase<StoragebornCategoryDef>.AllDefsListForReading
+                .Select(def => def.defName));
+            BodyGeneDefNames.AddRange(DefDatabase<GeneDef>.AllDefsListForReading
+                .Where(def => BodyCategory(def) != null)
+                .Select(def => def.defName));
+        }
 
         public static IEnumerable<StoragebornCategoryDef> BodyCategoryDefs()
         {

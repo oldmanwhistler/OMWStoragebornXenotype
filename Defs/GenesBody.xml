@@ -67,7 +67,7 @@
     <defName>OMW_StorageBodyLuggage</defName>
     <modExtensions>
       <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
-        <OMW_StoragebornCategory>OMW_StoragebornCategory_Industrial</OMW_StoragebornCategory>
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Medieval</OMW_StoragebornCategory>
       </li>
     </modExtensions>
     <label>Storageborn Luggage Body</label>

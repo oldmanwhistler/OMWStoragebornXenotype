@@ -139,19 +139,14 @@ namespace StoragebornXenotype
             }
 
             GUI.enabled = !MatchWorldTechLevel && !enableByCategory;
-            DrawBodyGroup(listing, "StoragebornSettingsFantasy", new[]
+            foreach (StoragebornCategoryDef category in StoragebornController.BodyCategoryDefs())
             {
-                "OMW_StorageBodyMimic", "OMW_StorageBodyLuggage", "OMW_StorageBodyCube", "OMW_StorageBodyTreant", "OMW_StorageBodyGolem"
-            });
-            DrawBodyGroup(listing, "StoragebornSettingsModern", new[]
-            {
-                "OMW_StorageBodyCardboard", "OMW_StorageBodySuitcase", "OMW_StorageBodyWardrobe"
-            });
-            DrawBodyGroup(listing, "StoragebornSettingsFuturistic", new[]
-            {
-                "OMW_StorageBodyMaid", "OMW_StorageBodyOrb", "OMW_StorageBodyMechLoader",
-                "OMW_StorageBodyCube2", "OMW_StorageBodyRobot", "OMW_StorageBodyRobot2"
-            });
+                listing.Gap();
+                listing.Label(category.LabelCap);
+                foreach (GeneDef bodyGene in StoragebornController.BodyGeneDefs()
+                    .Where(gene => StoragebornController.BodyCategory(gene) == category))
+                    DrawBodyGene(listing, bodyGene);
+            }
             GUI.enabled = oldGuiEnabled;
 
             listing.GapLine();
@@ -191,26 +186,18 @@ namespace StoragebornXenotype
                 StoragebornController.ApplyStageStatSettings(stageOffsets, stageFactors);
         }
 
-        private void DrawBodyGroup(Listing_Standard listing, string labelKey, IEnumerable<string> defNames)
+        private void DrawBodyGene(Listing_Standard listing, GeneDef bodyGene)
         {
-            listing.Gap();
-            listing.Label(labelKey.Translate());
-            foreach (string defName in defNames)
-            {
-                GeneDef bodyGene = DefDatabase<GeneDef>.GetNamedSilentFail(defName);
-                if (bodyGene == null) continue;
+            Rect row = listing.GetRect(68f);
+            Texture2D texture = StoragebornController.BodyPreviewTexture(bodyGene.defName);
+            if (texture != null)
+                Widgets.DrawTextureFitted(new Rect(row.x, row.y, 64f, 64f), texture, 1f);
 
-                Rect row = listing.GetRect(68f);
-                Texture2D texture = StoragebornController.BodyPreviewTexture(bodyGene.defName);
-                if (texture != null)
-                    Widgets.DrawTextureFitted(new Rect(row.x, row.y, 64f, 64f), texture, 1f);
-
-                bool enabled = IsBodyEnabled(bodyGene.defName);
-                bool updated = enabled;
-                Widgets.CheckboxLabeled(new Rect(row.x + 72f, row.y, row.width - 72f, row.height), bodyGene.LabelCap, ref updated);
-                if (updated != enabled)
-                    SetBodyEnabled(bodyGene.defName, updated);
-            }
+            bool enabled = IsBodyEnabled(bodyGene.defName);
+            bool updated = enabled;
+            Widgets.CheckboxLabeled(new Rect(row.x + 72f, row.y, row.width - 72f, row.height), bodyGene.LabelCap, ref updated);
+            if (updated != enabled)
+                SetBodyEnabled(bodyGene.defName, updated);
         }
 
         public override void ExposeData()
