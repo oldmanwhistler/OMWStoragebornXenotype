@@ -1,0 +1,66 @@
+  <genes>
+    <!-- Diet -->
+        <li>BS_Diet_Carnivore</li>
+        <li>BS_Diet_Fuel</li>
+        <li>BS_Diet_Herbivore</li>
+        <li>BS_Diet_Universal</li>
+        <li>Cannibal</li>
+
+    <!-- Psychic -->
+        <li>PsychicAbility_Deaf</li>
+        <li>BS_NaturalPsychic</li>
+        <li>PsychicAbility_Dull</li>
+        <li>PsychicAbility_Enhanced</li>
+        <li>PsychicAbility_Extreme</li>
+
+    <!-- Appearance -->
+        <li>BS_AlienApperanceStandards</li>   
+        <li>BS_AlienApperanceStandards_Lesser</li> 
+        <li>Beauty_VeryUgly</li>
+        <li>Beauty_Ugly</li>
+        <li>Beauty_Pretty</li>
+        <li>Beauty_Beautiful</li>
+
+    <!-- Wood -->
+        <li>FireWeakness</li>
+        <li>FireTerror</li>
+
+    <!-- Ambush Predator -->
+        <li>Nearsighted</li>
+
+    <!-- Combat Abilities -->
+        <li>AnimalWarcall</li>
+        <li>VU_Pounce</li>
+        <li>BS_FeedingFrenzy</li>
+        <li>BS_SnekEngulf</li>
+        
+    <!-- Aggression & Combat -->
+        <li>BS_NoEquip</li>
+        <li>Aggression_DeadCalm</li>
+        <li>KillThirst</li>
+        <li>BS_Talons</li>
+        <li>BS_Unarmed_VeryStrong</li>    
+
+    <!-- Special -->
+        <li>Libido_High</li>
+        <li>BS_PerfectMemory</li>
+        <li>BS_PilotAssistible</li>
+
+    <!-- Learning -->
+        <li>BS_Very_Passioned_Learning_Gene</li>
+        <li>BS_Passioned_Learning_Gene</li>
+
+    <!-- Aptitudes -->    
+        <li>AptitudePoor_Shooting</li>
+        <li>AptitudePoor_Melee</li>
+        <li>AptitudePoor_Construction</li>
+        <li>AptitudePoor_Mining</li>
+        <li>AptitudePoor_Cooking</li>
+        <li>AptitudePoor_Plants</li>
+        <li>AptitudePoor_Animals</li>
+        <li>AptitudePoor_Crafting</li>
+        <li>AptitudePoor_Artistic</li>
+        <li>AptitudePoor_Medicine</li>
+        <li>AptitudePoor_Social</li>
+        <li>AptitudePoor_Intellectual</li>
+  </genes>

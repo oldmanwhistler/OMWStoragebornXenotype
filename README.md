@@ -1,13 +1,13 @@
 # Storageborn Xenotype
 
-A race of sentient storage that can help but can't use weapons or armour. Inspired by [Ikea's Kallax Storageborn mod for Skyrim](https://www.youtube.com/watch?v=0tBlFZsMuO8), D&D mimics and the Luggage from Discworld.
+A race of sentient storage that can help but can't use weapons or armour. Inspired by D&D mimics, the Luggage from Discworld and [Ikea's Kallax Storageborn mod for Skyrim](https://www.youtube.com/watch?v=0tBlFZsMuO8).
 
 ![Splash](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Images/splashpage.png?raw=true)
 
 ## Features (English)
 
 - Storageborn gain storage capacity and natural armour as they age.
-- Different body sub-types have additional thematic genes.
+- One xenotype with multiple body sub-types.
 - Mod settings to enable/disable body sub-types (with World Tech Level support)
 
 ## Genes
@@ -42,6 +42,10 @@ With great carry capacity comes skill nerfs. By default they are bad at most thi
 
 See latest [compatibility](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Docs/Compatibility.md) information.
 
+## Issues and Known Issues
+
+See latest [known issues](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Docs/Bugs.md).
+
 ## AI
 
 [AI Disclosure](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Docs/AI.md)
@@ -52,4 +56,4 @@ See latest [compatibility](https://github.com/oldmanwhistler/OMWStoragebornXenot
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/LICENSE) for details.
