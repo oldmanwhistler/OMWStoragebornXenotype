@@ -189,7 +189,7 @@ namespace StoragebornXenotype
         private void DrawBodyGene(Listing_Standard listing, GeneDef bodyGene)
         {
             Rect row = listing.GetRect(68f);
-            Texture2D texture = StoragebornController.BodyPreviewTexture(bodyGene.defName);
+            Texture2D texture = ContentFinder<Texture2D>.Get(bodyGene.iconPath, false);
             if (texture != null)
                 Widgets.DrawTextureFitted(new Rect(row.x, row.y, 64f, 64f), texture, 1f);
 

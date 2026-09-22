@@ -89,42 +89,6 @@ namespace StoragebornXenotype
             }
         }
 
-        public static UnityEngine.Texture2D BodyPreviewTexture(string defName)
-        {
-            switch (defName)
-            {
-                case "OMW_StorageBodyLuggage":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Luggage/Storageborn_south", false);
-                case "OMW_StorageBodyMimic":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Mimic/Storageborn_south", false);
-                case "OMW_StorageBodyCardboard":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Cardboard/Storageborn_south", false);
-                case "OMW_StorageBodyMaid":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Maid/Storageborn_south", false);
-                case "OMW_StorageBodyCube":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Cube/Storageborn_south", false);
-                case "OMW_StorageBodyTreant":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Treant/Storageborn_south", false);
-                case "OMW_StorageBodyGolem":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Golem/Storageborn_south", false);
-                case "OMW_StorageBodySuitcase":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Suitcase/Storageborn_south", false);
-                case "OMW_StorageBodyWardrobe":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Wardrobe/Storageborn_south", false);
-                case "OMW_StorageBodyOrb":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Orb/Storageborn_south", false);
-                case "OMW_StorageBodyMechLoader":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/MechLoader/Storageborn_south", false);
-                case "OMW_StorageBodyCube2":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Cube2/Storageborn_south", false);
-                case "OMW_StorageBodyRobot":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Robot/Storageborn_south", false);
-                case "OMW_StorageBodyRobot2":
-                    return ContentFinder<Texture2D>.Get("Storageborn/Bodies/Robot2/Storageborn_south", false);
-                default:
-                    return null!;
-            }
-        }
 
         public static IEnumerable<GeneDef> StageSettingsGeneDefs()
         {
