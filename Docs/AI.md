@@ -4,14 +4,16 @@ This is a free mod with an AI disclosure so you can easily avoid it if that is y
 
 ## Anti-AI
 
-There's so much negative stuff around how AI is being pushed out around the world that it is very understandable to lash out at it.
+There's so much negative stuff around AI that it is very understandable to lash out at it.
 
-If you have strong opinions against AI then I suggest you take them up with your country's government. The negative effects of AI are a direct result of poor legislation and regulation. Stop voting for idiots, criminals and grifters.
+Please recognize that criticizing the free mods made by other people who play the same game as you does nothing to improve the situation. Skip it an move on.
 
-Please recognize that criticizing the free mods made by other people who play the same game as you does nothing to improve the situation you are bothered by.
+Harassing people with AI disclosures won't get rid of the AI but will get rid of the AI disclosures.
+
+IMO, AI needs better legislation and regulation. Stop voting for idiots, criminals and grifters.
 
 ## AI Usage
 
-"Storageborn Xenotype" was created with [Modmixer](https://modmixer.com/) and GPT-5.6 Luna for scaffolding and then manual coding.
+"Storageborn Xenotype" uses a combination of [Modmixer](https://modmixer.com/) (with GPT-5.6 Luna) and VS Code for manual coding.
 
-Game assets generated using GPT-5.6 Luna.
+Visual assets generated using GPT-5.6 Luna.
