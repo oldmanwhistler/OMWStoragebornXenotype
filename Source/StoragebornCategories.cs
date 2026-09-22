@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
@@ -12,6 +13,11 @@ namespace StoragebornXenotype
     public class StoragebornBodyCategoryExtension : DefModExtension
     {
         public StoragebornCategoryDef OMW_StoragebornCategory = null!;
+    }
+
+    public class StoragebornBodyGenesExtension : DefModExtension
+    {
+        public List<GeneDef> genes = new List<GeneDef>();
     }
 
     public static class WorldTechLevelIntegration
