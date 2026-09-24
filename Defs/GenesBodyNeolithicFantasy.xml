@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyTreant</defName>
+    <label>SB Treant</label>
+    <labelShortAdj>Treant</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Treant/Storageborn_south</iconPath>
+    <exclusionTags></exclusionTags>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_NeolithicFantasy</OMW_StoragebornCategory>
+      </li>
+      <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
+        <genes>
+        <li>AptitudeRemarkable_Plants</li>
+        <li>AptitudeTerrible_Animals</li>
+        <li>BS_Diet_Herbivore</li>        
+        <li>BS_NaturalPsychic</li>
+        <li>BS_AlienApperanceStandards_Lesser</li>
+        <li>FireWeakness</li>
+        <li>FireTerror</li>           
+        <li>Aggression_DeadCalm</li>        
+        <li>BS_Talons</li>
+        <li>BS_AnimalFriend</li>
+        <li>VU_NoBlood</li>
+        <li MayRequire="sarg.alphagenes">AG_InnatePsylink</li>             
+        <li MayRequire="sarg.alphagenes">AG_WoodLeather</li>
+        <li MayRequire="sarg.alphagenes">AG_NoMeat</li>
+        <li MayRequire="sarg.alphagenes">AG_ExtraLeather</li>        
+        </genes>
+      </li>        
+      <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Treant/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Treant/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Treant/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Treant/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Treant/Storageborn</Body_Hulk>
+        </bodyPaths>        
+      </li>
+    </modExtensions>    
+  </GeneDef>
+
+  <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyGolem</defName>
+    <label>SB Golem</label>
+    <labelShortAdj>Golem</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Golem/Storageborn_south</iconPath>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_NeolithicFantasy</OMW_StoragebornCategory>
+      </li>
+      <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
+        <genes>
+        <li>AptitudeRemarkable_Mining</li>
+        <li>AptitudeTerrible_Intellectual</li>        
+        <li>PsychicAbility_Dull</li>
+        <li>BS_AlienApperanceStandards_Lesser</li>
+        <li>BS_NoEquip</li>
+        <li>BS_Unarmed_VeryStrong</li>    
+        <li>Aggression_DeadCalm</li>        
+        <li>BS_AnimalFriend</li>
+        <li>VU_NoBlood</li>
+        <li MayRequire="sarg.alphagenes">AG_NoLeather</li>
+        <li MayRequire="sarg.alphagenes">AG_NoMeat</li>        
+        </genes>
+      </li>        
+      <li Class="BigAndSmall.PawnExtension">
+        <disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Golem/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Golem/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Golem/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Golem/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Golem/Storageborn</Body_Hulk>
+        </bodyPaths>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+</Defs>

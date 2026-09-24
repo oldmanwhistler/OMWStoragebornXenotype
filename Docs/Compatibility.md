@@ -1,10 +1,14 @@
 # Compatibility
 
-## Special
+## Enhanced by
 
 [World Tech Level](https://steamcommunity.com/sharedfiles/filedetails/?id=3414187030) - 209,842 Current Subscribers
 
 Storageborn mod settings can be set to match the World Tech Level. Change this setting before creating the world if you want randomizing your starting colonists to match the scenario tech level.
+
+[Alpha Genes](https://steamcommunity.com/sharedfiles/filedetails/?id=2891845502) - 290,826 Current Subscribers
+
+Makes use of the NoLeather / NoMeat genes as well as adding some abilities.
 
 ## Tested
 
@@ -22,6 +26,7 @@ The sets all pawns carrying capacity to 750kg which negates the carrying capacit
 
 ## Not Tested
 
+- [Show Me Your Hands](https://steamcommunity.com/sharedfiles/filedetails/?id=3805568727) - 323,764 Current Subscribers
 - [Carry Capacity Fixed](https://steamcommunity.com/sharedfiles/filedetails/?id=2880150945) - 31,230 Current Subscribers
 - [Strong Pawn](https://steamcommunity.com/sharedfiles/filedetails/?id=3523631891) - 7,909 Current Subscribers
 - [Carry Capacity from Bionics](https://steamcommunity.com/sharedfiles/filedetails/?id=3564369362) - 1,568 Current Subscribers
@@ -29,3 +34,4 @@ The sets all pawns carrying capacity to 750kg which negates the carrying capacit
 - [Over Haulers](https://steamcommunity.com/sharedfiles/filedetails/?id=3799915738)- 72 Current Subscribers
 - [Bag of Holding and Cargo Pants](https://steamcommunity.com/sharedfiles/filedetails/?id=3572952795) - 71 Current Subscribers
 - All of the facial animations mods
+- Mods that add random starting genes to pawns

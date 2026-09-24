@@ -7,18 +7,12 @@ A race of sentient storage that can help but can't use weapons or armour. Inspir
 ## Features (English)
 
 - Storageborn gain storage capacity and natural armour as they age.
-- One xenotype with multiple body sub-types.
+- One xenotype with multiple body sub-types with variation
 - Mod settings to enable/disable body sub-types (with World Tech Level support)
 
 ## Genes
 
 ![Endogenes](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Images/endogenes.png?raw=true)
-
-## Skills
-
-With great carry capacity comes skill nerfs. By default they are bad at most things except for per-body type specialities.
-
-![Skills](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Images/skills.png?raw=true)
 
 ## Body Types
 
@@ -42,9 +36,23 @@ With great carry capacity comes skill nerfs. By default they are bad at most thi
 
 See latest [compatibility](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Docs/Compatibility.md) information.
 
+Safe to add to saves; safe to remove from saves provided there are no Storageborn in the colony.
+
+Storageborn are not added to any factions by default.
+
+## Roadmap
+
+[See list of planned sub-xenotypes](https://docs.google.com/spreadsheets/d/e/2PACX-1vRRJ1fxLj_F4jYTbJYCIlvM4hSIDF5JTJK1_y3L9zGpuDZeB0OygG670hwXXrpsydRYQMO-_ymzqT0T/pubhtml)
+
+Drop ideas in the comments if there's some you'd like to see.
+
 ## Issues and Known Issues
 
 See latest [known issues](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Docs/Bugs.md).
+
+## Language Support
+
+- English
 
 ## AI
 

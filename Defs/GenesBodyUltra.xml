@@ -3,17 +3,36 @@
 
     <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyMaid</defName>
-    <modExtensions>
-      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
-        <OMW_StoragebornCategory>OMW_StoragebornCategory_Ultra</OMW_StoragebornCategory>
-      </li>
-    </modExtensions>
-    <label>Storageborn Maid Body</label>
-    <labelShortAdj>Maid Body</labelShortAdj>
+    <label>SB Maid Robot</label>
+    <labelShortAdj>Maid Robot</labelShortAdj>
     <description></description>
     <iconPath>Storageborn/Bodies/Maid/Storageborn_south</iconPath>
     <exclusionTags></exclusionTags>
     <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Ultra</OMW_StoragebornCategory>
+      </li>
+      <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
+        <genes>
+        <li>AptitudeRemarkable_Cooking</li>        
+        <li>AptitudeTerrible_Artistic</li>
+        <li>BS_Diet_Universal</li>        
+        <li>PsychicAbility_Dull</li>  
+        <li>BS_AnimalFriend</li>                      
+        <li>Neversleep</li>     
+        <li>VU_NoBlood</li>
+        <li>Beauty_Beautiful</li>   
+        <li>Libido_High</li>    
+        <li>Aggression_DeadCalm</li>     
+        <li>KindInstinct</li>                   
+        <li>BS_PerfectMemory</li>        
+        <li>BS_FoamSpray</li>      
+        <li MayRequire="sarg.alphagenes">AG_BansheeScream</li>        
+        <li MayRequire="sarg.alphagenes">AG_NoLeather</li>
+        <li MayRequire="sarg.alphagenes">AG_NoMeat</li>            
+        <li MayRequire="sarg.alphagenes">AG_Clean</li>        
+        </genes>
+      </li>        
       <li Class="BigAndSmall.PawnExtension">
 				<disableFacialAnimations>true</disableFacialAnimations>
         <bodyPaths>
@@ -26,18 +45,33 @@
       </li>    
     </modExtensions>
   </GeneDef>
+
+
   <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyOrb</defName>
+    <label>SB Orb</label>
+    <labelShortAdj>Orb</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Orb/Storageborn_south</iconPath>
     <modExtensions>
       <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
         <OMW_StoragebornCategory>OMW_StoragebornCategory_Ultra</OMW_StoragebornCategory>
       </li>
-    </modExtensions>
-    <label>Storageborn Orb Body</label>
-    <labelShortAdj>Orb Body</labelShortAdj>
-    <description></description>
-    <iconPath>Storageborn/Bodies/Orb/Storageborn_south</iconPath>
-    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
+        <genes>
+        <li>AptitudeRemarkable_Social</li>        
+        <li>AptitudeTerrible_Plants</li>        
+        <li>BS_Diet_Universal</li>        
+        <li>PsychicAbility_Enhanced</li>                
+        <li>BS_AnimalFriend</li>                      
+        <li>Neversleep</li>     
+        <li>VU_NoBlood</li>
+        <li>BS_Very_Passioned_Learning_Gene</li>        
+        <li MayRequire="sarg.alphagenes">AG_NoLeather</li>
+        <li MayRequire="sarg.alphagenes">AG_NoMeat</li>            
+        <li MayRequire="sarg.alphagenes">AG_Invisibility</li>
+        </genes>
+      </li>        
       <li Class="BigAndSmall.PawnExtension">
         <disableFacialAnimations>true</disableFacialAnimations>
         <bodyPaths>
@@ -53,16 +87,30 @@
 
  <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyCube2</defName>
+    <label>SB Tesseract</label>
+    <labelShortAdj>Tesseract</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Cube2/Storageborn_south</iconPath>
     <modExtensions>
       <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
         <OMW_StoragebornCategory>OMW_StoragebornCategory_Ultra</OMW_StoragebornCategory>
       </li>
-    </modExtensions>
-    <label>Storageborn Cube 2 Body</label>
-    <labelShortAdj>Cube 2 Body</labelShortAdj>
-    <description></description>
-    <iconPath>Storageborn/Bodies/Cube2/Storageborn_south</iconPath>
-    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
+        <genes>
+        <li>AptitudeRemarkable_Intellectual</li>
+        <li>AptitudeTerrible_Plants</li>                
+        <li>BS_Diet_Universal</li>        
+        <li>PsychicAbility_Extreme</li>                
+        <li>BS_AnimalFriend</li>                      
+        <li>Neversleep</li>     
+        <li>VU_NoBlood</li>
+        <li MayRequire="sarg.alphagenes">AG_NoLeather</li>
+        <li MayRequire="sarg.alphagenes">AG_NoMeat</li>            
+        <li MayRequire="sarg.alphagenes">AG_DevourBrains</li>
+        <li MayRequire="sarg.alphagenes">AG_Zap</li>
+        <li MayRequire="sarg.alphagenes">AG_InsanityBlast</li>                
+        </genes>
+      </li>        
       <li Class="BigAndSmall.PawnExtension">
         <disableFacialAnimations>true</disableFacialAnimations>
         <bodyPaths>

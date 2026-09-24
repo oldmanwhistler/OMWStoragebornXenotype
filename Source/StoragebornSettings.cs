@@ -217,7 +217,7 @@ namespace StoragebornXenotype
                 if (stageOffsets == null || stageOffsets.Length != 5)
                     stageOffsets = new[] { 25f, 50f, 75f, 100f, 150f };
                 if (stageFactors == null || stageFactors.Length != 5)
-                    stageFactors = new[] { 0.7f, 1f, 1.2f, 1.5f, 2f };
+                    stageFactors = new[] { 1f, 1.5f, 2f, 2.5f, 3f };
             }
             for (int i = 0; i < 5; i++)
             {

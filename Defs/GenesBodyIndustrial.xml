@@ -3,17 +3,32 @@
 
 <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodyCardboard</defName>
-    <modExtensions>
-      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
-        <OMW_StoragebornCategory>OMW_StoragebornCategory_Industrial</OMW_StoragebornCategory>
-      </li>
-    </modExtensions>
-    <label>Storageborn Cardboard Body</label>
-    <labelShortAdj>Cardboard Body</labelShortAdj>
+    <label>SB Cardboard Box</label>
+    <labelShortAdj>Cardboard Box</labelShortAdj>
     <description></description>
     <iconPath>Storageborn/Bodies/Cardboard/Storageborn_south</iconPath>
     <exclusionTags></exclusionTags>
     <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Industrial</OMW_StoragebornCategory>
+      </li>
+      <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
+        <genes>
+        <li>AptitudeRemarkable_Crafting</li>        
+        <li>AptitudeTerrible_Melee</li>
+        <li>Delicate</li>        
+        <li>BS_Diet_Herbivore</li>
+        <li>PsychicAbility_Deaf</li>
+        <li>Beauty_Ugly</li>    
+        <li>Neversleep</li>     
+        <li>VU_NoBlood</li>
+        <li>FireWeakness</li>
+        <li>FireTerror</li>    
+        <li>AnimalWarcall</li>                                            
+        <li MayRequire="sarg.alphagenes">AG_NoLeather</li>
+        <li MayRequire="sarg.alphagenes">AG_NoMeat</li>                 
+        </genes>
+      </li>        
       <li Class="BigAndSmall.PawnExtension">
 				<disableFacialAnimations>true</disableFacialAnimations>
         <bodyPaths>
@@ -29,16 +44,25 @@
 
 <GeneDef ParentName="OMW_StorageBodyBase">
     <defName>OMW_StorageBodySuitcase</defName>
+    <label>SB Suitcase</label>
+    <labelShortAdj>Suitcase</labelShortAdj>
+    <description></description>
+    <iconPath>Storageborn/Bodies/Suitcase/Storageborn_south</iconPath>
     <modExtensions>
       <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
         <OMW_StoragebornCategory>OMW_StoragebornCategory_Industrial</OMW_StoragebornCategory>
       </li>
-    </modExtensions>
-    <label>Storageborn Suitcase Body</label>
-    <labelShortAdj>Suitcase Body</labelShortAdj>
-    <description></description>
-    <iconPath>Storageborn/Bodies/Suitcase/Storageborn_south</iconPath>
-    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
+        <genes>
+        <li>AptitudeTerrible_Cooking</li>        
+        <li>AptitudeRemarkable_Shooting</li>
+        <li>PsychicAbility_Dull</li>                
+        <li>Neversleep</li>     
+        <li>VU_NoBlood</li>
+        <li MayRequire="sarg.alphagenes">AG_NoLeather</li>
+        <li MayRequire="sarg.alphagenes">AG_NoMeat</li>                   
+        </genes>
+      </li>        
       <li Class="BigAndSmall.PawnExtension">
         <disableFacialAnimations>true</disableFacialAnimations>
         <bodyPaths>

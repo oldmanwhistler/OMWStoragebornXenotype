@@ -8,7 +8,8 @@
     </exclusionTags>
     <geneClass>StoragebornXenotype.StoragebornSizeGene</geneClass>
     <biostatCpx>0</biostatCpx>
-    <biostatMet>0</biostatMet>
+    <!-- offset the natural armour -->
+    <biostatMet>4</biostatMet>
     <selectionWeight>1</selectionWeight>
     <canGenerateInGeneSet>false</canGenerateInGeneSet>
   </GeneDef>

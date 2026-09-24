@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!--
+    <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyLiving</defName>
+    <label>SB Living</label>
+    <labelShortAdj>Living</labelShortAdj>
+    <description>This is used for testing the living xenotype and should not be used in production. Used to count metabolism for balance. -9 metabolism.</description>
+    <iconPath>Storageborn/Bodies/Base/Storageborn_south</iconPath>
+    <exclusionTags></exclusionTags>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Neolithic</OMW_StoragebornCategory>
+      </li>
+      <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Base/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Base/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Base/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Base/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Base/Storageborn</Body_Hulk>
+        </bodyPaths>        
+      </li>
+    </modExtensions>    
+  </GeneDef>
+
+    <GeneDef ParentName="OMW_StorageBodyBase">
+    <defName>OMW_StorageBodyObject</defName>
+    <label>SB Object</label>
+    <labelShortAdj>Object</labelShortAdj>
+    <description>This is used for testing the object xenotype and should not be used in production. Used to count metabolism for balance. -20 metabolism.</description>
+    <iconPath>Storageborn/Bodies/Base/Storageborn_south</iconPath>
+    <exclusionTags></exclusionTags>
+    <modExtensions>
+      <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
+        <OMW_StoragebornCategory>OMW_StoragebornCategory_Neolithic</OMW_StoragebornCategory>
+      </li>
+      <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
+        <genes>
+        <li>Neversleep</li>    
+        <li>BS_AnimalFriend</li>
+        <li>VU_NoBlood</li>        
+        </genes>
+      </li>              
+      <li Class="BigAndSmall.PawnExtension">
+				<disableFacialAnimations>true</disableFacialAnimations>
+        <bodyPaths>
+          <Body_Female>Storageborn/Bodies/Base/Storageborn</Body_Female>
+          <Body_Male>Storageborn/Bodies/Base/Storageborn</Body_Male>
+          <Body_Thin>Storageborn/Bodies/Base/Storageborn</Body_Thin>
+          <Body_Fat>Storageborn/Bodies/Base/Storageborn</Body_Fat>
+          <Body_Hulk>Storageborn/Bodies/Base/Storageborn</Body_Hulk>
+        </bodyPaths>        
+      </li>
+    </modExtensions>    
+  </GeneDef>  
+-->  
+</Defs>
