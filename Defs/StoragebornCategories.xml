@@ -43,9 +43,11 @@
     <worldTechLevel>Ultra</worldTechLevel>
   </StoragebornXenotype.StoragebornCategoryDef>
 
+<!-- Archotech: doesn't actual work because World Tech Level uses Unrestricted in settings?
   <StoragebornXenotype.StoragebornCategoryDef>
     <defName>OMW_StoragebornCategory_Archotech</defName>
     <label>Archotech</label>
     <worldTechLevel>Archotech</worldTechLevel>
   </StoragebornXenotype.StoragebornCategoryDef>
+ -->  
 </Defs>
