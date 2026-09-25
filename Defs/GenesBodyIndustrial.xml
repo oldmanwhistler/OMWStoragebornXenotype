@@ -14,8 +14,10 @@
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
-        <li>AptitudeRemarkable_Crafting</li>        
         <li>AptitudeTerrible_Melee</li>
+        <li>AptitudeStrong_Construction</li>
+        <li>AptitudeRemarkable_Animals</li>               
+        <li>AptitudeRemarkable_Crafting</li>        
         <li>Delicate</li>        
         <li>BS_Diet_Herbivore</li>
         <li>PsychicAbility_Deaf</li>
@@ -54,8 +56,9 @@
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
-        <li>AptitudeTerrible_Cooking</li>        
         <li>AptitudeRemarkable_Shooting</li>
+        <li>AptitudePoor_Melee</li>        
+        <li>AptitudeTerrible_Cooking</li>        
         <li>PsychicAbility_Dull</li>                
         <li>Neversleep</li>     
         <li>VU_NoBlood</li>

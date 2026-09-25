@@ -16,6 +16,9 @@
         <genes>
         <li>AptitudeRemarkable_Plants</li>
         <li>AptitudeTerrible_Animals</li>
+        <li>AptitudePoor_Crafting</li>
+        <li>AptitudeStrong_Artistic</li>
+        <li>AptitudeStrong_Medicine</li>                        
         <li>BS_Diet_Herbivore</li>        
         <li MayRequire="sarg.alphagenes">AG_LightSustenance</li>
         <li>BS_NaturalPsychic</li>
@@ -57,6 +60,9 @@
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
+        <li>AptitudeTerrible_Shooting</li>
+        <li>AptitudeStrong_Melee</li>
+        <li>AptitudeStrong_Construction</li>                        
         <li>AptitudeRemarkable_Mining</li>
         <li MayRequire="sarg.alphagenes">AG_MiningYield_High</li>        
         <li>AptitudeTerrible_Intellectual</li>

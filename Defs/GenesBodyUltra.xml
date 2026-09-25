@@ -14,8 +14,12 @@
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
-        <li>AptitudeRemarkable_Cooking</li>        
+        <li>AptitudePoor_Melee</li>        
+        <li>AptitudeRemarkable_Cooking</li>   
+        <li>AptitudeStrong_Animals</li>                    
         <li>AptitudeTerrible_Artistic</li>
+        <li>AptitudeStrong_Medicine</li>
+        <li>AptitudePoor_Intellectual</li>                
         <li>BS_Diet_Fuel</li>         
         <li>PsychicAbility_Dull</li>  
         <li>BS_AnimalFriend</li>                      
@@ -26,11 +30,12 @@
         <li>Aggression_DeadCalm</li>     
         <li>KindInstinct</li>                   
         <li>BS_PerfectMemory</li>        
-        <li>BS_FoamSpray</li>      
-        <li MayRequire="sarg.alphagenes">AG_BansheeScream</li>        
+        <li>BS_FoamSpray</li>
+        <li>WoundHealing_Slow</li>              
         <li MayRequire="sarg.alphagenes">AG_NoLeather</li>
         <li MayRequire="sarg.alphagenes">AG_NoMeat</li>            
         <li MayRequire="sarg.alphagenes">AG_Clean</li>        
+        <li MayRequire="sarg.alphagenes">AG_MiningYield_Low</li>        
         </genes>
       </li>        
       <li Class="BigAndSmall.PawnExtension">
@@ -59,17 +64,23 @@
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
+        <li>AptitudeTerrible_Melee</li>  
+        <li>AptitudePoor_Mining</li>              
+        <li>AptitudeTerrible_Plants</li>    
+        <li>AptitudeStrong_Animals</li>
+        <li>AptitudeStrong_Crafting</li>
         <li>AptitudeRemarkable_Social</li>        
-        <li>AptitudeTerrible_Plants</li>        
         <li>BS_Diet_Fuel</li>        
         <li>PsychicAbility_Enhanced</li>                
         <li>BS_AnimalFriend</li>                      
         <li>Neversleep</li>     
         <li>VU_NoBlood</li>
+        <li>WoundHealing_Slow</li>        
         <li>BS_Very_Passioned_Learning_Gene</li>        
         <li MayRequire="sarg.alphagenes">AG_NoLeather</li>
         <li MayRequire="sarg.alphagenes">AG_NoMeat</li>            
-        <li MayRequire="sarg.alphagenes">AG_Invisibility</li>     
+        <li MayRequire="sarg.alphagenes">AG_Invisibility</li>   
+        <li MayRequire="sarg.alphagenes">AG_MiningYield_Low</li>          
         </genes>
       </li>        
       <li Class="BigAndSmall.PawnExtension">
@@ -97,18 +108,23 @@
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
+        <li>AptitudeTerrible_Melee</li> 
+        <li>AptitudeStrong_Mining</li>                   
+        <li>AptitudePoor_Crafting</li> 
+        <li>AptitudeTerrible_Artistic</li>                           
         <li>AptitudeRemarkable_Intellectual</li>
-        <li>AptitudeTerrible_Plants</li>                
         <li>BS_Diet_Fuel</li>         
         <li>PsychicAbility_Extreme</li>                
         <li>BS_AnimalFriend</li>                      
         <li>Neversleep</li>     
         <li>VU_NoBlood</li>
+        <li>WoundHealing_Slow</li>
+        <li>Delicate</li>                
         <li MayRequire="sarg.alphagenes">AG_NoLeather</li>
         <li MayRequire="sarg.alphagenes">AG_NoMeat</li>            
-        <li MayRequire="sarg.alphagenes">AG_DevourBrains</li>
         <li MayRequire="sarg.alphagenes">AG_Zap</li>
         <li MayRequire="sarg.alphagenes">AG_InsanityBlast</li>                       
+        <li MayRequire="sarg.alphagenes">AG_MiningYield_Low</li>        
         </genes>
       </li>        
       <li Class="BigAndSmall.PawnExtension">
