@@ -1,12 +1,67 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
   <BackstoryDef>
-    <defName>OMW_StoragebornChildhood</defName>
-    <title>Storageborn</title>
-    <titleShort>Storageborn</titleShort>
+    <defName>OMW_StoragebornChildhood_NeolithicFantasyNature</defName>
+    <title>Storageborn Nature Guardian</title>
+    <titleShort>Storageborn Nature Guardian</titleShort>
+    <description>They took root in rich soil and bedrock, silently observing the slow turn of seasons while absorbing nutrients from deep earth and decaying forest floors. Unburdened by fatigue, [PAWN_pronoun] carried immense weight across treacherous terrain with effortless stability, learning to endure crushing pressure and shape the land while remaining isolated from the frantic lives of warm-blooded creatures.</description>
+    <shuffleable>false</shuffleable>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>OMW_StoragebornChildhood_NeolithicFantasyMimic</defName>
+    <title>Storageborn Mimic</title>
+    <titleShort>Storageborn Mimic</titleShort>
+    <description>Hidden behind smooth varnish and forged hinges, [PAWN_nameDef] grew by perfectly imitating inert wooden and iron furnishings. [PAWN_pronoun] spent long stretches motionless in shadowed rooms and abandoned ruins, waiting patiently for unsuspecting prey to draw close before springing shut with crushing force and sharp internal barbs.</description>
+    <shuffleable>false</shuffleable>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>OMW_StoragebornChildhood_MedievalFurniture</defName>
+    <title>Storageborn Furniture</title>
+    <titleShort>Storageborn Furniture</titleShort>
+    <description>Polished to a fine luster and crafted with uncanny precision, [PAWN_nameDef] awoke into awareness with a innate sense of structure, balance, and quiet observe-and-serve instincts. Though remaining static to ordinary eyes, [PAWN_pronoun] learned to perceive the surrounding room in subtle vibrations, patiently bearing heavy loads and adjusting [PAWN_possessive] wooden frame to silently complement the lives of the creatures nearby.</description>
+    <shuffleable>false</shuffleable>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>OMW_StoragebornChildhood_IndustrialFurniture</defName>
+    <title>Storageborn Furniture</title>
+    <titleShort>Storageborn Furniture</titleShort>
     <description>Created during the hyper-consumerist zenith of a mid-tier glitterworld, the Storageborn were meant to be the ultimate logistical luxury: living furniture that could grow, flex, adapt to cargo sizes, and self-repair without taking up mechanical power. Their skeletons consist of dense, chitinous, flat-surfaced bone plates capable of locking into horizontal platforms, while their musculature functions like high-tension biological hydraulic straps.
 
 When the corporation bankrupt, millions of these "living storage solutions" were abandoned. Left without overseers, they developed true sapience, unbolted themselves from warehouse walls, and formed nomadic tribes. They view the gathering, organizing, and holding of items not just as a job, but as an intimate, sacred act of bodily fulfillment.</description>
     <shuffleable>false</shuffleable>
   </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>OMW_StoragebornChildhood_IndustrialStorage</defName>
+    <title>Storageborn Storage</title>
+    <titleShort>Storageborn Storage</titleShort>
+    <description>Creased along precise folds and reinforced at every join, [PAWN_nameDef] awoke into quiet self-awareness with a singular, driving purpose: to hold, protect, and organize whatever was placed inside. [PAWN_pronoun] learned to absorb heavy loads without bursting, maintaining structural integrity through endless movement while keeping secrets and prized belongings tucked safely within [PAWN_possessive] interior.
+</description>
+    <shuffleable>false</shuffleable>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>OMW_StoragebornChildhood_SpacerRobot</defName>
+    <title>Storageborn Robot</title>
+    <titleShort>Storageborn Robot</titleShort>
+    <description>Forged from heavy plating and wired with intricate internal logic, [PAWN_nameDef] awoke into functional self-awareness with an innate grasp of kinetic routines and systemic diagnostics. [PAWN_pronoun] processed vast streams of environmental data while executing demanding physical tasks without weariness, adapting [PAWN_possessive] heavy frame to calculate optimal movement, withstand crushing impacts, and safeguard valuable internal components.
+</description>
+    <shuffleable>false</shuffleable>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>OMW_StoragebornChildhood_UltraRobot</defName>
+    <title>Storageborn Robot</title>
+    <titleShort>Storageborn Robot</titleShort>
+    <description>Engineered from hyper-dense plasteel and laced with sub-atomic micro-circuitry, [PAWN_nameDef] awoke into precise self-awareness across a network of ultra-tech sub-processors. [PAWN_pronoun] processed trillions of environmental calculations every second, seamlessly manipulating high-density fields while bearing immense physical strains and managing intricate energy distribution without generating excess heat or strain.
+</description>
+    <shuffleable>false</shuffleable>
+  </BackstoryDef>
+
+
 </Defs>
+

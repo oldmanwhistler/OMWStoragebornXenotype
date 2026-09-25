@@ -11,6 +11,11 @@
       <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
         <OMW_StoragebornCategory>OMW_StoragebornCategory_Spacer</OMW_StoragebornCategory>
       </li>
+      <li Class="StoragebornXenotype.StoragebornBodyBackstoriesExtension">
+        <backgrounds>
+          <li>OMW_StoragebornChildhood_SpacerRobot</li>
+        </backgrounds>
+      </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
         <li>AptitudeStrong_Melee</li>        
@@ -50,6 +55,11 @@
       <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
         <OMW_StoragebornCategory>OMW_StoragebornCategory_Spacer</OMW_StoragebornCategory>
       </li>
+      <li Class="StoragebornXenotype.StoragebornBodyBackstoriesExtension">
+        <backgrounds>
+          <li>OMW_StoragebornChildhood_SpacerRobot</li>
+        </backgrounds>
+      </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
         <li>AptitudeStrong_Construction</li>        
@@ -88,6 +98,11 @@
     <modExtensions>
       <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
         <OMW_StoragebornCategory>OMW_StoragebornCategory_Spacer</OMW_StoragebornCategory>
+      </li>
+      <li Class="StoragebornXenotype.StoragebornBodyBackstoriesExtension">
+        <backgrounds>
+          <li>OMW_StoragebornChildhood_SpacerRobot</li>
+        </backgrounds>
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>

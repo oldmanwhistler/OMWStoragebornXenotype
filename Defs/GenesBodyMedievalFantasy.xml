@@ -11,6 +11,11 @@
       <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
         <OMW_StoragebornCategory>OMW_StoragebornCategory_MedievalFantasy</OMW_StoragebornCategory>
       </li>
+      <li Class="StoragebornXenotype.StoragebornBodyBackstoriesExtension">
+        <backgrounds>
+          <li>OMW_StoragebornChildhood_NeolithicFantasyMimic</li>
+        </backgrounds>
+      </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
         <li>AptitudeTerrible_Shooting</li>
@@ -58,6 +63,11 @@
     <modExtensions>
       <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
         <OMW_StoragebornCategory>OMW_StoragebornCategory_MedievalFantasy</OMW_StoragebornCategory>
+      </li>
+      <li Class="StoragebornXenotype.StoragebornBodyBackstoriesExtension">
+        <backgrounds>
+          <li>OMW_StoragebornChildhood_NeolithicFantasyMimic</li>
+        </backgrounds>
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
@@ -112,6 +122,12 @@
     <modExtensions>
       <li Class="StoragebornXenotype.StoragebornBodyCategoryExtension">
         <OMW_StoragebornCategory>OMW_StoragebornCategory_MedievalFantasy</OMW_StoragebornCategory>
+      </li>
+      <li Class="StoragebornXenotype.StoragebornBodyBackstoriesExtension">
+        <backgrounds>
+          <li>OMW_StoragebornChildhood_NeolithicFantasyMimic</li>
+          <li>OMW_StoragebornChildhood_MedievalFurniture</li>
+        </backgrounds>
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>

@@ -20,6 +20,11 @@ namespace StoragebornXenotype
         public List<GeneDef> genes = new List<GeneDef>();
     }
 
+    public class StoragebornBodyBackstoriesExtension : DefModExtension
+    {
+        public List<BackstoryDef> backgrounds = new List<BackstoryDef>();
+    }
+
     public static class WorldTechLevelIntegration
     {
         private const string PackageId = "m00nl1ght.WorldTechLevel";

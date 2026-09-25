@@ -4,6 +4,8 @@
   <StoragebornSettingsBodiesTab>Bodies</StoragebornSettingsBodiesTab>
   <StoragebornSettingsStagesTab>Storage carrying capacity stages</StoragebornSettingsStagesTab>
   <StoragebornSettingsBodyGenes>Enabled Storageborn genes</StoragebornSettingsBodyGenes>
+  <StoragebornSettingsBodyNoGenes>No additional genes</StoragebornSettingsBodyNoGenes>
+  <StoragebornSettingsResetAll>Reset all settings to default</StoragebornSettingsResetAll>
   <StoragebornSettingsFantasy>Fantasy</StoragebornSettingsFantasy>
   <StoragebornSettingsModern>Modern</StoragebornSettingsModern>
   <StoragebornSettingsFuturistic>Futuristic</StoragebornSettingsFuturistic>

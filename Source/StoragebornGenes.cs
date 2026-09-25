@@ -26,6 +26,14 @@ namespace StoragebornXenotype
         {
             base.PostAdd();
 
+            StoragebornBodyBackstoriesExtension backstoriesExtension = def.GetModExtension<StoragebornBodyBackstoriesExtension>();
+            if (pawn.story != null && backstoriesExtension?.backgrounds != null)
+            {
+                List<BackstoryDef> backgrounds = backstoriesExtension.backgrounds.Where(backstory => backstory != null).ToList();
+                if (backgrounds.Count > 0)
+                    pawn.story.Childhood = backgrounds.RandomElement();
+            }
+
             StoragebornBodyGenesExtension extension = def.GetModExtension<StoragebornBodyGenesExtension>();
             if (extension == null) return;
 
