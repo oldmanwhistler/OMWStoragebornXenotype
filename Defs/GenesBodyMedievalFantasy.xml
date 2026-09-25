@@ -28,6 +28,9 @@
         <li>BS_SnekEngulf</li>
         <li>BS_NoEquip</li>
         <li>Aggression_DeadCalm</li>
+        <li>WoundHealing_SuperFast</li>        
+        <li>Cannibal</li>   
+        <li MayRequire="sarg.alphagenes">AG_DevourBrains</li>              
         <li MayRequire="sarg.alphagenes">AG_PlainLeather</li>
         <li MayRequire="sarg.alphagenes">AG_TarBlood</li>        
         </genes>
@@ -78,6 +81,8 @@
         <li>BS_NoEquip</li>
         <li>KillThirst</li>
         <li>BS_AnimalFriend</li>
+        <li>WoundHealing_SuperFast</li>    
+        <li>Cannibal</li>               
         <li MayRequire="sarg.alphagenes">AG_NoxiousBreath</li>  
         <li MayRequire="sarg.alphagenes">AG_DevourBrains</li>              
         <li MayRequire="sarg.alphagenes">AG_TarBlood</li>
@@ -126,6 +131,7 @@
         <li>BS_SlimeAttack</li>
         <li>AcidSpray</li>
         <li>BS_NoEquip</li>
+        <li>WoundHealing_SuperFast</li>        
         <li MayRequire="sarg.alphagenes">AG_SlimeBlood</li>        
         <li MayRequire="sarg.alphagenes">AG_NoLeather</li>
         <li MayRequire="sarg.alphagenes">AG_NoMeat</li>         
