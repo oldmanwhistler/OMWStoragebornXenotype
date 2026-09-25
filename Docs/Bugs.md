@@ -4,6 +4,7 @@
 
 - Storageborn can't use guns/weapons. This was done as a tradeoff for their capabilities. Animations would also look weird because of how their bodies are implemented.
 - Storageborn can't use clothing/armour. This was done as a tradeoff for their capabilities. The clothing layering would look weird because of how their bodies are implemented. They were given natural armour and vacuum genes to compensate.
+- Because they have no heads, nothing sticks out when they sleep in a bed.
 
 ## Known Issues - Won't Fix
 

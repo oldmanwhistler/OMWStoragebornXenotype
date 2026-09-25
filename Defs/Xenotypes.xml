@@ -34,15 +34,14 @@
     <li MayRequire="redmattis.bigsmall.core">BS_BorealSkin</li>
     <li MayRequire="redmattis.bigsmall.core">BS_SkinFrostWhite</li>
     <li MayRequire="redmattis.bigsmall.core">VU_LightPallorSkin</li>
-    <li MayRequire="sarg.alphagenes">AG_Skin_Drakonori_PaleRed</li>
-    <li MayRequire="sarg.alphagenes">AG_Skin_Drakonori_PaleBlue</li>
-    <li MayRequire="sarg.alphagenes">AG_Skin_PaleBlueFish</li>
     <li MayRequire="redmattis.bigsmall.core">BS_CreamSkin</li>
     <li MayRequire="redmattis.bigsmall.core">BS_BorealSkin</li>
     <li MayRequire="redmattis.bigsmall.core">BS_SkinFrostWhite</li>
-    <li MayRequire="redmattis.bigsmall.core">VU_LightPallorSkin</li>
     <li MayRequire="redmattis.bigsmall.core">BS_VeryLightOrange</li>
     <li MayRequire="redmattis.bigsmall.core">VU_NosferatuSkin</li>    
+    <li MayRequire="sarg.alphagenes">AG_Skin_Drakonori_PaleRed</li>
+    <li MayRequire="sarg.alphagenes">AG_Skin_Drakonori_PaleBlue</li>
+    <li MayRequire="sarg.alphagenes">AG_Skin_PaleBlueFish</li>
     </genes>    
     <inheritable>true</inheritable>
     <canGenerateAsCombatant>true</canGenerateAsCombatant>
