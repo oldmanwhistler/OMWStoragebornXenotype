@@ -20,8 +20,7 @@
         <genes>
         <li>AptitudeStrong_Melee</li>        
         <li>AptitudeRemarkable_Construction</li>
-        <li>AptitudeTerrible_Intellectual</li>
-        <li>BS_Diet_Fuel</li>        
+        <li>AptitudeTerrible_Intellectual</li>       
         <li>Beauty_Ugly</li>        
         <li>PsychicAbility_Deaf</li>                
         <li>BS_AnimalFriend</li>                      
@@ -66,8 +65,7 @@
         <li>AptitudeRemarkable_Mining</li>
         <li>AptitudePoor_Plants</li>        
         <li>AptitudeTerrible_Social</li>        
-        <li MayRequire="sarg.alphagenes">AG_MiningYield_High</li>                            
-        <li>BS_Diet_Fuel</li>        
+        <li MayRequire="sarg.alphagenes">AG_MiningYield_High</li>                                 
         <li>PsychicAbility_Deaf</li>                
         <li>BS_AnimalFriend</li>                      
         <li>Neversleep</li>     
@@ -109,8 +107,7 @@
         <li>AptitudeRemarkable_Shooting</li>
         <li>AptitudeTerrible_Plants</li> 
         <li>AptitudeStrong_Crafting</li> 
-        <li>AptitudePoor_Social</li>                    
-        <li>BS_Diet_Fuel</li>                  
+        <li>AptitudePoor_Social</li>                                    
         <li>PsychicAbility_Deaf</li>                
         <li>BS_AnimalFriend</li>                      
         <li>Neversleep</li>     
