@@ -17,6 +17,7 @@
         <li>AptitudeRemarkable_Plants</li>
         <li>AptitudeTerrible_Animals</li>
         <li>BS_Diet_Herbivore</li>        
+        <li MayRequire="sarg.alphagenes">AG_LightSustenance</li>
         <li>BS_NaturalPsychic</li>
         <li>BS_AlienApperanceStandards_Lesser</li>
         <li>FireWeakness</li>
@@ -57,16 +58,19 @@
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
         <li>AptitudeRemarkable_Mining</li>
-        <li>AptitudeTerrible_Intellectual</li>        
+        <li MayRequire="sarg.alphagenes">AG_MiningYield_High</li>        
+        <li>AptitudeTerrible_Intellectual</li>
+        <li>RobustDigestion</li>                
         <li>PsychicAbility_Dull</li>
-        <li>BS_AlienApperanceStandards_Lesser</li>
         <li>BS_NoEquip</li>
         <li>BS_Unarmed_VeryStrong</li>    
+        <li>MeleeDamage_Strong</li>
         <li>Aggression_DeadCalm</li>        
         <li>BS_AnimalFriend</li>
         <li>VU_NoBlood</li>
         <li MayRequire="sarg.alphagenes">AG_NoLeather</li>
-        <li MayRequire="sarg.alphagenes">AG_NoMeat</li>        
+        <li MayRequire="sarg.alphagenes">AG_NoMeat</li>
+        <li MayRequire="sarg.alphagenes">AG_Clean</li>                
         </genes>
       </li>        
       <li Class="BigAndSmall.PawnExtension">

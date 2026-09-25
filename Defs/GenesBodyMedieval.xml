@@ -13,8 +13,10 @@
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
+        <li>AptitudeTerrible_Shooting</li>        
         <li>AptitudeTerrible_Artistic</li>
         <li>AptitudeRemarkable_Medicine</li>
+        <li>StrongStomach</li>        
         <li>PsychicAbility_Dull</li>
         <li>FireWeakness</li>
         <li>FireTerror</li>           
@@ -24,6 +26,8 @@
         <li>Aggression_DeadCalm</li>
         <li>BS_AnimalFriend</li>
         <li>VU_NoBlood</li>
+        <li>Learning_Fast</li>
+        <li>BS_PerfectMemory</li>                 
         <li MayRequire="sarg.alphagenes">AG_WoodLeather</li>
         <li MayRequire="sarg.alphagenes">AG_NoMeat</li>      
         </genes>

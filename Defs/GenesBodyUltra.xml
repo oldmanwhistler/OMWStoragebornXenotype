@@ -16,7 +16,7 @@
         <genes>
         <li>AptitudeRemarkable_Cooking</li>        
         <li>AptitudeTerrible_Artistic</li>
-        <li>BS_Diet_Universal</li>        
+        <li>BS_Diet_Fuel</li>         
         <li>PsychicAbility_Dull</li>  
         <li>BS_AnimalFriend</li>                      
         <li>Neversleep</li>     
@@ -61,7 +61,7 @@
         <genes>
         <li>AptitudeRemarkable_Social</li>        
         <li>AptitudeTerrible_Plants</li>        
-        <li>BS_Diet_Universal</li>        
+        <li>BS_Diet_Fuel</li>        
         <li>PsychicAbility_Enhanced</li>                
         <li>BS_AnimalFriend</li>                      
         <li>Neversleep</li>     
@@ -69,7 +69,7 @@
         <li>BS_Very_Passioned_Learning_Gene</li>        
         <li MayRequire="sarg.alphagenes">AG_NoLeather</li>
         <li MayRequire="sarg.alphagenes">AG_NoMeat</li>            
-        <li MayRequire="sarg.alphagenes">AG_Invisibility</li>
+        <li MayRequire="sarg.alphagenes">AG_Invisibility</li>     
         </genes>
       </li>        
       <li Class="BigAndSmall.PawnExtension">
@@ -99,7 +99,7 @@
         <genes>
         <li>AptitudeRemarkable_Intellectual</li>
         <li>AptitudeTerrible_Plants</li>                
-        <li>BS_Diet_Universal</li>        
+        <li>BS_Diet_Fuel</li>         
         <li>PsychicAbility_Extreme</li>                
         <li>BS_AnimalFriend</li>                      
         <li>Neversleep</li>     
@@ -108,7 +108,7 @@
         <li MayRequire="sarg.alphagenes">AG_NoMeat</li>            
         <li MayRequire="sarg.alphagenes">AG_DevourBrains</li>
         <li MayRequire="sarg.alphagenes">AG_Zap</li>
-        <li MayRequire="sarg.alphagenes">AG_InsanityBlast</li>                
+        <li MayRequire="sarg.alphagenes">AG_InsanityBlast</li>                       
         </genes>
       </li>        
       <li Class="BigAndSmall.PawnExtension">

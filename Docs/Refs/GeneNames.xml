@@ -67,6 +67,18 @@
         <li>BS_Diet_Herbivore</li>
         <li>BS_Diet_Universal</li>
         <li>Cannibal</li>     
+        <li>StrongStomach</li>
+        <li>RobustDigestion</li>
+        <li MayRequire="sarg.alphagenes">AG_LightSustenance</li>
+
+    <!-- Healing -->
+        <li>WoundHealing_Slow</li>
+        <li>WoundHealing_Fast</li>
+        <li>WoundHealing_SuperFast</li>
+
+        <li MayRequire="sarg.alphagenes">AG_MiningYield_High</li>
+        <li MayRequire="sarg.alphagenes">AG_MiningYield_Low</li>
+
 
     <!-- Psychic -->
         <li>PsychicAbility_Deaf</li>
@@ -155,7 +167,6 @@
         <li MayRequire="sarg.alphagenes">AG_PlainLeather</li>
         <li MayRequire="sarg.alphagenes">AG_WoodLeather</li>
         <li MayRequire="sarg.alphagenes">AG_WoolLeather</li>
-        <li MayRequire="sarg.alphagenes">AG_TetraCoils</li>
         <li MayRequire="sarg.alphagenes">AG_Clean</li>
         <li MayRequire="sarg.alphagenes">AG_Filthy</li>
         <li MayRequire="sarg.alphagenes">AG_ExtraLeather</li>

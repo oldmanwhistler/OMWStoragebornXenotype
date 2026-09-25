@@ -19,6 +19,7 @@
     <li MayRequire="redmattis.bigsmall.core">VU_Unliving</li>
     <li MayRequire="redmattis.bigsmall.core">BS_PainNumb</li>    
     <li MayRequire="sarg.alphagenes">AG_TableResistance</li>
+    <li MayRequire="sarg.alphagenes">AG_NoWings</li>    
     <li>ToxicEnvironmentResistance_Total</li>        
     <li>MaxTemp_LargeIncrease</li>
     <li>Robust</li>
@@ -27,11 +28,21 @@
     <li>DarkVision</li>
     <li>Skin_SheerWhite</li>
     <li>Skin_LightGray</li>
+    <li>Skin_PaleYellow</li>
     <li MayRequire="redmattis.bigsmall.core">BS_Skin_Marble_White</li>
     <li MayRequire="redmattis.bigsmall.core">BS_CreamSkin</li>
     <li MayRequire="redmattis.bigsmall.core">BS_BorealSkin</li>
     <li MayRequire="redmattis.bigsmall.core">BS_SkinFrostWhite</li>
     <li MayRequire="redmattis.bigsmall.core">VU_LightPallorSkin</li>
+    <li MayRequire="sarg.alphagenes">AG_Skin_Drakonori_PaleRed</li>
+    <li MayRequire="sarg.alphagenes">AG_Skin_Drakonori_PaleBlue</li>
+    <li MayRequire="sarg.alphagenes">AG_Skin_PaleBlueFish</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_CreamSkin</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_BorealSkin</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_SkinFrostWhite</li>
+    <li MayRequire="redmattis.bigsmall.core">VU_LightPallorSkin</li>
+    <li MayRequire="redmattis.bigsmall.core">BS_VeryLightOrange</li>
+    <li MayRequire="redmattis.bigsmall.core">VU_NosferatuSkin</li>    
     </genes>    
     <inheritable>true</inheritable>
     <canGenerateAsCombatant>true</canGenerateAsCombatant>

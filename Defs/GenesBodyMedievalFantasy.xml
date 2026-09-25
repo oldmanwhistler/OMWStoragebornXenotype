@@ -13,9 +13,11 @@
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
+        <li>AptitudeTerrible_Shooting</li>        
         <li>AptitudeRemarkable_Social</li>
         <li>AptitudeTerrible_Medicine</li>                
         <li>BS_Diet_Carnivore</li>
+        <li>RobustDigestion</li>        
         <li>PsychicAbility_Dull</li>
         <li>Nearsighted</li>
         <li>BS_SnekEngulf</li>
@@ -54,6 +56,7 @@
         <li>AptitudeRemarkable_Melee</li>
         <li>AptitudeTerrible_Shooting</li>
         <li>BS_Diet_Carnivore</li>
+        <li>RobustDigestion</li>        
         <li>PsychicAbility_Deaf</li>
         <li>BS_AlienApperanceStandards</li>   
         <li>FireWeakness</li>
@@ -64,7 +67,8 @@
         <li>BS_NoEquip</li>
         <li>KillThirst</li>
         <li>BS_AnimalFriend</li>
-        <li MayRequire="sarg.alphagenes">AG_NoxiousBreath</li>        
+        <li MayRequire="sarg.alphagenes">AG_NoxiousBreath</li>  
+        <li MayRequire="sarg.alphagenes">AG_DevourBrains</li>              
         <li MayRequire="sarg.alphagenes">AG_TarBlood</li>
         <li MayRequire="sarg.alphagenes">AG_WoodLeather</li>
         </genes>
@@ -95,8 +99,10 @@
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
+        <li>AptitudeTerrible_Shooting</li>        
         <li>AptitudeRemarkable_Artistic</li>        
         <li>AptitudeTerrible_Social</li>
+        <li>RobustDigestion</li>        
         <li>BS_AnimalFriend</li>
         <li>BS_AlienApperanceStandards_Lesser</li>   
         <li>Nearsighted</li>

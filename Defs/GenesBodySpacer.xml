@@ -51,7 +51,8 @@
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
-        <li>AptitudeRemarkable_Mining</li>                    
+        <li>AptitudeRemarkable_Mining</li>
+        <li MayRequire="sarg.alphagenes">AG_MiningYield_High</li>                            
         <li>AptitudeTerrible_Social</li>        
         <li>BS_Diet_Fuel</li>        
         <li>PsychicAbility_Deaf</li>                
