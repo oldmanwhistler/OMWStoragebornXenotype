@@ -35,6 +35,7 @@
         <li>Aggression_DeadCalm</li>
         <li>WoundHealing_SuperFast</li>        
         <li>Cannibal</li>   
+        <li>Immunity_Strong</li>        
         <li MayRequire="sarg.alphagenes">AG_DevourBrains</li>              
         <li MayRequire="sarg.alphagenes">AG_PlainLeather</li>
         <li MayRequire="sarg.alphagenes">AG_TarBlood</li>        
@@ -93,6 +94,7 @@
         <li>BS_AnimalFriend</li>
         <li>WoundHealing_SuperFast</li>    
         <li>Cannibal</li>               
+        <li>Immunity_SuperStrong</li>        
         <li MayRequire="sarg.alphagenes">AG_NoxiousBreath</li>  
         <li MayRequire="sarg.alphagenes">AG_DevourBrains</li>              
         <li MayRequire="sarg.alphagenes">AG_TarBlood</li>
@@ -148,6 +150,7 @@
         <li>AcidSpray</li>
         <li>BS_NoEquip</li>
         <li>WoundHealing_SuperFast</li>        
+        <li>Immunity_Strong</li>        
         <li MayRequire="sarg.alphagenes">AG_SlimeBlood</li>        
         <li MayRequire="sarg.alphagenes">AG_NoLeather</li>
         <li MayRequire="sarg.alphagenes">AG_NoMeat</li>         

@@ -76,6 +76,12 @@
         <li>WoundHealing_Fast</li>
         <li>WoundHealing_SuperFast</li>
 
+    <!-- Immunity -->
+        <li>Immunity_Weak</li>
+        <li>Immunity_Strong</li>
+        <li>Immunity_SuperStrong</li>
+
+    <!-- Miners -->
         <li MayRequire="sarg.alphagenes">AG_MiningYield_High</li>
         <li MayRequire="sarg.alphagenes">AG_MiningYield_Low</li>
 

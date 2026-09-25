@@ -133,6 +133,7 @@
         <li>BS_AnimalFriend</li>                      
         <li>Neversleep</li>     
         <li>VU_NoBlood</li>
+        <li>Immunity_Strong</li>
         <li>WoundHealing_Slow</li>
         <li>Delicate</li>                
         <li MayRequire="sarg.alphagenes">AG_NoLeather</li>

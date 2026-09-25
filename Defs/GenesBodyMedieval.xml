@@ -38,7 +38,9 @@
         <li>BS_AnimalFriend</li>
         <li>VU_NoBlood</li>
         <li>Learning_Fast</li>
-        <li>BS_PerfectMemory</li>                 
+        <li>BS_PerfectMemory</li>  
+        <li>WoundHealing_Fast</li>        
+        <li>Immunity_Strong</li>        
         <li MayRequire="sarg.alphagenes">AG_WoodLeather</li>
         <li MayRequire="sarg.alphagenes">AG_NoMeat</li>      
         </genes>
