@@ -83,8 +83,9 @@ namespace StoragebornXenotype
         public void DoWindowContents(UnityEngine.Rect inRect)
         {
             float tabHeight = 35f;
-            Rect bodyRect = new Rect(inRect.x, inRect.y + tabHeight, inRect.width, inRect.height - tabHeight);
-            Rect bodyViewRect = new Rect(0f, 0f, bodyRect.width - 16f, selectedTab == 0 ? 1400f : 520f);
+            float resetButtonHeight = 34f;
+            Rect bodyRect = new Rect(inRect.x, inRect.y + tabHeight, inRect.width, inRect.height - tabHeight - resetButtonHeight - 4f);
+            Rect bodyViewRect = new Rect(0f, 0f, bodyRect.width - 16f, selectedTab == 0 ? BodySettingsContentHeight() : 520f);
             float tabWidth = (inRect.width - 4f) / 3f;
 
             if (Widgets.ButtonText(new Rect(inRect.x, inRect.y, tabWidth, tabHeight), "StoragebornSettingsBodiesTab".Translate()))
@@ -105,6 +106,17 @@ namespace StoragebornXenotype
                 DrawQuestSettings(listing);
             listing.End();
             Widgets.EndScrollView();
+
+            if (Widgets.ButtonText(new Rect(inRect.x, inRect.yMax - resetButtonHeight, inRect.width, resetButtonHeight), "StoragebornSettingsResetAll".Translate()))
+                ResetAllSettings();
+        }
+
+        private static float BodySettingsContentHeight()
+        {
+            int bodyCount = System.Linq.Enumerable.Count(StoragebornController.BodyGeneDefs());
+            int categoryCount = System.Linq.Enumerable.Count(StoragebornController.BodyCategoryDefs());
+            // Includes the body/category toggles, per-category headings and gene rows, and footer buttons.
+            return 500f + categoryCount * 50f + bodyCount * 68f;
         }
 
         private void DrawBodySettings(Listing_Standard listing)
@@ -114,7 +126,7 @@ namespace StoragebornXenotype
             if (worldTechLevelAvailable)
             {
                 bool match = MatchWorldTechLevel;
-                listing.CheckboxLabeled("StoragebornSettingsMatchWorldTechLevel".Translate(), ref match);
+                CheckboxIndented(listing, "StoragebornSettingsMatchWorldTechLevel".Translate(), ref match);
                 if (match != MatchWorldTechLevel)
                     SetMatchWorldTechLevel(match);
             }
@@ -122,7 +134,7 @@ namespace StoragebornXenotype
             bool oldGuiEnabled = GUI.enabled;
             GUI.enabled = !MatchWorldTechLevel;
             bool categoryMode = enableByCategory;
-            listing.CheckboxLabeled("StoragebornSettingsEnableByCategory".Translate(), ref categoryMode);
+            CheckboxIndented(listing, "StoragebornSettingsEnableByCategory".Translate(), ref categoryMode);
             if (categoryMode != enableByCategory)
                 SetEnableByCategory(categoryMode);
 
@@ -133,7 +145,7 @@ namespace StoragebornXenotype
             {
                 bool enabled = IsCategoryEnabled(category.defName);
                 bool updated = enabled;
-                listing.CheckboxLabeled(category.LabelCap, ref updated);
+                CheckboxIndented(listing, category.LabelCap, ref updated);
                 if (updated != enabled)
                     SetCategoryEnabled(category.defName, updated);
             }
@@ -159,7 +171,7 @@ namespace StoragebornXenotype
         private void DrawQuestSettings(Listing_Standard listing)
         {
             listing.Label("StoragebornSettingsQuestTitle".Translate());
-            listing.CheckboxLabeled("StoragebornSettingsQuestEnabled".Translate(), ref storagebornRefugeeQuestEnabled);
+            CheckboxIndented(listing, "StoragebornSettingsQuestEnabled".Translate(), ref storagebornRefugeeQuestEnabled);
             listing.Label("StoragebornSettingsQuestDescription".Translate());
         }
 
@@ -172,12 +184,13 @@ namespace StoragebornXenotype
                 if (stageGene == null) continue;
 
                 listing.Label(stageGene.LabelCap);
-                Rect row = listing.GetRect(30f);
-                Widgets.Label(new Rect(row.x, row.y, 90f, row.height), "StoragebornSettingsOffset".Translate());
-                string offsetText = Widgets.TextField(new Rect(row.x + 90f, row.y, 100f, row.height), stageOffsets[i].ToString());
+                Rect row = listing.GetRect(60f);
+                float controlsX = row.x + 16f;
+                Widgets.Label(new Rect(controlsX, row.y, 246f, 30f), "StoragebornSettingsOffset".Translate());
+                string offsetText = Widgets.TextField(new Rect(controlsX + 246f, row.y, 100f, 30f), stageOffsets[i].ToString());
                 if (float.TryParse(offsetText, out float offset)) stageOffsets[i] = offset;
-                Widgets.Label(new Rect(row.x + 205f, row.y, 90f, row.height), "StoragebornSettingsFactor".Translate());
-                string factorText = Widgets.TextField(new Rect(row.x + 295f, row.y, 100f, row.height), stageFactors[i].ToString());
+                Widgets.Label(new Rect(controlsX, row.y + 30f, 234f, 30f), "StoragebornSettingsFactor".Translate());
+                string factorText = Widgets.TextField(new Rect(controlsX + 246f, row.y + 30f, 100f, 30f), stageFactors[i].ToString());
                 if (float.TryParse(factorText, out float factor)) stageFactors[i] = factor;
             }
 
@@ -190,14 +203,39 @@ namespace StoragebornXenotype
         {
             Rect row = listing.GetRect(68f);
             Texture2D texture = ContentFinder<Texture2D>.Get(bodyGene.iconPath, false);
+            Rect iconRect = new Rect(row.x, row.y, 64f, 64f);
             if (texture != null)
-                Widgets.DrawTextureFitted(new Rect(row.x, row.y, 64f, 64f), texture, 1f);
+                Widgets.DrawTextureFitted(iconRect, texture, 1f);
+
+            StoragebornBodyGenesExtension extension = bodyGene.GetModExtension<StoragebornBodyGenesExtension>();
+            string geneList = extension?.genes == null || extension.genes.Count == 0
+                ? "StoragebornSettingsBodyNoGenes".Translate().Resolve()
+                : string.Join("\n", extension.genes.Where(gene => gene != null).Select(gene => "• " + gene.LabelCap));
+            TooltipHandler.TipRegion(iconRect, geneList);
 
             bool enabled = IsBodyEnabled(bodyGene.defName);
             bool updated = enabled;
-            Widgets.CheckboxLabeled(new Rect(row.x + 72f, row.y, row.width - 72f, row.height), bodyGene.LabelCap, ref updated);
+            Widgets.CheckboxLabeled(new Rect(row.x + 88f, row.y, row.width - 88f, row.height), bodyGene.LabelCap, ref updated);
             if (updated != enabled)
                 SetBodyEnabled(bodyGene.defName, updated);
+        }
+
+        private static void CheckboxIndented(Listing_Standard listing, string label, ref bool value)
+        {
+            Rect row = listing.GetRect(30f);
+            Widgets.CheckboxLabeled(new Rect(row.x + 16f, row.y, row.width - 16f, row.height), label, ref value);
+        }
+
+        private void ResetAllSettings()
+        {
+            disabledBodyGenes.Clear();
+            disabledCategories.Clear();
+            matchWorldTechLevel = true;
+            enableByCategory = true;
+            storagebornRefugeeQuestEnabled = true;
+            stageOffsets = new[] { 25f, 50f, 75f, 100f, 150f };
+            stageFactors = new[] { 1f, 1.5f, 2f, 2.5f, 3f };
+            StoragebornController.ApplyStageStatSettings(stageOffsets, stageFactors);
         }
 
         public override void ExposeData()
