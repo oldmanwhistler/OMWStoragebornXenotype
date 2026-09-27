@@ -29,3 +29,5 @@ Psycasting genes were done thematically as well vs trying to achieve any game ba
 ## Balance
 
 The lack of armour and utility will make them overpowered for neolithic eras but then more balanced at higher tech eras.
+
+I had looked at the B&S "android fuel" diet for the "robot" storageborn but it was too hard to play with in early colonies.

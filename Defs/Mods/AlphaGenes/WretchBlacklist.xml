@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs MayRequire="sarg.alphagenes">
+  <AlphaGenes.WretchBlacklistDef>
+		<defName>BS_WretchBlacklistDef_Various</defName>
+		<blackListedGenes>							
+			<li>OMW_Storageborn</li>
+			<li>OMW_StorageHead</li>
+			<li>OMW_StoragebornCardboard</li>
+            <li>OMW_StoragebornSuitcase</li>
+            <li>OMW_StoragebornWardrobe</li>
+            <li>OMW_StoragebornLuggage</li>
+            <li>OMW_StoragebornMimic</li>
+            <li>OMW_StoragebornCube</li>
+            <li>OMW_StoragebornTreat</li>
+            <li>OMW_StoragebornGolem</li>
+            <li>OMW_StoragebornMechLoader</li>
+            <li>OMW_StoragebornRobot</li>
+            <li>OMW_StoragebornRobot2</li>
+            <li>OMW_StoragebornMaid</li>
+            <li>OMW_StoragebornOrb</li>
+            <li>OMW_StoragebornCube2</li>
+            <li>OMW_StoragebornStage_4</li>            
+            <li>OMW_StoragebornStage_3</li>            
+            <li>OMW_StoragebornStage_2</li>            
+            <li>OMW_StoragebornStage_1</li>            
+            <li>OMW_StoragebornStage_0</li>            
+		</blackListedGenes>							
+	</AlphaGenes.WretchBlacklistDef>
+</Defs>

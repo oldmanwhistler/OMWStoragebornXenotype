@@ -7,12 +7,8 @@ A race of sentient storage that can help but can't use weapons or armour. Inspir
 ## Features (English)
 
 - Storageborn gain storage capacity and natural armour as they age.
-- One xenotype with multiple body sub-types with variation
-- Mod settings to enable/disable body sub-types (with World Tech Level support)
-
-## Genes
-
-![Endogenes](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Images/endogenes.png?raw=true)
+- One xenotype with multiple body sub-types with variation.
+- Mod settings to enable/disable body sub-types.
 
 ## Body Types
 

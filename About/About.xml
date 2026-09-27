@@ -22,9 +22,15 @@
       <displayName>Big and Small - Genes and More</displayName>
       <steamWorkshopUrl>steam://url/CommunityFilePage/2920751126</steamWorkshopUrl>
     </li>
+    <li>
+      <packageId>oskarpotocki.vanillafactionsexpanded.core</packageId>
+      <displayName>Vanilla Expanded Framework</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2023507013</steamWorkshopUrl>
+    </li>
   </modDependencies>
   <loadAfter>
     <li>brrainz.harmony</li>
+    <li>sarg.alphagenes</li>
     <li>redmattis.bigsmall.core</li>
   </loadAfter>
   <loadBefore>
