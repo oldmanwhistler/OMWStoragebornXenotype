@@ -26,7 +26,21 @@ A race of sentient storage that can help but can't use weapons or armour. Inspir
 
 ## Recommended
 
-[Pickup and Haul](https://steamcommunity.com/sharedfiles/filedetails/?id=1279012058) - to make use of the extra inventory space.
+[Pickup and Haul](https://steamcommunity.com/sharedfiles/filedetails/?id=1279012058)
+
+Required to make use of the extra carrying capacity.
+
+[Tweaks Galore](https://steamcommunity.com/sharedfiles/filedetails/?id=2695164414)
+
+Enable "Hunters can use melee" since some storageborn pawns will be unable to equip ranged weapons.
+
+[Complex Jobs](https://steamcommunity.com/sharedfiles/filedetails/?id=2069684319)
+
+You'll want to set up storageborn to be your primary haulers. Using Complex Jobs with manual priorities lets you do this.
+
+[Keyz' Allow Utilities](https://steamcommunity.com/sharedfiles/filedetails/?id=3524716849)
+
+Gives the Haul+ immediate haul job.
 
 ## Compatibility
 

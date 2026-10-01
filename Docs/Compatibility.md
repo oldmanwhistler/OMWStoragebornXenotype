@@ -18,6 +18,12 @@ Makes use of the NoLeather / NoMeat genes as well as adding some abilities.
 
 Works fine.
 
+[Vanilla Apparel Expanded - Accessories](https://steamcommunity.com/sharedfiles/filedetails/?id=2521176396) - 591,674 Current Subscribers
+
+The Big & Small "no clothing or armor" gene blocks Backpacks, so the Storageborn race can't equip accessories.
+
+A normal cloth backpack adds +50kg, giving a baseliner 85kg, which would be the equivalent to a medium storageborn with default settings.
+
 ## Not Recommended
 
 [10x Carry Capacity](https://steamcommunity.com/sharedfiles/filedetails/?id=2019000693) - 23,678 Current Subscribers
@@ -26,7 +32,6 @@ The sets all pawns carrying capacity to 750kg which negates the carrying capacit
 
 ## Not Tested
 
-- [Vanilla Apparel Expanded - Accessories](https://steamcommunity.com/sharedfiles/filedetails/?id=2521176396) 591,674 Current Subscribers
 - [VRE Androids](https://steamcommunity.com/sharedfiles/filedetails/?id=2975771801) - 342,479 Current Subscribers
 - [Show Me Your Hands](https://steamcommunity.com/sharedfiles/filedetails/?id=3805568727) - 323,764 Current Subscribers
 - [Carry Capacity Fixed](https://steamcommunity.com/sharedfiles/filedetails/?id=2880150945) - 31,230 Current Subscribers
