@@ -12,40 +12,44 @@ namespace StoragebornXenotype
             new Harmony("oldmanwhistler.StoragebornXenotype").PatchAll();
         }
     }
-
-    [HarmonyPatch(typeof(RestUtility), nameof(RestUtility.CanUseBedEver), new[] { typeof(Pawn), typeof(ThingDef) })]
-    public static class StoragebornBedEligibilityPatch
+   
+    [HarmonyPatch]
+    public static class StoragebornSleepingBodyRenderPatch
     {
-        public static bool Prefix(Pawn p, ThingDef bedDef, ref bool __result)
+        public static System.Reflection.MethodBase TargetMethod()
         {
-            if (!StoragebornController.HasStoragebornGene(p) || StoragebornBedRules.IsAllowedStoragebornSleepingSpot(bedDef))
-                return true;
+            return AccessTools.Method(typeof(PawnRenderer), "GetBodyPos", new[]
+            {
+                typeof(UnityEngine.Vector3), typeof(PawnPosture), typeof(bool).MakeByRefType()
+            });
+        }
 
-            __result = false;
-            return false;
+        public static void Postfix(PawnRenderer __instance, PawnPosture posture, ref bool showBody)
+        {
+            if (posture != PawnPosture.LayingInBed && posture != PawnPosture.LayingInBedFaceUp)
+                return;
+
+            Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+            if (pawn != null && StoragebornController.HasStoragebornGene(pawn) && pawn.CurrentBed() != null)
+                showBody = true;
         }
     }
 
-    public static class StoragebornBedRules
+    [HarmonyPatch(typeof(PawnRenderNodeWorker_Body), nameof(PawnRenderNodeWorker_Body.CanDrawNow))]
+    public static class StoragebornBodyNodeVisibilityPatch
     {
-        public static bool IsAllowedStoragebornSleepingSpot(ThingDef bedDef)
+        public static void Postfix(PawnRenderNode node, PawnDrawParms parms, ref bool __result)
         {
-            return bedDef == ThingDefOf.SleepingSpot || bedDef.defName == "DoubleSleepingSpot" ||
-                (ModsConfig.BiotechActive && bedDef.defName == "BabySleepingSpot");
-        }
-    }
+            if (__result || parms.Portrait || parms.posture == PawnPosture.Standing ||
+                parms.flags.FlagSet(PawnRenderFlags.NoBody) || parms.bed == null ||
+                !parms.pawn.RaceProps.Humanlike || !node.DebugEnabled)
+                return;
 
-    [HarmonyPatch(typeof(CompAssignableToPawn_Bed), nameof(CompAssignableToPawn_Bed.CanAssignTo))]
-    public static class StoragebornBedAssignmentPatch
-    {
-        public static bool Prefix(CompAssignableToPawn_Bed __instance, Pawn pawn, ref AcceptanceReport __result)
-        {
-            ThingDef bedDef = __instance.parent.def;
-            if (!StoragebornController.HasStoragebornGene(pawn) || StoragebornBedRules.IsAllowedStoragebornSleepingSpot(bedDef))
-                return true;
+            if (parms.pawn.mindState?.duty?.def?.drawBodyOverride == false)
+                return;
 
-            __result = "StoragebornBedAssignmentRestriction".Translate();
-            return false;
+            if (StoragebornController.HasStoragebornGene(parms.pawn))
+                __result = true;
         }
     }
 
