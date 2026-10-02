@@ -77,11 +77,6 @@
     <description>Carriers of this gene have been modified to be a bit smaller</description>
     <iconPath>GeneIcons/BS_VeryScaleDown</iconPath>
     <displayOrderInCategory>1050</displayOrderInCategory>
-    <forcedTraits>
-      <li>
-        <def>Small</def>
-      </li>
-    </forcedTraits>
     <exclusionTags>
       <li>Tiny</li>
     </exclusionTags>
@@ -101,11 +96,6 @@
     <description>Carriers of this gene are very tiny.</description>
     <iconPath>GeneIcons/BS_VeryScaleDown</iconPath>
     <displayOrderInCategory>1050</displayOrderInCategory>
-    <forcedTraits>
-      <li>
-        <def>Dwarfism</def>
-      </li>
-    </forcedTraits>
     <exclusionTags>
       <li>Tiny</li>
     </exclusionTags>
