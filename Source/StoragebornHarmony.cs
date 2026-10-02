@@ -9,10 +9,34 @@ namespace StoragebornXenotype
     {
         static StoragebornHarmony()
         {
-            new Harmony("oldmanwhistler.StoragebornXenotype").PatchAll();
+            Harmony harmony = new Harmony("oldmanwhistler.StoragebornXenotype");
+            harmony.PatchAll();
+            TryPatchShowMeYourHands(harmony);
+        }
+
+        private static void TryPatchShowMeYourHands(Harmony harmony)
+        {
+            System.Type handDrawerType = AccessTools.TypeByName("ShowMeYourHands.HandDrawer");
+            if (handDrawerType == null)
+                return;
+
+            System.Reflection.MethodInfo postDraw = AccessTools.Method(handDrawerType, "PostDraw");
+            if (postDraw == null)
+            {
+                Log.Warning("[Storageborn Xenotype] Could not find Show Me Your Hands HandDrawer.PostDraw; Storageborn hand suppression was not applied.");
+                return;
+            }
+
+            harmony.Patch(postDraw, prefix: new HarmonyMethod(typeof(StoragebornHarmony), nameof(SkipShowMeYourHandsForStorageborn)));
+        }
+
+        public static bool SkipShowMeYourHandsForStorageborn(object __instance)
+        {
+            ThingWithComps parent = Traverse.Create(__instance).Field("parent").GetValue<ThingWithComps>();
+            return !(parent is Pawn pawn) || !StoragebornController.HasStoragebornGene(pawn);
         }
     }
-   
+
     [HarmonyPatch]
     public static class StoragebornSleepingBodyRenderPatch
     {

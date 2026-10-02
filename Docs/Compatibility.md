@@ -24,6 +24,10 @@ The Big & Small "no clothing or armor" gene blocks Backpacks, so the Storageborn
 
 A normal cloth backpack adds +50kg, giving a baseliner 85kg, which would be the equivalent to a medium storageborn with default settings.
 
+### [Show Me Your Hands](https://steamcommunity.com/sharedfiles/filedetails/?id=3805568727) - 323,764 Current Subscribers
+
+There's a patch to not show hands for Storageborn.
+
 ### Mods that randomize genes
 
 If storageborn genes are picked up as part of randomization it will set the xenotype. Storageborn hybrids are not possible.
@@ -34,11 +38,13 @@ If storageborn genes are picked up as part of randomization it will set the xeno
 
 The sets all pawns carrying capacity to 750kg which negates the carrying capacity from the Storageborn race. They still get their carrying capacity multiplier.
 
+[Carry Capacity Fixed](https://steamcommunity.com/sharedfiles/filedetails/?id=2880150945) - 31,230 Current Subscribers
+
+This will reduce the carry capacity of the race to that of normal baseliners. Which is disappointing.
+
 ## Not Tested
 
 - [VRE Androids](https://steamcommunity.com/sharedfiles/filedetails/?id=2975771801) - 342,479 Current Subscribers
-- [Show Me Your Hands](https://steamcommunity.com/sharedfiles/filedetails/?id=3805568727) - 323,764 Current Subscribers
-- [Carry Capacity Fixed](https://steamcommunity.com/sharedfiles/filedetails/?id=2880150945) - 31,230 Current Subscribers
 - [Strong Pawn](https://steamcommunity.com/sharedfiles/filedetails/?id=3523631891) - 7,909 Current Subscribers
 - [Carry Capacity from Bionics](https://steamcommunity.com/sharedfiles/filedetails/?id=3564369362) - 1,568 Current Subscribers
 - [dd.Armful Haul](https://steamcommunity.com/sharedfiles/filedetails/?id=3808100512) - 87 Current Subscribers

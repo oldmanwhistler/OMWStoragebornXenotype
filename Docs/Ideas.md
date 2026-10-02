@@ -1,7 +1,6 @@
 # Ideas
 
-- swedish meatballs
+- D&D Bag of Holding
 - samantha from DCC (nussy)
-- do ikea and fantasy as separate packs
 - add a dicebag if Shiny Math Rocks is installed
-- Alpha Skills support for dropping items on death?
+- Supports "No Leather" and "No Meat" but Spacer/Ultra could drop steel or components.

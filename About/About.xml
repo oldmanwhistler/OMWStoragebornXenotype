@@ -32,6 +32,7 @@
     <li>brrainz.harmony</li>
     <li>sarg.alphagenes</li>
     <li>redmattis.bigsmall.core</li>
+    <li>mlie.showmeyourhands</li>
   </loadAfter>
   <loadBefore>
     <li>mlie.10xcarryingcapacity</li>
