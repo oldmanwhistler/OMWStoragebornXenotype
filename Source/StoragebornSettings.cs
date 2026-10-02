@@ -122,7 +122,6 @@ namespace StoragebornXenotype
 
         private void DrawBodySettings(Listing_Standard listing)
         {
-            listing.Label("StoragebornSettingsBodyGenes".Translate());
             Rect modeRow = listing.GetRect(32f);
             Widgets.Label(new Rect(modeRow.x, modeRow.y, 150f, modeRow.height), "StoragebornSettingsSelectionMode".Translate());
             if (Widgets.ButtonText(new Rect(modeRow.x + 154f, modeRow.y, modeRow.width - 154f, modeRow.height), SelectionModeLabel(SelectionMode)))
@@ -138,6 +137,12 @@ namespace StoragebornXenotype
             }
 
             bool oldGuiEnabled = GUI.enabled;
+
+            if (SelectionMode == BodySelectionMode.PerBody)
+            {
+                    listing.Label("StoragebornSettingsBodyGenes".Translate());
+            }
+
             foreach (StoragebornCategoryDef category in StoragebornController.BodyCategoryDefs())
             {
                 List<GeneDef> categoryGenes = StoragebornController.BodyGeneDefs()
@@ -227,7 +232,7 @@ namespace StoragebornXenotype
             if (showProbability)
             {
                 Widgets.Label(new Rect(row.xMax - 64f, row.y + 5f, 58f, 24f), weight.ToString("0.00"));
-                float updatedWeight = Widgets.HorizontalSlider(new Rect(row.x + 88f, row.y + 32f, row.width - 152f, 20f), weight, 0f, 1f, false);
+                float updatedWeight = Widgets.HorizontalSlider(new Rect(row.x + 88f, row.y + 32f, row.width - 152f, 20f), weight, 0f, 1f, false, roundTo: 0.1f);
                 if (!Mathf.Approximately(updatedWeight, weight)) SetBodyWeight(bodyGene.defName, updatedWeight);
             }
         }
