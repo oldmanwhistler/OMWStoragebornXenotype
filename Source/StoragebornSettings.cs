@@ -49,7 +49,15 @@ namespace StoragebornXenotype
 
         private void SetSelectionMode(BodySelectionMode mode)
         {
-            if (mode == BodySelectionMode.WorldTechLevel && !WorldTechLevelIntegration.IsAvailable) return;
+            if (mode == BodySelectionMode.WorldTechLevel && !WorldTechLevelIntegration.IsAvailable)
+            {
+                mode = (int)BodySelectionMode.PerCategory;
+            }
+            if (mode == BodySelectionMode.PerCategory || mode == BodySelectionMode.WorldTechLevel)
+            {
+                bodyWeights.Clear();
+                disabledBodyGenes.Clear();
+            }
             bodySelectionMode = (int)mode;
         }
 
