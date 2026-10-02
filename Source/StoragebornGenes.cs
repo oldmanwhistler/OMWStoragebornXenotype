@@ -28,8 +28,28 @@ namespace StoragebornXenotype
         }
     }
 
+    public class StoragebornSubGene : Gene
+    {
+        protected void ResetXenotype()
+        {
+            // This changes gene randomization and hybrid births to force the storageborn xenotype.
+
+            Log.Message(
+                $"[Storageborn Xenotype] Body gene {def.defName} was added to a non-Storageborn xenotype ({pawn.genes?.Xenotype?.defName} -- resetting the OMW_Storageborn gene).");
+            // Remove the Storageborn gene since we are resetting the xenotype.
+            foreach (Gene gene in pawn.genes.GenesListForReading)
+            {
+                if (gene.def.defName == "OMW_Storageborn")
+                    pawn.genes?.RemoveGene(gene);
+            }
+
+            // this will reset the xenotype to storageborn and cause the body type to be randomized again.                
+            pawn.genes.AddGene(DefDatabase<GeneDef>.GetNamed("OMW_Storageborn"), xenogene: false);
+        }
+    }
+
     // This is a specific body gene to set the body type.
-    public class StoragebornBodyGene : Gene
+    public class StoragebornBodyGene : StoragebornSubGene
     {
         private readonly List<Gene> addedGenes = new List<Gene>();
 
@@ -44,18 +64,8 @@ namespace StoragebornXenotype
 
             if (pawn.genes.Xenotype?.defName != "omw_storageborn")
             {
-                // This changes gene randomization and hybrid births to force the storageborn xenotype.
                 // The hacky way body images are done with no heads won't work with a non-storageborn xenotype.
-                Log.Message(
-                    $"[Storageborn Xenotype] Body gene {def.defName} was added to a non-Storageborn xenotype ({pawn.genes?.Xenotype?.defName} -- resetting the OMW_Storageborn gene).");
-                // Remove the Storageborn gene since we are resetting the xenotype.
-                foreach (Gene gene in pawn.genes.GenesListForReading)
-                {
-                    if (gene.def.defName == "OMW_Storageborn")
-                        pawn.genes?.RemoveGene(gene);
-                }
-                // this will reset the xenotype to storageborn and cause the body type to be randomized again.                
-                pawn.genes.AddGene(DefDatabase<GeneDef>.GetNamed("OMW_Storageborn"), xenogene: false);                
+                ResetXenotype();
                 return;
             }            
             StoragebornBodyBackstoriesExtension backstoriesExtension = def.GetModExtension<StoragebornBodyBackstoriesExtension>();
@@ -103,13 +113,30 @@ namespace StoragebornXenotype
         }
     }
 
-    public class StoragebornSizeGene : Gene
+    public class StoragebornSizeGene : StoragebornSubGene
     {
         public override bool Active
         {
             get
             {
                 return base.Active && StoragebornController.HasStoragebornGene(pawn);
+            }
+        }
+
+        public override void PostAdd()
+        {
+            base.PostAdd();
+            if (pawn == null || pawn.genes == null)
+            {
+                Log.Error(
+                    $"[Storageborn Xenotype] Storage capacity gene {def.defName} was added to a null pawn or a pawn with no genes.");
+                return;
+            }
+
+            if (pawn.genes.Xenotype?.defName != "omw_storageborn")
+            {
+                // The hacky way body images are done with no heads won't work with a non-storageborn xenotype.
+                ResetXenotype();                
             }
         }
     }

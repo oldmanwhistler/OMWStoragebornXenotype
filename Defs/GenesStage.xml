@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <GeneDef Name="OMW_StorageStage" Abstract="True">
+    <prerequisite>OMW_Storageborn</prerequisite>     
     <displayCategory>Storageborn</displayCategory>
     <exclusionTags>
       <li>OMW_StorageStage</li>
