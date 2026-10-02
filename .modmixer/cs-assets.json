@@ -13,7 +13,8 @@
     "Storageborn/Bodies/MechLoader/Storageborn_south",
     "Storageborn/Bodies/Cube2/Storageborn_south",
     "Storageborn/Bodies/Robot/Storageborn_south",
-    "Storageborn/Bodies/Robot2/Storageborn_south"
+    "Storageborn/Bodies/Robot2/Storageborn_south",
+    "Storageborn/Bodies/Base/Storageborn_south"
   ],
   "audio": []
 }
