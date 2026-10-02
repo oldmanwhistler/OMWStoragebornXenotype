@@ -2,8 +2,9 @@
 <Defs>
   <GeneDef ParentName="GeneJawBase">
     <defName>OMW_StorageHead</defName>
+    <prerequisite>OMW_Storageborn</prerequisite>       
     <label>No head</label>
-    <description>Carriers of this gene don't have individual heads. Their head is part of their body</description>
+    <description>For carriers of this gene their head is part of their body</description>
     <iconPath>Head/StoragebornHead</iconPath>
     <displayCategory>Storageborn</displayCategory>    
     <displayOrderInCategory>98</displayOrderInCategory>
@@ -48,6 +49,7 @@
   <GeneDef Name="OMW_StorageBodyBase" Abstract="True">
     <displayCategory>Storageborn</displayCategory>
     <geneClass>StoragebornXenotype.StoragebornBodyGene</geneClass>
+    <prerequisite>OMW_Storageborn</prerequisite>    
     <canGenerateInGeneSet>false</canGenerateInGeneSet>
     <exclusionTags>
       <li>AG_Bodies</li>

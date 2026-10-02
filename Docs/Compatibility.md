@@ -4,25 +4,29 @@ I use this to keep track of mods I should test interactions with. I write down t
 
 ## Enhanced by
 
-[World Tech Level](https://steamcommunity.com/sharedfiles/filedetails/?id=3414187030) - 209,842 Current Subscribers
+### [World Tech Level](https://steamcommunity.com/sharedfiles/filedetails/?id=3414187030) - 209,842 Current Subscribers
 
 Storageborn mod settings can be set to match the World Tech Level. Change this setting before creating the world if you want randomizing your starting colonists to match the scenario tech level.
 
-[Alpha Genes](https://steamcommunity.com/sharedfiles/filedetails/?id=2891845502) - 290,826 Current Subscribers
+### [Alpha Genes](https://steamcommunity.com/sharedfiles/filedetails/?id=2891845502) - 290,826 Current Subscribers
 
 Makes use of the NoLeather / NoMeat genes as well as adding some abilities.
 
 ## Tested
 
-[Pick Up and Haul](https://steamcommunity.com/sharedfiles/filedetails/?id=1279012058) - 1,750,537 Current Subscribers
+### [Pick Up and Haul](https://steamcommunity.com/sharedfiles/filedetails/?id=1279012058) - 1,750,537 Current Subscribers
 
 Works fine.
 
-[Vanilla Apparel Expanded - Accessories](https://steamcommunity.com/sharedfiles/filedetails/?id=2521176396) - 591,674 Current Subscribers
+### [Vanilla Apparel Expanded - Accessories](https://steamcommunity.com/sharedfiles/filedetails/?id=2521176396) - 591,674 Current Subscribers
 
 The Big & Small "no clothing or armor" gene blocks Backpacks, so the Storageborn race can't equip accessories.
 
 A normal cloth backpack adds +50kg, giving a baseliner 85kg, which would be the equivalent to a medium storageborn with default settings.
+
+### Mods that randomize genes
+
+If storageborn genes are picked up as part of randomization it will set the xenotype. Storageborn hybrids are not possible.
 
 ## Not Recommended
 
@@ -42,4 +46,4 @@ The sets all pawns carrying capacity to 750kg which negates the carrying capacit
 - [Over Haulers](https://steamcommunity.com/sharedfiles/filedetails/?id=3799915738)- 72 Current Subscribers
 - [Bag of Holding and Cargo Pants](https://steamcommunity.com/sharedfiles/filedetails/?id=3572952795) - 71 Current Subscribers
 - All of the facial animations mods
-- Mods that add random starting genes to pawns
+- Modded beds. My patch to make the Storageborn show their body when sleeping on a bed should work with any modded bed.

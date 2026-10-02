@@ -5,16 +5,30 @@ using Verse;
 
 namespace StoragebornXenotype
 {
+    // These is the Storageborn Gene that all storageborn have
     public class StoragebornGene : Gene
     {
         public override void PostAdd()
         {
             base.PostAdd();
+            if (pawn.genes.Xenotype?.defName != "omw_storageborn")
+            {
+                // This changes gene randomization and hybrid births to force the storageborn xenotype.
+                // The hacky way body images are done with no heads won't work with a non-storageborn xenotype.
+                Log.Message(
+                    $"[Storageborn Xenotype] Body gene {def.defName} was added to a non-Storageborn xenotype ({pawn.genes?.Xenotype?.defName} -- resetting xenotype).");
+                pawn.genes?.SetXenotypeDirect(DefDatabase<XenotypeDef>.GetNamed("omw_storageborn"));
+                // SetXenotypeDirect doesn't add the bald and no beard genes if the pawn has already been generated, so we need to add them manually.
+                pawn.genes?.AddGene(DefDatabase<GeneDef>.GetNamed("Hair_BaldOnly"), xenogene: false);
+                pawn.genes?.AddGene(DefDatabase<GeneDef>.GetNamed("Beard_NoBeardOnly"), xenogene: false);
+            }
+
             StoragebornController.ApplyTo(pawn);
             StoragebornController.RandomizeBodyGene(pawn);
         }
     }
 
+    // This is a specific body gene to set the body type.
     public class StoragebornBodyGene : Gene
     {
         private readonly List<Gene> addedGenes = new List<Gene>();
@@ -28,15 +42,22 @@ namespace StoragebornXenotype
                 return;
             }
 
-            if (pawn.genes.Xenotype?.defName != "omw_storageborn") 
+            if (pawn.genes.Xenotype?.defName != "omw_storageborn")
             {
                 // This changes gene randomization and hybrid births to force the storageborn xenotype.
                 // The hacky way body images are done with no heads won't work with a non-storageborn xenotype.
-                Log.Error($"[Storageborn Xenotype] Body gene {def.defName} was added to a non-Storageborn xenotype ({pawn.genes?.Xenotype?.defName} -- resetting xenotype).");
-                pawn.genes?.SetXenotypeDirect(DefDatabase<XenotypeDef>.GetNamed("omw_storageborn"));
+                Log.Message(
+                    $"[Storageborn Xenotype] Body gene {def.defName} was added to a non-Storageborn xenotype ({pawn.genes?.Xenotype?.defName} -- resetting the OMW_Storageborn gene).");
+                // Remove the Storageborn gene since we are resetting the xenotype.
+                foreach (Gene gene in pawn.genes.GenesListForReading)
+                {
+                    if (gene.def.defName == "OMW_Storageborn")
+                        pawn.genes?.RemoveGene(gene);
+                }
+                // this will reset the xenotype to storageborn and cause the body type to be randomized again.                
+                pawn.genes.AddGene(DefDatabase<GeneDef>.GetNamed("OMW_Storageborn"), xenogene: false);                
                 return;
-            }
-            
+            }            
             StoragebornBodyBackstoriesExtension backstoriesExtension = def.GetModExtension<StoragebornBodyBackstoriesExtension>();
             if (pawn.story != null && backstoriesExtension?.backgrounds != null)
             {
