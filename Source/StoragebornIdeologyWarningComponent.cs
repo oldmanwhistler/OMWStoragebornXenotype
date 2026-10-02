@@ -28,13 +28,17 @@ namespace StoragebornXenotype
 
         private static bool PlayerIdeologyUsesHeadgear()
         {
-            Ideo ideo = Faction.OfPlayerSilentFail?.ideos?.PrimaryIdeo;
+            if (Faction.OfPlayerSilentFail?.ideos == null)
+                return false;
+            Ideo ideo = Faction.OfPlayerSilentFail.ideos.PrimaryIdeo;
             if (ideo?.PreceptsListForReading == null)
                 return false;
 
             foreach (Precept_Apparel precept in ideo.PreceptsListForReading.OfType<Precept_Apparel>())
             {
-                ApparelProperties apparel = precept.apparelDef?.apparel;
+                if (precept.apparelDef == null)
+                    continue;
+                ApparelProperties apparel = precept.apparelDef.apparel;
                 if (apparel == null || apparel.bodyPartGroups == null)
                     continue;
 
