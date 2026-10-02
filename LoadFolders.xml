@@ -1,0 +1,6 @@
+<loadFolders>
+  <v1.6>
+    <li>Defs</li>
+    <li IfModActive="sarg.alphagenes">1.6/Mods/AlphaGenes</li>
+  </v1.6>
+</loadFolders>

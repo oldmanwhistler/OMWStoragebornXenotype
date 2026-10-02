@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Defs MayRequire="sarg.alphagenes" MayRequire="sarg.alphagenes">
+<Defs>
   <AlphaGenes.WretchBlacklistDef>
 		<defName>BS_WretchBlacklistDef_OMW_Storageborn</defName>
 		<blackListedGenes>							
