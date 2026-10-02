@@ -1,46 +1,52 @@
 # Storageborn Xenotype
 
-A race of sentient storage that can help but can't use weapons or armour. Inspired by D&D mimics, the Luggage from Discworld and [Ikea's Kallax Storageborn mod for Skyrim](https://www.youtube.com/watch?v=0tBlFZsMuO8).
+A race of sentient storage solutions. Inspired by D&D mimics and the Luggage from Discworld.
 
-![Splash](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Images/splashpage.png?raw=true)
+![Splash](https://raw.githubusercontent.com/oldmanwhistler/OMWStoragebornXenotype/refs/heads/main/Docs/Images/splashpage.png)
 
 ## Features (English)
 
-- Storageborn gain storage capacity and natural armour as they age.
-- One xenotype with multiple body sub-types with variation.
-- Mod settings to enable/disable body sub-types.
+- One xenotype with multiple sub-types with different appearance and genes.
+- Storageborn gain storage capacity, natural armour and size as they age.
+- Mod settings to enable, disable or change random weights of body sub-types with World Tech Level support.
+
+## Caravan Capacity
+
+![Caravan Capacity](https://raw.githubusercontent.com/oldmanwhistler/OMWStoragebornXenotype/refs/heads/main/Docs/Images/caravan.png)
 
 ## Body Types
 
-![Fantasy Bodies](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Images/fantasy.png?raw=true)
+[Full lists of body types and their different genes]
 
-![Modern Bodies](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Images/modern.png?raw=true)
-
-![Futuristic Bodies](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Images/futuristic.png?raw=true)
-
-![In Game Screenshot](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Images/ingame.png?raw=true)
+![In Game Screenshot](https://raw.githubusercontent.com/oldmanwhistler/OMWStoragebornXenotype/refs/heads/main/Docs/Images/ingame.png)
 
 ## Configuration
 
-![Stages configuration](https://github.com/oldmanwhistler/OMWStoragebornXenotype/blob/main/Images/settings.png?raw=true)
+![Per Category](https://raw.githubusercontent.com/oldmanwhistler/OMWStoragebornXenotype/refs/heads/main/Docs/Images/Settings/percategory.png)
 
-## Recommended
+![Per Body](https://raw.githubusercontent.com/oldmanwhistler/OMWStoragebornXenotype/refs/heads/main/Docs/Images/Settings/perbody.png)
+
+![Stages configuration](https://raw.githubusercontent.com/oldmanwhistler/OMWStoragebornXenotype/refs/heads/main/Docs/Images/Settings/stages.png)
+
+![Quest configuration](https://raw.githubusercontent.com/oldmanwhistler/OMWStoragebornXenotype/refs/heads/main/Docs/Images/Settings/quest.png)
+
+## Recommended Mods
 
 [Pickup and Haul](https://steamcommunity.com/sharedfiles/filedetails/?id=1279012058)
 
-Required to make use of the extra carrying capacity.
+Required to make use of the extra carrying capacity while hauling.
 
 [Tweaks Galore](https://steamcommunity.com/sharedfiles/filedetails/?id=2695164414)
 
-Enable "Hunters can use melee" since some storageborn pawns will be unable to equip ranged weapons.
+Enables "Hunters can use melee" since some storageborn pawns will be unable to equip ranged weapons.
 
 [Complex Jobs](https://steamcommunity.com/sharedfiles/filedetails/?id=2069684319)
 
-You'll want to set up storageborn to be your primary haulers. Using Complex Jobs with manual priorities lets you do this.
+Use Complex Jobs with manual priorities have your storageborn be your primary haulers.
 
 [Keyz' Allow Utilities](https://steamcommunity.com/sharedfiles/filedetails/?id=3524716849)
 
-Gives the Haul+ immediate haul job.
+Gives the Haul+ prioritized haul job.
 
 ## Compatibility
 
