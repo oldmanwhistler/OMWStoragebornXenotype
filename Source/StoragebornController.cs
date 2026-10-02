@@ -161,12 +161,20 @@ namespace StoragebornXenotype
         {
             if (pawn?.genes == null || !HasStoragebornGene(pawn)) return;
 
-            StoragebornSettings settings = StoragebornXenotypeMod.Instance?.Settings;
+            StoragebornSettings settings = StoragebornXenotypeMod.Instance.Settings;
             List<GeneDef> enabled = BodyGeneDefs()
-                .Where(def => settings?.IsBodyEffectivelyEnabled(def) ?? true)
+                .Where(def => settings.IsBodyEffectivelyEnabled(def))
                 .Where(def => settings == null || settings.GetBodyWeight(def.defName) > 0f)
                 .ToList();
-            GeneDef selected = null;
+            GeneDef selectedGeneDef = DefDatabase<GeneDef>.GetNamedSilentFail("OMW_StorageBodyWardrobe");
+            if (selectedGeneDef == null)
+            {
+                Log.Error(
+                    "[Storageborn Xenotype] Fallback body gene OMW_StorageBodyWardrobe could not be found; existing body genes were left unchanged.");
+                return;
+            }
+
+            bool selectedSelected = false;
             float totalWeight = enabled.Sum(def => settings?.GetBodyWeight(def.defName) ?? 1f);
             if (totalWeight > 0f)
             {
@@ -176,22 +184,17 @@ namespace StoragebornXenotype
                     roll -= settings?.GetBodyWeight(candidate.defName) ?? 1f;
                     if (roll < 0f)
                     {
-                        selected = candidate;
+                        selectedGeneDef = candidate;
+                        selectedSelected = true;
                         break;
                     }
                 }
-                selected ??= enabled[enabled.Count - 1];
+                if (!selectedSelected) selectedGeneDef = enabled[enabled.Count - 1];
             }
 
-            if (selected == null)
+            if (selectedSelected == false)
             {
                 Log.Error("[Storageborn Xenotype] No eligible Storageborn body subtype had a positive relative weight; defaulting to OMW_StorageBodyWardrobe.");
-                selected = DefDatabase<GeneDef>.GetNamedSilentFail("OMW_StorageBodyWardrobe");
-                if (selected == null)
-                {
-                    Log.Error("[Storageborn Xenotype] Fallback body gene OMW_StorageBodyWardrobe could not be found; existing body genes were left unchanged.");
-                    return;
-                }
             }
 
             List<Gene> existing = pawn.genes.GenesListForReading
@@ -201,7 +204,7 @@ namespace StoragebornXenotype
             foreach (Gene gene in existing)
                 pawn.genes.RemoveGene(gene);
 
-            pawn.genes.AddGene(selected, xenogene: false);
+            pawn.genes.AddGene(selectedGeneDef, xenogene: false);
         }
 
         public static void RerandomizeAllStorageborn()
