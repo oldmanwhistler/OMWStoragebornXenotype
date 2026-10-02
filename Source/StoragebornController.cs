@@ -161,12 +161,39 @@ namespace StoragebornXenotype
         {
             if (pawn?.genes == null || !HasStoragebornGene(pawn)) return;
 
+            StoragebornSettings settings = StoragebornXenotypeMod.Instance?.Settings;
             List<GeneDef> enabled = BodyGeneDefs()
-                .Where(def => StoragebornXenotypeMod.Instance?.Settings?.IsBodyEffectivelyEnabled(def) ?? true)
+                .Where(def => settings?.IsBodyEffectivelyEnabled(def) ?? true)
+                .Where(def => settings == null || settings.GetBodyWeight(def.defName) > 0f)
                 .ToList();
-            if (enabled.Count == 0) return;
+            GeneDef selected = null;
+            float totalWeight = enabled.Sum(def => settings?.GetBodyWeight(def.defName) ?? 1f);
+            if (totalWeight > 0f)
+            {
+                float roll = Rand.Value * totalWeight;
+                foreach (GeneDef candidate in enabled)
+                {
+                    roll -= settings?.GetBodyWeight(candidate.defName) ?? 1f;
+                    if (roll < 0f)
+                    {
+                        selected = candidate;
+                        break;
+                    }
+                }
+                selected ??= enabled[enabled.Count - 1];
+            }
 
-            GeneDef selected = enabled.RandomElement();
+            if (selected == null)
+            {
+                Log.Error("[Storageborn Xenotype] No eligible Storageborn body subtype had a positive relative weight; defaulting to OMW_StorageBodyWardrobe.");
+                selected = DefDatabase<GeneDef>.GetNamedSilentFail("OMW_StorageBodyWardrobe");
+                if (selected == null)
+                {
+                    Log.Error("[Storageborn Xenotype] Fallback body gene OMW_StorageBodyWardrobe could not be found; existing body genes were left unchanged.");
+                    return;
+                }
+            }
+
             List<Gene> existing = pawn.genes.GenesListForReading
                 .Where(g => BodyGeneDefNames.Contains(g.def.defName))
                 .ToList();

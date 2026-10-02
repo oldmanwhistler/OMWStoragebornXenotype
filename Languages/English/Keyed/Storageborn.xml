@@ -3,7 +3,8 @@
   <StoragebornSettingsCategory>Storageborn Xenotype</StoragebornSettingsCategory>
   <StoragebornSettingsBodiesTab>Bodies</StoragebornSettingsBodiesTab>
   <StoragebornSettingsStagesTab>Storage carrying capacity stages</StoragebornSettingsStagesTab>
-  <StoragebornSettingsBodyGenes>Enabled Storageborn genes</StoragebornSettingsBodyGenes>
+  <StoragebornSettingsBodyGenes>Storageborn body subtype weights (0 disables a subtype; range 0–1)</StoragebornSettingsBodyGenes>
+  <StoragebornSettingsWeight>Weight</StoragebornSettingsWeight>
   <StoragebornSettingsBodyNoGenes>No additional genes</StoragebornSettingsBodyNoGenes>
   <StoragebornSettingsResetAll>Reset all settings to default</StoragebornSettingsResetAll>
   <StoragebornSettingsFantasy>Fantasy</StoragebornSettingsFantasy>
@@ -18,8 +19,10 @@
   <StoragebornSettingsQuestTitle>Storageborn refuge quest</StoragebornSettingsQuestTitle>
   <StoragebornSettingsQuestEnabled>Enable the Storageborn refuge quest</StoragebornSettingsQuestEnabled>
   <StoragebornSettingsQuestDescription>A Storageborn wanderer will seek refuge and offer to join the colony.</StoragebornSettingsQuestDescription>
-  <StoragebornSettingsMatchWorldTechLevel>Match world tech level</StoragebornSettingsMatchWorldTechLevel>
-  <StoragebornSettingsEnableByCategory>Enable by category</StoragebornSettingsEnableByCategory>
+  <StoragebornSettingsSelectionMode>Selection mode</StoragebornSettingsSelectionMode>
+  <StoragebornSettingsPerCategory>Per category</StoragebornSettingsPerCategory>
+  <StoragebornSettingsPerBody>Per body</StoragebornSettingsPerBody>
+  <StoragebornSettingsFollowWorldTechLevel>Follow World Tech Level</StoragebornSettingsFollowWorldTechLevel>
   <StoragebornSettingsCategories>Storageborn categories</StoragebornSettingsCategories>
   <StoragebornSettingsBodyStatus>Display body enable status</StoragebornSettingsBodyStatus>
   <StoragebornSettingsStatusEnabled>{0} — Enabled</StoragebornSettingsStatusEnabled>
@@ -32,4 +35,6 @@
   <StoragebornSettingsReasonIndividualDisabled>Reason: individual body setting is disabled</StoragebornSettingsReasonIndividualDisabled>
   <StoragebornSettingsReasonMissingCategory>Reason: body has no category</StoragebornSettingsReasonMissingCategory>
   <StoragebornSettingsUnknownCategory>Unknown category</StoragebornSettingsUnknownCategory>
+  <StoragebornIdeologyHeadgearLetterLabel>Ideology apparel warning</StoragebornIdeologyHeadgearLetterLabel>
+  <StoragebornIdeologyHeadgearWarning>Storageborn Xenotype does not support Ideology apparel.</StoragebornIdeologyHeadgearWarning>
 </LanguageData>

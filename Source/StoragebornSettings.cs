@@ -9,18 +9,20 @@ namespace StoragebornXenotype
     public class StoragebornSettings : ModSettings
     {
         private List<string> disabledBodyGenes = new List<string>();
+        private Dictionary<string, float> bodyWeights = new Dictionary<string, float>();
         private Vector2 scrollPosition;
         private int selectedTab;
         private float[] stageOffsets = { 25f, 50f, 75f, 100f, 150f };
         private float[] stageFactors = { 1.0f, 1.5f, 2.0f, 2.5f, 3.0f };
         private bool storagebornRefugeeQuestEnabled = true;
-        private bool matchWorldTechLevel = true;
-        private bool enableByCategory = true;
+        private int bodySelectionMode = 0;
         private List<string> disabledCategories = new List<string>();
 
         public bool StoragebornRefugeeQuestEnabled => storagebornRefugeeQuestEnabled;
-        public bool MatchWorldTechLevel => matchWorldTechLevel && WorldTechLevelIntegration.IsAvailable;
-        public bool EnableByCategory => enableByCategory;
+        private enum BodySelectionMode { PerCategory = 0, PerBody = 1, WorldTechLevel = 2 }
+        private BodySelectionMode SelectionMode => (BodySelectionMode)Mathf.Clamp(bodySelectionMode, 0, 2);
+        public bool MatchWorldTechLevel => SelectionMode == BodySelectionMode.WorldTechLevel && WorldTechLevelIntegration.IsAvailable;
+        public bool EnableByCategory => SelectionMode == BodySelectionMode.PerCategory;
         public bool IsCategoryEnabled(string defName) => !disabledCategories.Contains(defName);
 
         public bool IsBodyEffectivelyEnabled(GeneDef gene)
@@ -28,10 +30,10 @@ namespace StoragebornXenotype
             StoragebornCategoryDef category = StoragebornController.BodyCategory(gene);
             if (category == null) return false;
             if (MatchWorldTechLevel && WorldTechLevelIntegration.TryGetWorldTechLevel(out TechLevel worldTechLevel))
-                return category.worldTechLevel <= worldTechLevel;
-            if (enableByCategory)
-                return IsCategoryEnabled(category.defName);
-            return IsBodyEnabled(gene.defName);
+                return category.worldTechLevel <= worldTechLevel && GetBodyWeight(gene.defName) > 0f;
+            if (EnableByCategory && !IsCategoryEnabled(category.defName))
+                return false;
+            return GetBodyWeight(gene.defName) > 0f;
         }
 
         public string BodyStatusReasonKey(GeneDef gene)
@@ -39,26 +41,16 @@ namespace StoragebornXenotype
             StoragebornCategoryDef category = StoragebornController.BodyCategory(gene);
             if (category == null) return "StoragebornSettingsReasonMissingCategory";
             if (MatchWorldTechLevel && WorldTechLevelIntegration.TryGetWorldTechLevel(out TechLevel worldTechLevel))
-                return category.worldTechLevel <= worldTechLevel ? "StoragebornSettingsReasonWorldAllowed" : "StoragebornSettingsReasonWorldBlocked";
-            if (enableByCategory)
-                return IsCategoryEnabled(category.defName) ? "StoragebornSettingsReasonCategoryEnabled" : "StoragebornSettingsReasonCategoryDisabled";
-            return IsBodyEnabled(gene.defName) ? "StoragebornSettingsReasonIndividualEnabled" : "StoragebornSettingsReasonIndividualDisabled";
+                return category.worldTechLevel > worldTechLevel ? "StoragebornSettingsReasonWorldBlocked" : GetBodyWeight(gene.defName) > 0f ? "StoragebornSettingsReasonWorldAllowed" : "StoragebornSettingsReasonIndividualDisabled";
+            if (EnableByCategory && !IsCategoryEnabled(category.defName))
+                return "StoragebornSettingsReasonCategoryDisabled";
+            return GetBodyWeight(gene.defName) > 0f ? "StoragebornSettingsReasonIndividualEnabled" : "StoragebornSettingsReasonIndividualDisabled";
         }
 
-        public void SetMatchWorldTechLevel(bool value)
+        private void SetSelectionMode(BodySelectionMode mode)
         {
-            matchWorldTechLevel = value && WorldTechLevelIntegration.IsAvailable;
-            if (!matchWorldTechLevel)
-            {
-                enableByCategory = true;
-                disabledCategories.Clear();
-                disabledBodyGenes.Clear();
-            }
-        }
-
-        public void SetEnableByCategory(bool value)
-        {
-            enableByCategory = value;
+            if (mode == BodySelectionMode.WorldTechLevel && !WorldTechLevelIntegration.IsAvailable) return;
+            bodySelectionMode = (int)mode;
         }
 
         public void SetCategoryEnabled(string defName, bool enabled)
@@ -67,18 +59,19 @@ namespace StoragebornXenotype
             else if (!disabledCategories.Contains(defName)) disabledCategories.Add(defName);
         }
 
-        public bool IsBodyEnabled(string defName)
+        public float GetBodyWeight(string defName)
         {
-            return !disabledBodyGenes.Contains(defName);
+            if (bodyWeights.TryGetValue(defName, out float weight))
+                return Mathf.Clamp01(weight);
+            return disabledBodyGenes.Contains(defName) ? 0f : 1f;
         }
 
-        public void SetBodyEnabled(string defName, bool enabled)
+        public void SetBodyWeight(string defName, float weight)
         {
-            if (enabled)
-                disabledBodyGenes.Remove(defName);
-            else if (!disabledBodyGenes.Contains(defName))
-                disabledBodyGenes.Add(defName);
+            bodyWeights[defName] = Mathf.Clamp01(weight);
         }
+
+        public bool IsBodyEnabled(string defName) => GetBodyWeight(defName) > 0f;
 
         public void DoWindowContents(UnityEngine.Rect inRect)
         {
@@ -116,48 +109,46 @@ namespace StoragebornXenotype
             int bodyCount = System.Linq.Enumerable.Count(StoragebornController.BodyGeneDefs());
             int categoryCount = System.Linq.Enumerable.Count(StoragebornController.BodyCategoryDefs());
             // Includes the body/category toggles, per-category headings and gene rows, and footer buttons.
-            return 500f + categoryCount * 50f + bodyCount * 68f;
+            return 420f + categoryCount * 54f + bodyCount * 68f;
         }
 
         private void DrawBodySettings(Listing_Standard listing)
         {
             listing.Label("StoragebornSettingsBodyGenes".Translate());
-            bool worldTechLevelAvailable = WorldTechLevelIntegration.IsAvailable;
-            if (worldTechLevelAvailable)
+            Rect modeRow = listing.GetRect(32f);
+            Widgets.Label(new Rect(modeRow.x, modeRow.y, 150f, modeRow.height), "StoragebornSettingsSelectionMode".Translate());
+            if (Widgets.ButtonText(new Rect(modeRow.x + 154f, modeRow.y, modeRow.width - 154f, modeRow.height), SelectionModeLabel(SelectionMode)))
             {
-                bool match = MatchWorldTechLevel;
-                CheckboxIndented(listing, "StoragebornSettingsMatchWorldTechLevel".Translate(), ref match);
-                if (match != MatchWorldTechLevel)
-                    SetMatchWorldTechLevel(match);
+                List<FloatMenuOption> options = new List<FloatMenuOption>
+                {
+                    new FloatMenuOption(SelectionModeLabel(BodySelectionMode.PerCategory), () => SetSelectionMode(BodySelectionMode.PerCategory)),
+                    new FloatMenuOption(SelectionModeLabel(BodySelectionMode.PerBody), () => SetSelectionMode(BodySelectionMode.PerBody))
+                };
+                if (WorldTechLevelIntegration.IsAvailable)
+                    options.Add(new FloatMenuOption(SelectionModeLabel(BodySelectionMode.WorldTechLevel), () => SetSelectionMode(BodySelectionMode.WorldTechLevel)));
+                Find.WindowStack.Add(new FloatMenu(options));
             }
 
             bool oldGuiEnabled = GUI.enabled;
-            GUI.enabled = !MatchWorldTechLevel;
-            bool categoryMode = enableByCategory;
-            CheckboxIndented(listing, "StoragebornSettingsEnableByCategory".Translate(), ref categoryMode);
-            if (categoryMode != enableByCategory)
-                SetEnableByCategory(categoryMode);
-
-            listing.Label("StoragebornSettingsCategories".Translate());
-            bool categoriesEnabled = !MatchWorldTechLevel && enableByCategory;
-            GUI.enabled = categoriesEnabled;
             foreach (StoragebornCategoryDef category in StoragebornController.BodyCategoryDefs())
             {
-                bool enabled = IsCategoryEnabled(category.defName);
-                bool updated = enabled;
-                CheckboxIndented(listing, category.LabelCap, ref updated);
-                if (updated != enabled)
-                    SetCategoryEnabled(category.defName, updated);
-            }
-
-            GUI.enabled = !MatchWorldTechLevel && !enableByCategory;
-            foreach (StoragebornCategoryDef category in StoragebornController.BodyCategoryDefs())
-            {
+                List<GeneDef> categoryGenes = StoragebornController.BodyGeneDefs()
+                    .Where(gene => StoragebornController.BodyCategory(gene) == category).ToList();
+                if (SelectionMode == BodySelectionMode.WorldTechLevel &&
+                    (!WorldTechLevelIntegration.TryGetWorldTechLevel(out TechLevel worldTechLevel) || category.worldTechLevel > worldTechLevel)) continue;
                 listing.Gap();
-                listing.Label(category.LabelCap);
-                foreach (GeneDef bodyGene in StoragebornController.BodyGeneDefs()
-                    .Where(gene => StoragebornController.BodyCategory(gene) == category))
-                    DrawBodyGene(listing, bodyGene);
+                if (SelectionMode == BodySelectionMode.PerCategory)
+                {
+                    bool enabled = IsCategoryEnabled(category.defName);
+                    bool updated = enabled;
+                    CheckboxIndented(listing, category.LabelCap, ref updated);
+                    if (updated != enabled) SetCategoryEnabled(category.defName, updated);
+                }
+                else listing.Label(category.LabelCap);
+                foreach (GeneDef bodyGene in categoryGenes)
+                {
+                    DrawBodyGene(listing, bodyGene, SelectionMode == BodySelectionMode.PerBody);
+                }
             }
             GUI.enabled = oldGuiEnabled;
 
@@ -199,7 +190,17 @@ namespace StoragebornXenotype
                 StoragebornController.ApplyStageStatSettings(stageOffsets, stageFactors);
         }
 
-        private void DrawBodyGene(Listing_Standard listing, GeneDef bodyGene)
+        private string SelectionModeLabel(BodySelectionMode mode)
+        {
+            switch (mode)
+            {
+                case BodySelectionMode.PerBody: return "StoragebornSettingsPerBody".Translate();
+                case BodySelectionMode.WorldTechLevel: return "StoragebornSettingsFollowWorldTechLevel".Translate();
+                default: return "StoragebornSettingsPerCategory".Translate();
+            }
+        }
+
+        private void DrawBodyGene(Listing_Standard listing, GeneDef bodyGene, bool showProbability)
         {
             Rect row = listing.GetRect(68f);
             Texture2D texture = ContentFinder<Texture2D>.Get(bodyGene.iconPath, false);
@@ -213,11 +214,14 @@ namespace StoragebornXenotype
                 : string.Join("\n", extension.genes.Where(gene => gene != null).Select(gene => "• " + gene.LabelCap));
             TooltipHandler.TipRegion(iconRect, geneList);
 
-            bool enabled = IsBodyEnabled(bodyGene.defName);
-            bool updated = enabled;
-            Widgets.CheckboxLabeled(new Rect(row.x + 88f, row.y, row.width - 88f, row.height), bodyGene.LabelCap, ref updated);
-            if (updated != enabled)
-                SetBodyEnabled(bodyGene.defName, updated);
+            float weight = GetBodyWeight(bodyGene.defName);
+            Widgets.Label(new Rect(row.x + 88f, row.y + 5f, row.width - 100f, 24f), bodyGene.LabelCap);
+            if (showProbability)
+            {
+                Widgets.Label(new Rect(row.xMax - 64f, row.y + 5f, 58f, 24f), weight.ToString("0.00"));
+                float updatedWeight = Widgets.HorizontalSlider(new Rect(row.x + 88f, row.y + 32f, row.width - 152f, 20f), weight, 0f, 1f, false);
+                if (!Mathf.Approximately(updatedWeight, weight)) SetBodyWeight(bodyGene.defName, updatedWeight);
+            }
         }
 
         private static void CheckboxIndented(Listing_Standard listing, string label, ref bool value)
@@ -229,9 +233,9 @@ namespace StoragebornXenotype
         private void ResetAllSettings()
         {
             disabledBodyGenes.Clear();
+            bodyWeights.Clear();
             disabledCategories.Clear();
-            matchWorldTechLevel = true;
-            enableByCategory = true;
+            bodySelectionMode = (int)BodySelectionMode.PerCategory;
             storagebornRefugeeQuestEnabled = true;
             stageOffsets = new[] { 25f, 50f, 75f, 100f, 150f };
             stageFactors = new[] { 1f, 1.5f, 2f, 2.5f, 3f };
@@ -242,12 +246,14 @@ namespace StoragebornXenotype
         {
             base.ExposeData();
             Scribe_Values.Look(ref storagebornRefugeeQuestEnabled, "storagebornRefugeeQuestEnabled", true);
-            Scribe_Values.Look(ref matchWorldTechLevel, "matchWorldTechLevel", true);
-            Scribe_Values.Look(ref enableByCategory, "enableByCategory", true);
+            Scribe_Values.Look(ref bodySelectionMode, "bodySelectionMode", 0);
             Scribe_Collections.Look(ref disabledCategories, "disabledCategories", LookMode.Value);
             Scribe_Collections.Look(ref disabledBodyGenes, "disabledBodyGenes", LookMode.Value);
+            Scribe_Collections.Look(ref bodyWeights, "bodyWeights", LookMode.Value, LookMode.Value);
             if (Scribe.mode == LoadSaveMode.PostLoadInit && disabledBodyGenes == null)
                 disabledBodyGenes = new List<string>();
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && bodyWeights == null)
+                bodyWeights = new Dictionary<string, float>();
             if (Scribe.mode == LoadSaveMode.PostLoadInit && disabledCategories == null)
                 disabledCategories = new List<string>();
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
