@@ -35,6 +35,7 @@
   <StoragebornSettingsReasonIndividualDisabled>Reason: individual body setting is disabled</StoragebornSettingsReasonIndividualDisabled>
   <StoragebornSettingsReasonMissingCategory>Reason: body has no category</StoragebornSettingsReasonMissingCategory>
   <StoragebornSettingsUnknownCategory>Unknown category</StoragebornSettingsUnknownCategory>
+  <StoragebornBedAssignmentRestriction>Storageborn can only be assigned to sleeping spots.</StoragebornBedAssignmentRestriction>
   <StoragebornIdeologyHeadgearLetterLabel>Ideology apparel warning</StoragebornIdeologyHeadgearLetterLabel>
   <StoragebornIdeologyHeadgearWarning>Storageborn Xenotype does not support Ideology apparel.</StoragebornIdeologyHeadgearWarning>
 </LanguageData>
