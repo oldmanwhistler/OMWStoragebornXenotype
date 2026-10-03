@@ -24,17 +24,25 @@ The Big & Small "no clothing or armor" gene blocks Backpacks, so the Storageborn
 
 A normal cloth backpack adds +50kg, giving a baseliner 85kg, which would be the equivalent to a medium storageborn with default settings.
 
+### [Ogrestack](https://steamcommunity.com/sharedfiles/filedetails/?id=1447140290) - 389,489 Current Subscribers
+
+Works fine.
+
 ### [Show Me Your Hands](https://steamcommunity.com/sharedfiles/filedetails/?id=3805568727) - 323,764 Current Subscribers
 
-There's a patch to not show hands for Storageborn.
+I added a patch to *not* show hands for Storageborn since the hands won't match the bodies.
 
 ### Mods that randomize genes
 
-If storageborn genes are picked up as part of randomization it will set the xenotype. Storageborn hybrids are not possible.
+Storageborn hybrids are not possible. If storageborn genes are picked up as part of randomization then they will force the xenotype back to omw_storageborn.
 
 ## Not Recommended
 
 [10x Carry Capacity](https://steamcommunity.com/sharedfiles/filedetails/?id=2019000693) - 23,678 Current Subscribers
+
+The sets all pawns carrying capacity to 750kg which negates the carrying capacity from the Storageborn race. They still get their carrying capacity multiplier.
+
+[Strong Pawn](https://steamcommunity.com/sharedfiles/filedetails/?id=3523631891) - 7,909 Current Subscribers
 
 The sets all pawns carrying capacity to 750kg which negates the carrying capacity from the Storageborn race. They still get their carrying capacity multiplier.
 
@@ -44,8 +52,7 @@ This will reduce the carry capacity of the race to that of normal baseliners. Wh
 
 ## Not Tested
 
-- [VRE Androids](https://steamcommunity.com/sharedfiles/filedetails/?id=2975771801) - 342,479 Current Subscribers
-- [Strong Pawn](https://steamcommunity.com/sharedfiles/filedetails/?id=3523631891) - 7,909 Current Subscribers
+- [Stack XXL](https://steamcommunity.com/sharedfiles/filedetails/?id=826366050) - 8,086 Current Subscribers
 - [Carry Capacity from Bionics](https://steamcommunity.com/sharedfiles/filedetails/?id=3564369362) - 1,568 Current Subscribers
 - [dd.Armful Haul](https://steamcommunity.com/sharedfiles/filedetails/?id=3808100512) - 87 Current Subscribers
 - [Flat Carrying Capacity](https://steamcommunity.com/sharedfiles/filedetails/?id=3794966911) - 81 Current Subscribers

@@ -33,6 +33,7 @@
     <li>sarg.alphagenes</li>
     <li>redmattis.bigsmall.core</li>
     <li>mlie.showmeyourhands</li>
+    <li>mpwoz.strongpawns</li>
   </loadAfter>
   <loadBefore>
     <li>mlie.10xcarryingcapacity</li>

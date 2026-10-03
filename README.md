@@ -32,6 +32,10 @@ A race of sentient storage solutions. Inspired by D&D mimics and the Luggage fro
 
 ## Recommended Mods
 
+[Ogrestack](https://steamcommunity.com/sharedfiles/filedetails/?id=1447140290)
+
+Required to make use of the extra carrying capacity while hauling.
+
 [Pickup and Haul](https://steamcommunity.com/sharedfiles/filedetails/?id=1279012058)
 
 Required to make use of the extra carrying capacity while hauling.
