@@ -27,6 +27,7 @@
         <li>AptitudePoor_Medicine</li>                        
         <li>AptitudeRemarkable_Social</li>
         <li>BS_Diet_Carnivore</li>
+        <li>StrongStomach</li>        
         <li>RobustDigestion</li>        
         <li>PsychicAbility_Dull</li>
         <li>Nearsighted</li>
@@ -81,6 +82,7 @@
         <li>AptitudeStrong_Artistic</li>
         <li>AptitudePoor_Social</li>                                                
         <li>BS_Diet_Carnivore</li>
+        <li>StrongStomach</li>        
         <li>RobustDigestion</li>        
         <li>PsychicAbility_Deaf</li>
         <li>BS_AlienApperanceStandards</li>   
@@ -140,7 +142,8 @@
         <li>AptitudeStrong_Plants</li>                                      
         <li>AptitudeRemarkable_Artistic</li>        
         <li>AptitudeTerrible_Social</li>
-        <li>AptitudePoor_Intellectual</li>        
+        <li>AptitudePoor_Intellectual</li>  
+        <li>StrongStomach</li>      
         <li>RobustDigestion</li>        
         <li>BS_AnimalFriend</li>
         <li>BS_AlienApperanceStandards_Lesser</li>   

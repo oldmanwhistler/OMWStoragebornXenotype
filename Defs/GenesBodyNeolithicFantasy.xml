@@ -76,6 +76,7 @@
         <li>AptitudeRemarkable_Mining</li>
         <li MayRequire="sarg.alphagenes">AG_MiningYield_High</li>        
         <li>AptitudeTerrible_Intellectual</li>
+        <li>StrongStomach</li>        
         <li>RobustDigestion</li>                
         <li>PsychicAbility_Dull</li>
         <li>BS_NoEquip</li>
