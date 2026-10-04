@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace StoragebornXenotype
@@ -8,6 +9,22 @@ namespace StoragebornXenotype
     // These is the Storageborn Gene that all storageborn have
     public class StoragebornGene : Gene
     {
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach (Gizmo gizmo in base.GetGizmos() ?? Enumerable.Empty<Gizmo>())
+                yield return gizmo;
+
+            if (!Prefs.DevMode) yield break;
+
+            yield return new Command_Action
+            {
+                defaultLabel = "StoragebornDevRerandomizeBody".Translate(),
+                defaultDesc = "StoragebornDevRerandomizeBodyDesc".Translate(),
+                icon = ContentFinder<Texture2D>.Get("UI/Icons/Abilities/OMW_StoragebornRandomizer"),
+                action = () => StoragebornController.RandomizeBodyGene(pawn, force: true)
+            };
+        }
+
         public override void PostAdd()
         {
             base.PostAdd();

@@ -157,7 +157,7 @@ namespace StoragebornXenotype
                 pawn.apparel.Remove(apparel);
         }
 
-        public static void RandomizeBodyGene(Pawn pawn)
+        public static void RandomizeBodyGene(Pawn pawn, bool force = false)
         {
             if (pawn?.genes == null || !HasStoragebornGene(pawn)) return;
 
@@ -166,6 +166,18 @@ namespace StoragebornXenotype
                 .Where(def => settings.IsBodyEffectivelyEnabled(def))
                 .Where(def => settings == null || settings.GetBodyWeight(def.defName) > 0f)
                 .ToList();
+            List<Gene> existing = pawn.genes.GenesListForReading
+                .Where(g => BodyGeneDefNames.Contains(g.def.defName))
+                .ToList();
+            Gene activeGene = existing.FirstOrDefault(g => enabled.Contains(g.def));
+
+            if (!force && activeGene != null)
+            {
+                foreach (Gene duplicate in existing.Where(g => g != activeGene).ToList())
+                    pawn.genes.RemoveGene(duplicate);
+                return;
+            }
+
             GeneDef selectedGeneDef = DefDatabase<GeneDef>.GetNamedSilentFail("OMW_StorageBodyWardrobe");
             if (selectedGeneDef == null)
             {
@@ -197,10 +209,6 @@ namespace StoragebornXenotype
                 Log.Error("[Storageborn Xenotype] No eligible Storageborn body subtype had a positive relative weight; defaulting to OMW_StorageBodyWardrobe.");
             }
 
-            List<Gene> existing = pawn.genes.GenesListForReading
-                .Where(g => BodyGeneDefNames.Contains(g.def.defName))
-                .ToList();
-
             foreach (Gene gene in existing)
                 pawn.genes.RemoveGene(gene);
 
@@ -226,7 +234,7 @@ namespace StoragebornXenotype
 
             foreach (Pawn pawn in pawns)
                 if (HasStoragebornGene(pawn))
-                    RandomizeBodyGene(pawn);
+                    RandomizeBodyGene(pawn, force: true);
         }
 
         public static void SetStage(Pawn pawn)
