@@ -7,18 +7,16 @@
   <StoragebornSettingsWeight>Weight</StoragebornSettingsWeight>
   <StoragebornSettingsBodyNoGenes>No additional genes</StoragebornSettingsBodyNoGenes>
   <StoragebornSettingsResetAll>Reset all settings to default</StoragebornSettingsResetAll>
-  <StoragebornSettingsFantasy>Fantasy</StoragebornSettingsFantasy>
-  <StoragebornSettingsModern>Modern</StoragebornSettingsModern>
-  <StoragebornSettingsFuturistic>Futuristic</StoragebornSettingsFuturistic>
   <StoragebornSettingsRerandomize>Re-randomize all Storageborn pawn bodies in the colony</StoragebornSettingsRerandomize>
   <StoragebornSettingsStageGenes>Storage stage genes</StoragebornSettingsStageGenes>
   <StoragebornSettingsOffset>Carry Capacity Offset</StoragebornSettingsOffset>
   <StoragebornSettingsFactor>Carry Capacity Multiplier</StoragebornSettingsFactor>
   <StoragebornSettingsSaveStages>Save carry capacity stage gene settings</StoragebornSettingsSaveStages>
-  <StoragebornSettingsQuestTab>Refuge quest</StoragebornSettingsQuestTab>
+  <StoragebornSettingsMiscTab>Misc</StoragebornSettingsMiscTab>
   <StoragebornSettingsQuestTitle>Storageborn refuge quest</StoragebornSettingsQuestTitle>
   <StoragebornSettingsQuestEnabled>Enable the Storageborn refuge quest</StoragebornSettingsQuestEnabled>
   <StoragebornSettingsQuestDescription>A Storageborn wanderer will seek refuge and offer to join the colony.</StoragebornSettingsQuestDescription>
+  <StoragebornSettingsTraceGeneExtensions>Trace body gene extensions in the log</StoragebornSettingsTraceGeneExtensions>
   <StoragebornSettingsSelectionMode>Selection mode</StoragebornSettingsSelectionMode>
   <StoragebornSettingsPerCategory>Per category</StoragebornSettingsPerCategory>
   <StoragebornSettingsPerBody>Per body</StoragebornSettingsPerBody>

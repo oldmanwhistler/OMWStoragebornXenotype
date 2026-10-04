@@ -10,6 +10,11 @@ namespace StoragebornXenotype
     // These is the Storageborn Gene that all storageborn have
     public class StoragebornGene : Gene
     {
+        private bool TraceExtensions()
+        {
+            return StoragebornXenotypeMod.Instance?.Settings?.TraceGeneExtensionsEnabled ?? false;
+        }
+
         public override IEnumerable<Gizmo> GetGizmos()
         {
             foreach (Gizmo gizmo in base.GetGizmos() ?? Enumerable.Empty<Gizmo>())
@@ -35,10 +40,21 @@ namespace StoragebornXenotype
                 // The hacky way body images are done with no heads won't work with a non-storageborn xenotype.
                 Log.Message(
                     $"[Storageborn Xenotype] Body gene {def.defName} was added to a non-Storageborn xenotype ({pawn.genes?.Xenotype?.defName} -- resetting xenotype).");
-                pawn.genes?.SetXenotypeDirect(DefDatabase<XenotypeDef>.GetNamed("omw_storageborn"));
-                // SetXenotypeDirect doesn't add the bald and no beard genes if the pawn has already been generated, so we need to add them manually.
-                pawn.genes?.AddGene(DefDatabase<GeneDef>.GetNamed("Hair_BaldOnly"), xenogene: false);
-                pawn.genes?.AddGene(DefDatabase<GeneDef>.GetNamed("Beard_NoBeardOnly"), xenogene: false);
+                List<Gene> genesToAddBack = new List<Gene>();
+                foreach (Gene gene in pawn.genes.GenesListForReading)
+                {
+                    if (gene.def.defName.Contains("OMW_StorageBody"))
+                        if (TraceExtensions())
+                            Log.Message($"[Storageborn Xenotype] Removing bodygene {gene.def.defName} from pawn {pawn.LabelShort}.");
+                        pawn.genes?.RemoveGene(gene);
+                }
+                pawn.genes?.SetXenotype(DefDatabase<XenotypeDef>.GetNamed("omw_storageborn"));
+                foreach (Gene gene in genesToAddBack)
+                {
+                    if (TraceExtensions())
+                        Log.Message($"[Storageborn Xenotype] Re-adding bodygene {gene.def.defName} to pawn {pawn.LabelShort}.");
+                    pawn.genes?.AddGene(gene.def, xenogene: false);
+                }
             }
 
             StoragebornController.ApplyTo(pawn);
@@ -48,6 +64,11 @@ namespace StoragebornXenotype
 
     public class StoragebornSubGene : Gene
     {
+        protected bool TraceExtensions()
+        {
+            return StoragebornXenotypeMod.Instance?.Settings?.TraceGeneExtensionsEnabled ?? false;
+        }
+        
         protected void ResetXenotype()
         {
             // This changes gene randomization and hybrid births to force the storageborn xenotype.
@@ -58,9 +79,13 @@ namespace StoragebornXenotype
             foreach (Gene gene in pawn.genes.GenesListForReading)
             {
                 if (gene.def.defName == "OMW_Storageborn")
+                    if (TraceExtensions())
+                        Log.Message($"[Storageborn Xenotype] Removing gene {gene.def.defName} from pawn {pawn.LabelShort}.");
                     pawn.genes?.RemoveGene(gene);
             }
 
+            if (TraceExtensions())
+                Log.Message($"[Storageborn Xenotype] Adding OMW_Storageborn gene which should reset the xenotype to OMW_Storageborn for pawn {pawn.LabelShort}.");
             // this will reset the xenotype to storageborn and cause the body type to be randomized again.                
             pawn.genes.AddGene(DefDatabase<GeneDef>.GetNamed("OMW_Storageborn"), xenogene: false);
         }
@@ -106,7 +131,12 @@ namespace StoragebornXenotype
                     string generated = NameGenerator.GenerateName(request, rootKeyword: "name");
                     string[] parts = generated.Split(new[] { ' ' }, 2, System.StringSplitOptions.RemoveEmptyEntries);
                     if (parts.Length > 0)
-                        pawn.Name = new NameTriple(parts[0], currentName.Nick, parts.Length > 1 ? parts[1] : string.Empty);
+                    {
+                        if (TraceExtensions())
+                            Log.Message($"[Storageborn Xenotype] Body gene {def.defName} generated new name {generated} for pawn {pawn.LabelShort}.");
+                        pawn.Name = new NameTriple(parts[0], currentName.Nick,
+                            parts.Length > 1 ? parts[1] : string.Empty);
+                    }
                 }
             }
 
@@ -115,7 +145,12 @@ namespace StoragebornXenotype
             {
                 List<BackstoryDef> backgrounds = backstoriesExtension.backgrounds.Where(backstory => backstory != null).ToList();
                 if (backgrounds.Count > 0)
-                    pawn.story.Childhood = backgrounds.RandomElement();
+                {
+                    BackstoryDef selectedBackground = backgrounds.RandomElement();
+                    if (TraceExtensions())
+                        Log.Message($"[Storageborn Xenotype] Body gene {def.defName} selected background {selectedBackground.defName} for pawn {pawn.LabelShort}.");
+                    pawn.story.Childhood = selectedBackground;
+                }
             }
 
             StoragebornBodyGenesExtension extension = def.GetModExtension<StoragebornBodyGenesExtension>();
@@ -129,9 +164,20 @@ namespace StoragebornXenotype
                     continue;
                 }
 
+                if (TraceExtensions())
+                    Log.Message($"[Storageborn Xenotype] Applying gene extension: body gene {def.defName} adds {geneDef.defName} to pawn {pawn.LabelShort}.");
+
                 Gene addedGene = pawn.genes.AddGene(geneDef, xenogene: false);
                 if (addedGene != null)
+                {
                     addedGenes.Add(addedGene);
+                    if (TraceExtensions())
+                        Log.Message($"[Storageborn Xenotype] Applied gene extension: {geneDef.defName} added to pawn {pawn.LabelShort}.");
+                }
+                else if (TraceExtensions())
+                {
+                    Log.Message($"[Storageborn Xenotype] Gene extension produced no gene instance: {geneDef.defName} for pawn {pawn.LabelShort}.");
+                }
             }
         }
 
@@ -140,7 +186,11 @@ namespace StoragebornXenotype
             base.PostRemove();
 
             foreach (Gene addedGene in addedGenes)
+            {
+                if (TraceExtensions())
+                    Log.Message($"[Storageborn Xenotype] Removing gene {addedGene.def.defName} from pawn {pawn.LabelShort} due to removal of body gene {def.defName}.");
                 pawn.genes.RemoveGene(addedGene);
+            }
 
             addedGenes.Clear();
 
@@ -150,7 +200,9 @@ namespace StoragebornXenotype
             foreach (GeneDef geneDef in extension.genes)
             {
                 if (geneDef == null)
+                {
                     Log.Error($"[Storageborn Xenotype] Body gene {def.defName} has a missing gene in its StoragebornBodyGenesExtension.");
+                }
             }
         }
     }

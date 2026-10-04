@@ -15,10 +15,12 @@ namespace StoragebornXenotype
         private float[] stageOffsets = { 25f, 50f, 75f, 100f, 150f };
         private float[] stageFactors = { 1.0f, 1.5f, 2.0f, 2.5f, 3.0f };
         private bool storagebornRefugeeQuestEnabled = true;
+        private bool traceGeneExtensionsEnabled;
         private int bodySelectionMode = 0;
         private List<string> disabledCategories = new List<string>();
 
         public bool StoragebornRefugeeQuestEnabled => storagebornRefugeeQuestEnabled;
+        public bool TraceGeneExtensionsEnabled => traceGeneExtensionsEnabled;
         private enum BodySelectionMode { PerCategory = 0, PerBody = 1, WorldTechLevel = 2 }
         private BodySelectionMode SelectionMode => (BodySelectionMode)Mathf.Clamp(bodySelectionMode, 0, 2);
         public bool MatchWorldTechLevel => SelectionMode == BodySelectionMode.WorldTechLevel && WorldTechLevelIntegration.IsAvailable;
@@ -93,7 +95,7 @@ namespace StoragebornXenotype
                 selectedTab = 0;
             if (Widgets.ButtonText(new Rect(inRect.x + tabWidth + 2f, inRect.y, tabWidth, tabHeight), "StoragebornSettingsStagesTab".Translate()))
                 selectedTab = 1;
-            if (Widgets.ButtonText(new Rect(inRect.x + (tabWidth + 2f) * 2f, inRect.y, tabWidth, tabHeight), "StoragebornSettingsQuestTab".Translate()))
+            if (Widgets.ButtonText(new Rect(inRect.x + (tabWidth + 2f) * 2f, inRect.y, tabWidth, tabHeight), "StoragebornSettingsMiscTab".Translate()))
                 selectedTab = 2;
 
             Widgets.BeginScrollView(bodyRect, ref scrollPosition, bodyViewRect);
@@ -177,6 +179,8 @@ namespace StoragebornXenotype
             listing.Label("StoragebornSettingsQuestTitle".Translate());
             CheckboxIndented(listing, "StoragebornSettingsQuestEnabled".Translate(), ref storagebornRefugeeQuestEnabled);
             listing.Label("StoragebornSettingsQuestDescription".Translate());
+            listing.GapLine();
+            CheckboxIndented(listing, "StoragebornSettingsTraceGeneExtensions".Translate(), ref traceGeneExtensionsEnabled);
         }
 
         private void DrawStageSettings(Listing_Standard listing)
@@ -250,6 +254,7 @@ namespace StoragebornXenotype
             disabledCategories.Clear();
             bodySelectionMode = (int)BodySelectionMode.PerCategory;
             storagebornRefugeeQuestEnabled = true;
+            traceGeneExtensionsEnabled = false;
             stageOffsets = new[] { 25f, 50f, 75f, 100f, 150f };
             stageFactors = new[] { 1f, 1.5f, 2f, 2.5f, 3f };
             StoragebornController.ApplyStageStatSettings(stageOffsets, stageFactors);
@@ -259,6 +264,7 @@ namespace StoragebornXenotype
         {
             base.ExposeData();
             Scribe_Values.Look(ref storagebornRefugeeQuestEnabled, "storagebornRefugeeQuestEnabled", true);
+            Scribe_Values.Look(ref traceGeneExtensionsEnabled, "traceGeneExtensionsEnabled", false);
             Scribe_Values.Look(ref bodySelectionMode, "bodySelectionMode", 0);
             Scribe_Collections.Look(ref disabledCategories, "disabledCategories", LookMode.Value);
             Scribe_Collections.Look(ref disabledBodyGenes, "disabledBodyGenes", LookMode.Value);

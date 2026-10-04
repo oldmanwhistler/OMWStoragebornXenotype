@@ -206,7 +206,7 @@ namespace StoragebornXenotype
 
             if (selectedSelected == false)
             {
-                Log.Error("[Storageborn Xenotype] No eligible Storageborn body subtype had a positive relative weight; defaulting to OMW_StorageBodyWardrobe.");
+                Log.Warning("[Storageborn Xenotype] No eligible Storageborn body subtype had a positive relative weight; defaulting to OMW_StorageBodyWardrobe. Check mod settings.");
             }
 
             foreach (Gene gene in existing)
