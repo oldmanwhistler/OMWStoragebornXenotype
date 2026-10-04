@@ -17,6 +17,9 @@
           <li>OMW_StoragebornChildhood_NeolithicFantasyNature</li>
         </backgrounds>
       </li>
+      <li Class="StoragebornXenotype.StoragebornBodyNameRulesExtension">
+        <nameRules>OMW_StoragebornNameRules_Treant</nameRules>
+      </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
         <li>AptitudeRemarkable_Plants</li>
@@ -67,6 +70,9 @@
         <backgrounds>
           <li>OMW_StoragebornChildhood_NeolithicFantasyNature</li>
         </backgrounds>
+      </li>
+      <li Class="StoragebornXenotype.StoragebornBodyNameRulesExtension">
+        <nameRules>OMW_StoragebornNameRules_Golem</nameRules>
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>

@@ -85,6 +85,15 @@ namespace StoragebornXenotype
                 ResetXenotype();
                 return;
             }            
+            StoragebornBodyNameRulesExtension nameRulesExtension = def.GetModExtension<StoragebornBodyNameRulesExtension>();
+            if (nameRulesExtension?.nameRules != null && pawn.Name is NameTriple currentName)
+            {
+                string generated = NameGenerator.GenerateName(nameRulesExtension.nameRules);
+                string[] parts = generated.Split(new[] { ' ' }, 2, System.StringSplitOptions.RemoveEmptyEntries);
+                if (parts.Length > 0)
+                    pawn.Name = new NameTriple(parts[0], currentName.Nick, parts.Length > 1 ? parts[1] : string.Empty);
+            }
+
             StoragebornBodyBackstoriesExtension backstoriesExtension = def.GetModExtension<StoragebornBodyBackstoriesExtension>();
             if (pawn.story != null && backstoriesExtension?.backgrounds != null)
             {

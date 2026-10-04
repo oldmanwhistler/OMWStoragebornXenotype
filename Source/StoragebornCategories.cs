@@ -25,6 +25,11 @@ namespace StoragebornXenotype
         public List<BackstoryDef> backgrounds = new List<BackstoryDef>();
     }
 
+    public class StoragebornBodyNameRulesExtension : DefModExtension
+    {
+        public RulePackDef nameRules = null!;
+    }
+
     public static class WorldTechLevelIntegration
     {
         private const string PackageId = "m00nl1ght.WorldTechLevel";

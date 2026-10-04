@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RulePackDef>
+    <defName>OMW_StoragebornNameRules_Treant</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>name->[PlantFirst] [PlantLast]</li>
+        <li>PlantFirst->Alder</li>
+        <li>PlantFirst->Ash</li>
+        <li>PlantFirst->Briar</li>
+        <li>PlantFirst->Clover</li>
+        <li>PlantFirst->Fern</li>
+        <li>PlantFirst->Hazel</li>
+        <li>PlantFirst->Ivy</li>
+        <li>PlantFirst->Juniper</li>
+        <li>PlantFirst->Laurel</li>
+        <li>PlantFirst->Maple</li>
+        <li>PlantFirst->Moss</li>
+        <li>PlantFirst->Rowan</li>
+        <li>PlantFirst->Thistle</li>
+        <li>PlantFirst->Willow</li>
+        <li>PlantFirst->Yarrow</li>
+        <li>PlantLast->Barkwhisper</li>
+        <li>PlantLast->Bloomheart</li>
+        <li>PlantLast->Boughkeeper</li>
+        <li>PlantLast->Dewrunner</li>
+        <li>PlantLast->Greenbough</li>
+        <li>PlantLast->Leafdancer</li>
+        <li>PlantLast->Mossmantle</li>
+        <li>PlantLast->Rootwalker</li>
+        <li>PlantLast->Seedwarden</li>
+        <li>PlantLast->Thornweave</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+</Defs>

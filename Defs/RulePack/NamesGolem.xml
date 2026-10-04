@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RulePackDef>
+    <defName>OMW_StoragebornNameRules_Golem</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>name->[StoneFirst] [StoneLast]</li>
+        <li>StoneFirst->Basalt</li>
+        <li>StoneFirst->Flint</li>
+        <li>StoneFirst->Granite</li>
+        <li>StoneFirst->Jasper</li>
+        <li>StoneFirst->Obsidian</li>
+        <li>StoneFirst->Onyx</li>
+        <li>StoneFirst->Quartz</li>
+        <li>StoneFirst->Slate</li>
+        <li>StoneLast->Bedrock</li>
+        <li>StoneLast->Cragborn</li>
+        <li>StoneLast->Deepdelver</li>
+        <li>StoneLast->Earthshaper</li>
+        <li>StoneLast->Ironvein</li>
+        <li>StoneLast->Mountainheart</li>
+        <li>StoneLast->Rockbreaker</li>
+        <li>StoneLast->Stoneward</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+</Defs>
