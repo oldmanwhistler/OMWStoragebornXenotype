@@ -18,7 +18,9 @@
         </backgrounds>
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyNameRulesExtension">
-        <nameRules>OMW_StoragebornNameRules_Treant</nameRules>
+        <nameRules>
+          <li>OMW_StoragebornNameRules_Treant_Neutral</li>
+        </nameRules>
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>
@@ -72,7 +74,9 @@
         </backgrounds>
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyNameRulesExtension">
-        <nameRules>OMW_StoragebornNameRules_Golem</nameRules>
+        <nameRules>
+          <li>OMW_StoragebornNameRules_Golem_Neutral</li>
+        </nameRules>
       </li>
       <li Class="StoragebornXenotype.StoragebornBodyGenesExtension">
         <genes>

@@ -27,7 +27,7 @@ namespace StoragebornXenotype
 
     public class StoragebornBodyNameRulesExtension : DefModExtension
     {
-        public RulePackDef nameRules = null!;
+        public List<RulePackDef> nameRules = new List<RulePackDef>();
     }
 
     public static class WorldTechLevelIntegration

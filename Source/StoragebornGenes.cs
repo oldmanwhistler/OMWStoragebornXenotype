@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using Verse.Grammar;
 using UnityEngine;
 using Verse;
 
@@ -86,12 +87,27 @@ namespace StoragebornXenotype
                 return;
             }            
             StoragebornBodyNameRulesExtension nameRulesExtension = def.GetModExtension<StoragebornBodyNameRulesExtension>();
-            if (nameRulesExtension?.nameRules != null && pawn.Name is NameTriple currentName)
+            if (nameRulesExtension?.nameRules != null && nameRulesExtension.nameRules.Count > 0 && pawn.Name is NameTriple currentName)
             {
-                string generated = NameGenerator.GenerateName(nameRulesExtension.nameRules);
-                string[] parts = generated.Split(new[] { ' ' }, 2, System.StringSplitOptions.RemoveEmptyEntries);
-                if (parts.Length > 0)
-                    pawn.Name = new NameTriple(parts[0], currentName.Nick, parts.Length > 1 ? parts[1] : string.Empty);
+                GrammarRequest request = new GrammarRequest();
+                foreach (RulePackDef rules in nameRulesExtension.nameRules)
+                {
+                    if (rules == null)
+                        continue;
+                    if (pawn.gender == Gender.Male && rules.defName.EndsWith("_Female", System.StringComparison.Ordinal))
+                        continue;
+                    if (pawn.gender == Gender.Female && rules.defName.EndsWith("_Male", System.StringComparison.Ordinal))
+                        continue;
+                    request.Includes.Add(rules);
+                }
+
+                if (request.Includes.Count > 0)
+                {
+                    string generated = NameGenerator.GenerateName(request, rootKeyword: "name");
+                    string[] parts = generated.Split(new[] { ' ' }, 2, System.StringSplitOptions.RemoveEmptyEntries);
+                    if (parts.Length > 0)
+                        pawn.Name = new NameTriple(parts[0], currentName.Nick, parts.Length > 1 ? parts[1] : string.Empty);
+                }
             }
 
             StoragebornBodyBackstoriesExtension backstoriesExtension = def.GetModExtension<StoragebornBodyBackstoriesExtension>();

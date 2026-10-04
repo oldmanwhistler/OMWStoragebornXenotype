@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <RulePackDef>
-    <defName>OMW_StoragebornNameRules_Treant</defName>
+    <defName>OMW_StoragebornNameRules_Treant_Neutral</defName>
 <rulePack>
   <rulesStrings>
     <!-- Name Structure -->
